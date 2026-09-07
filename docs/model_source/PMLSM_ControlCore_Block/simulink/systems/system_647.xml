@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-1, -7, 1707, 961]</P>
+  <P Name="ZoomFactor">125</P>
+  <Block BlockType="Inport" Name="v_ref" SID="648">
+    <P Name="Position">[-245, -332, -215, -318]</P>
+    <P Name="ZOrder">-1</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">v_ref_safe</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="abs_v_ref" SID="649">
+    <P Name="Position">[15, -112, 45, -98]</P>
+    <P Name="ZOrder">177</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="abs_v_mmps" SID="650">
+    <P Name="Position">[-120, -232, -90, -218]</P>
+    <P Name="ZOrder">178</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="e_v" SID="651">
+    <P Name="Position">[-55, -27, -25, -13]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">4</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">e_v</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Reference" Name="Compare&#xA;To Constant1" SID="652">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[75, -48, 170, -22]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="LibraryVersion">9.1</P>
+    <P Name="SourceBlock">simulink/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="relop">&gt;</P>
+      <P Name="const">-v_over_eps</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Reference" Name="Compare&#xA;To Constant2" SID="653">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[75, -118, 170, -92]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="LibraryVersion">9.1</P>
+    <P Name="SourceBlock">simulink/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="relop">&gt;</P>
+      <P Name="const">v_ff_eps</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Constant" Name="Constant1" SID="654">
+    <P Name="Position">[-130, -303, -60, -277]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">Iq_fric_start</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant5" SID="655">
+    <P Name="Position">[270, -30, 300, 0]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">0</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant6" SID="656">
+    <P Name="Position">[-130, -158, -60, -132]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">Iq_fric_run</P>
+  </Block>
+  <Block BlockType="Gain" Name="Gain" SID="657">
+    <P Name="Position">[-55, -240, -25, -210]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Gain">-1</P>
+  </Block>
+  <Block BlockType="Logic" Name="Logical&#xA;Operator" SID="658">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[215, -139, 250, -1]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="AllPortsSameDT">off</P>
+    <P Name="OutDataTypeStr">boolean</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">ff_enable</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Product" Name="Product" SID="659">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[5, -198, 30, -127]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Product" Name="Product1" SID="660">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[10, -343, 35, -272]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Product" Name="Product2" SID="661">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[15, -71, 45, -4]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Relay" Name="Relay" SID="662">
+    <P Name="Position">[15, -240, 45, -210]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="OnSwitchValue">-v_stick_on</P>
+    <P Name="OffSwitchValue">-v_stick_off</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">fric_start_mode</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Signum" Name="Sign" SID="663">
+    <P Name="Position">[-110, -195, -80, -165]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Signum" Name="Sign1" SID="664">
+    <P Name="Position">[-115, -340, -85, -310]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Switch" Name="Switch" SID="665">
+    <P Name="Position">[130, -303, 200, -147]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Switch" Name="Switch2" SID="666">
+    <P Name="Position">[340, -153, 410, 13]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">iq_ff</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Outport" Name="iq_ff" SID="667">
+    <P Name="Position">[490, -77, 520, -63]</P>
+    <P Name="ZOrder">-2</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">657#out:1</P>
+    <P Name="Dst">662#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">fric_start_mode</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">662#out:1</P>
+    <P Name="Dst">665#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">650#out:1</P>
+    <P Name="Dst">657#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">ff_enable</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">658#out:1</P>
+    <P Name="Dst">666#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">652#out:1</P>
+    <P Name="Dst">658#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Src">653#out:1</P>
+    <P Name="Dst">658#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">661#out:1</P>
+    <P Name="Dst">652#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">651#out:1</P>
+    <P Name="Dst">661#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">660#out:1</P>
+    <P Name="Points">[59, 0; 0, 30]</P>
+    <P Name="Dst">665#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">10</P>
+    <P Name="Src">654#out:1</P>
+    <P Name="Points">[-5, 0]</P>
+    <P Name="Dst">660#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">664#out:1</P>
+    <P Name="Dst">660#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">12</P>
+    <P Name="Src">659#out:1</P>
+    <P Name="Points">[60, 0; 0, -15]</P>
+    <P Name="Dst">665#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">665#out:1</P>
+    <P Name="Points">[115, 0; 0, 100]</P>
+    <P Name="Dst">666#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">iq_ff</P>
+    <P Name="ZOrder">14</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">666#out:1</P>
+    <P Name="Dst">667#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">15</P>
+    <P Name="Src">649#out:1</P>
+    <P Name="Dst">653#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">656#out:1</P>
+    <P Name="Dst">659#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">17</P>
+    <P Name="Src">655#out:1</P>
+    <P Name="Dst">666#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">18</P>
+    <P Name="Src">663#out:1</P>
+    <P Name="Points">[43, 0]</P>
+    <Branch>
+      <P Name="ZOrder">19</P>
+      <P Name="Dst">659#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">20</P>
+      <P Name="Points">[0, 125; 47, 0]</P>
+      <P Name="Dst">661#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">21</P>
+    <P Name="Src">648#out:1</P>
+    <P Name="Points">[50, 0]</P>
+    <Branch>
+      <P Name="ZOrder">22</P>
+      <P Name="Dst">664#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">23</P>
+      <P Name="Points">[0, 145]</P>
+      <P Name="Dst">663#in:1</P>
+    </Branch>
+  </Line>
+  <Annotation SID="668">
+    <P Name="Name">if start_mode == 1 
+	iq_fric_mag = Iq_fric_start; 
+else   
+	iq_fric_mag = Iq_fric_run; 
+
+if ff_enable  
+	iq_ff = iq_fric_mag * sign(v_ref);
+ else
+	iq_ff = 0;</P>
+    <P Name="Position">[261, -381, 661, -271]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="FixedWidth">on</P>
+    <P Name="ZOrder">-1</P>
+  </Annotation>
+</System>

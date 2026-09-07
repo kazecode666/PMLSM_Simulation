@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">80</P>
+  <Block BlockType="Inport" Name="duty_a" SID="867">
+    <P Name="Position">[20, 118, 50, 132]</P>
+    <P Name="ZOrder">1</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">duty_a</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="duty_b" SID="869">
+    <P Name="Position">[20, 438, 50, 452]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">2</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">duty_b</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="duty_c" SID="871">
+    <P Name="Position">[20, 793, 50, 807]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Port">3</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">duty_c</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="ZeroOrderHold" Name="a_cmd_zoh" SID="970">
+    <P Name="Position">[175, 285, 225, 315]</P>
+    <P Name="ZOrder">30</P>
+    <P Name="SampleTime">MIL_Current_Control_Ts_s</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="a_half_50us" SID="971">
+    <P Name="Position">[300, 280, 340, 320]</P>
+    <P Name="ZOrder">31</P>
+    <P Name="InitialCondition">0.5</P>
+    <P Name="SampleTime">MIL_PWM_Delay_Substep_s</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="a_one_100us" SID="972">
+    <P Name="Position">[430, 280, 470, 320]</P>
+    <P Name="ZOrder">32</P>
+    <P Name="InitialCondition">0.5</P>
+    <P Name="SampleTime">MIL_PWM_Delay_Substep_s</P>
+  </Block>
+  <Block BlockType="Constant" Name="accurate_enable" SID="967">
+    <P Name="Position">[5, 10, 215, 50]</P>
+    <P Name="ZOrder">27</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">MIL_PWM_Update_Delay_Accurate_Enable</P>
+  </Block>
+  <Block BlockType="Gain" Name="accurate_mode_offset" SID="968">
+    <P Name="Position">[310, 15, 350, 45]</P>
+    <P Name="ZOrder">28</P>
+    <P Name="Gain">3</P>
+  </Block>
+  <Block BlockType="ZeroOrderHold" Name="b_cmd_zoh" SID="973">
+    <P Name="Position">[180, 630, 230, 660]</P>
+    <P Name="ZOrder">33</P>
+    <P Name="SampleTime">MIL_Current_Control_Ts_s</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="b_half_50us" SID="974">
+    <P Name="Position">[305, 625, 345, 665]</P>
+    <P Name="ZOrder">34</P>
+    <P Name="InitialCondition">0.5</P>
+    <P Name="SampleTime">MIL_PWM_Delay_Substep_s</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="b_one_100us" SID="975">
+    <P Name="Position">[440, 625, 480, 665]</P>
+    <P Name="ZOrder">35</P>
+    <P Name="InitialCondition">0.5</P>
+    <P Name="SampleTime">MIL_PWM_Delay_Substep_s</P>
+  </Block>
+  <Block BlockType="ZeroOrderHold" Name="c_cmd_zoh" SID="976">
+    <P Name="Position">[155, 1010, 205, 1040]</P>
+    <P Name="ZOrder">36</P>
+    <P Name="SampleTime">MIL_Current_Control_Ts_s</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="c_half_50us" SID="977">
+    <P Name="Position">[280, 1005, 320, 1045]</P>
+    <P Name="ZOrder">37</P>
+    <P Name="InitialCondition">0.5</P>
+    <P Name="SampleTime">MIL_PWM_Delay_Substep_s</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="c_one_100us" SID="978">
+    <P Name="Position">[435, 1005, 475, 1045]</P>
+    <P Name="ZOrder">38</P>
+    <P Name="InitialCondition">0.5</P>
+    <P Name="SampleTime">MIL_PWM_Delay_Substep_s</P>
+  </Block>
+  <Block BlockType="Constant" Name="delay_mode" SID="873">
+    <P Name="Position">[10, -61, 210, -19]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">MIL_PWM_Update_Delay_Mode</P>
+  </Block>
+  <Block BlockType="Goto" Name="delay_mode_goto" SID="874">
+    <P Name="Position">[460, -21, 625, 11]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pwm_update_delay_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="duty_a_delay_mode_from" SID="879">
+    <P Name="Position">[320, 75, 505, 105]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pwm_update_delay_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="MultiPortSwitch" Name="duty_a_delay_select" SID="880">
+    <PortCounts in="7" out="1"/>
+    <P Name="Position">[545, 69, 625, 321]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="DataPortOrder">Zero-based contiguous</P>
+    <P Name="Inputs">6</P>
+    <P Name="zeroidx">on</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Gain" Name="duty_a_half_now" SID="876">
+    <P Name="Position">[275, 145, 325, 175]</P>
+    <P Name="ZOrder">10</P>
+    <P Name="ShowName">off</P>
+    <P Name="Gain">0.5</P>
+  </Block>
+  <Block BlockType="Sum" Name="duty_a_half_sum" SID="878">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[360, 150, 380, 170]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="ShowName">off</P>
+    <P Name="Inputs">|++</P>
+  </Block>
+  <Block BlockType="Gain" Name="duty_a_half_z1" SID="877">
+    <P Name="Position">[210, 170, 260, 200]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="ShowName">off</P>
+    <P Name="Gain">0.5</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="duty_a_z1" SID="875">
+    <P Name="Position">[115, 165, 155, 205]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="InitialCondition">0.5</P>
+    <P Name="SampleTime">Ts_ACR</P>
+  </Block>
+  <Block BlockType="From" Name="duty_b_delay_mode_from" SID="885">
+    <P Name="Position">[330, 389, 515, 421]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pwm_update_delay_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="MultiPortSwitch" Name="duty_b_delay_select" SID="886">
+    <PortCounts in="7" out="1"/>
+    <P Name="Position">[550, 376, 625, 674]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="DataPortOrder">Zero-based contiguous</P>
+    <P Name="Inputs">6</P>
+    <P Name="zeroidx">on</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Gain" Name="duty_b_half_now" SID="882">
+    <P Name="Position">[280, 470, 330, 500]</P>
+    <P Name="ZOrder">16</P>
+    <P Name="ShowName">off</P>
+    <P Name="Gain">0.5</P>
+  </Block>
+  <Block BlockType="Sum" Name="duty_b_half_sum" SID="884">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[375, 475, 395, 495]</P>
+    <P Name="ZOrder">18</P>
+    <P Name="ShowName">off</P>
+    <P Name="Inputs">|++</P>
+  </Block>
+  <Block BlockType="Gain" Name="duty_b_half_z1" SID="883">
+    <P Name="Position">[205, 500, 255, 530]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="ShowName">off</P>
+    <P Name="Gain">0.5</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="duty_b_z1" SID="881">
+    <P Name="Position">[120, 497, 160, 533]</P>
+    <P Name="ZOrder">15</P>
+    <P Name="InitialCondition">0.5</P>
+    <P Name="SampleTime">Ts_ACR</P>
+  </Block>
+  <Block BlockType="From" Name="duty_c_delay_mode_from" SID="891">
+    <P Name="Position">[325, 741, 520, 769]</P>
+    <P Name="ZOrder">25</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pwm_update_delay_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="MultiPortSwitch" Name="duty_c_delay_select" SID="892">
+    <PortCounts in="7" out="1"/>
+    <P Name="Position">[550, 733, 625, 1047]</P>
+    <P Name="ZOrder">26</P>
+    <P Name="DataPortOrder">Zero-based contiguous</P>
+    <P Name="Inputs">6</P>
+    <P Name="zeroidx">on</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Gain" Name="duty_c_half_now" SID="888">
+    <P Name="Position">[270, 830, 320, 860]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="ShowName">off</P>
+    <P Name="Gain">0.5</P>
+  </Block>
+  <Block BlockType="Sum" Name="duty_c_half_sum" SID="890">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[370, 835, 390, 855]</P>
+    <P Name="ZOrder">24</P>
+    <P Name="ShowName">off</P>
+    <P Name="Inputs">|++</P>
+  </Block>
+  <Block BlockType="Gain" Name="duty_c_half_z1" SID="889">
+    <P Name="Position">[205, 860, 255, 890]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="ShowName">off</P>
+    <P Name="Gain">0.5</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="duty_c_z1" SID="887">
+    <P Name="Position">[120, 856, 160, 894]</P>
+    <P Name="ZOrder">21</P>
+    <P Name="InitialCondition">0.5</P>
+    <P Name="SampleTime">Ts_ACR</P>
+  </Block>
+  <Block BlockType="Sum" Name="effective_delay_mode" SID="969">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[390, -20, 420, 10]</P>
+    <P Name="ZOrder">29</P>
+    <P Name="NameLocation">left</P>
+  </Block>
+  <Block BlockType="Outport" Name="duty_a_delayed" SID="868">
+    <P Name="Position">[715, 188, 745, 202]</P>
+    <P Name="ZOrder">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="duty_b_delayed" SID="870">
+    <P Name="Position">[715, 518, 745, 532]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="duty_c_delayed" SID="872">
+    <P Name="Position">[715, 883, 745, 897]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">867#out:1</P>
+    <P Name="Points">[25, 0]</P>
+    <Branch>
+      <P Name="ZOrder">98</P>
+      <P Name="Points">[0, 60]</P>
+      <Branch>
+        <P Name="ZOrder">97</P>
+        <P Name="Points">[0, 115]</P>
+        <P Name="Dst">970#in:1</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">3</P>
+        <P Name="Dst">875#in:1</P>
+      </Branch>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">52</P>
+      <P Name="Points">[100, 0]</P>
+      <Branch>
+        <P Name="ZOrder">174</P>
+        <P Name="Points">[0, 35]</P>
+        <P Name="Dst">876#in:1</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">10</P>
+        <P Name="Dst">880#in:2</P>
+      </Branch>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">12</P>
+    <P Name="Src">875#out:1</P>
+    <P Name="Points">[10, 0]</P>
+    <Branch>
+      <P Name="ZOrder">60</P>
+      <P Name="Points">[0, 27; 245, 0; 0, -17]</P>
+      <P Name="Dst">880#in:4</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">59</P>
+      <P Name="Dst">877#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">876#out:1</P>
+    <P Name="Dst">878#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">877#out:1</P>
+    <P Name="Dst">878#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">879#out:1</P>
+    <P Name="Dst">880#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">878#out:1</P>
+    <P Name="Dst">880#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">14</P>
+    <P Name="Src">880#out:1</P>
+    <P Name="Dst">868#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">869#out:1</P>
+    <P Name="Points">[30, 0]</P>
+    <Branch>
+      <P Name="ZOrder">108</P>
+      <P Name="Points">[0, 70]</P>
+      <Branch>
+        <P Name="ZOrder">107</P>
+        <P Name="Points">[0, 130]</P>
+        <P Name="Dst">973#in:1</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">15</P>
+        <P Name="Dst">881#in:1</P>
+      </Branch>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">49</P>
+      <P Name="Points">[100, 0]</P>
+      <Branch>
+        <P Name="ZOrder">17</P>
+        <P Name="Points">[0, 40]</P>
+        <P Name="Dst">882#in:1</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">22</P>
+        <P Name="Dst">886#in:2</P>
+      </Branch>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">24</P>
+    <P Name="Src">881#out:1</P>
+    <P Name="Points">[10, 0]</P>
+    <Branch>
+      <P Name="ZOrder">62</P>
+      <P Name="Points">[0, 34; 217, 0; 0, -24]</P>
+      <P Name="Dst">886#in:4</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">61</P>
+      <P Name="Dst">883#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">19</P>
+    <P Name="Src">882#out:1</P>
+    <P Name="Dst">884#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">20</P>
+    <P Name="Src">883#out:1</P>
+    <P Name="Points">[125, 0]</P>
+    <P Name="Dst">884#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">21</P>
+    <P Name="Src">885#out:1</P>
+    <P Name="Dst">886#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">23</P>
+    <P Name="Src">884#out:1</P>
+    <P Name="Dst">886#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">26</P>
+    <P Name="Src">886#out:1</P>
+    <P Name="Dst">870#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">28</P>
+    <P Name="Src">871#out:1</P>
+    <P Name="Points">[30, 0]</P>
+    <Branch>
+      <P Name="ZOrder">117</P>
+      <P Name="Points">[0, 75]</P>
+      <Branch>
+        <P Name="ZOrder">116</P>
+        <P Name="Points">[0, 150]</P>
+        <P Name="Dst">976#in:1</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">27</P>
+        <P Name="Dst">887#in:1</P>
+      </Branch>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">46</P>
+      <P Name="Points">[100, 0]</P>
+      <Branch>
+        <P Name="ZOrder">203</P>
+        <P Name="Points">[0, 45]</P>
+        <P Name="Dst">888#in:1</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">34</P>
+        <P Name="Dst">892#in:2</P>
+      </Branch>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">36</P>
+    <P Name="Src">887#out:1</P>
+    <P Name="Points">[10, 0]</P>
+    <Branch>
+      <P Name="ZOrder">199</P>
+      <P Name="Points">[0, 45; 271, 0; 0, -30]</P>
+      <P Name="Dst">892#in:4</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">63</P>
+      <P Name="Dst">889#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">31</P>
+    <P Name="Src">888#out:1</P>
+    <P Name="Dst">890#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">32</P>
+    <P Name="Src">889#out:1</P>
+    <P Name="Points">[120, 0]</P>
+    <P Name="Dst">890#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">33</P>
+    <P Name="Src">891#out:1</P>
+    <P Name="Dst">892#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">35</P>
+    <P Name="Src">890#out:1</P>
+    <P Name="Dst">892#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">38</P>
+    <P Name="Src">892#out:1</P>
+    <P Name="Dst">872#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">93</P>
+    <P Name="Src">967#out:1</P>
+    <P Name="Dst">968#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">94</P>
+    <P Name="Src">873#out:1</P>
+    <P Name="Points">[190, 0]</P>
+    <P Name="Dst">969#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">95</P>
+    <P Name="Src">968#out:1</P>
+    <P Name="Points">[50, 0]</P>
+    <P Name="Dst">969#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">96</P>
+    <P Name="Src">969#out:1</P>
+    <P Name="Dst">874#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">99</P>
+    <P Name="Src">970#out:1</P>
+    <P Name="Points">[25, 0]</P>
+    <Branch>
+      <P Name="ZOrder">102</P>
+      <P Name="Points">[0, -70]</P>
+      <P Name="Dst">880#in:5</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">101</P>
+      <P Name="Dst">971#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">100</P>
+    <P Name="Src">971#out:1</P>
+    <P Name="Points">[40, 0]</P>
+    <Branch>
+      <P Name="ZOrder">129</P>
+      <P Name="Points">[0, -35]</P>
+      <P Name="Dst">880#in:6</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">103</P>
+      <P Name="Dst">972#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">106</P>
+    <P Name="Src">972#out:1</P>
+    <P Name="Dst">880#in:7</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">109</P>
+    <P Name="Src">973#out:1</P>
+    <P Name="Points">[25, 0]</P>
+    <Branch>
+      <P Name="ZOrder">195</P>
+      <P Name="Points">[0, -80]</P>
+      <P Name="Dst">886#in:5</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">191</P>
+      <P Name="Dst">974#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">110</P>
+    <P Name="Src">974#out:1</P>
+    <P Name="Points">[42, 0]</P>
+    <Branch>
+      <P Name="ZOrder">194</P>
+      <P Name="Points">[0, -40]</P>
+      <P Name="Dst">886#in:6</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">113</P>
+      <P Name="Dst">975#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">115</P>
+    <P Name="Src">975#out:1</P>
+    <P Name="Dst">886#in:7</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">118</P>
+    <P Name="Src">976#out:1</P>
+    <P Name="Points">[25, 0]</P>
+    <Branch>
+      <P Name="ZOrder">128</P>
+      <P Name="Points">[0, -90]</P>
+      <P Name="Dst">892#in:5</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">120</P>
+      <P Name="Dst">977#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">119</P>
+    <P Name="Src">977#out:1</P>
+    <P Name="Points">[68, 0]</P>
+    <Branch>
+      <P Name="ZOrder">198</P>
+      <P Name="Points">[0, -45]</P>
+      <P Name="Dst">892#in:6</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">122</P>
+      <P Name="Dst">978#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">124</P>
+    <P Name="Src">978#out:1</P>
+    <P Name="Dst">892#in:7</P>
+  </Line>
+</System>

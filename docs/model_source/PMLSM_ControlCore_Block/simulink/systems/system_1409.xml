@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">146</P>
+  <Block BlockType="Inport" Name="id_ref" SID="1412">
+    <P Name="Position">[40, 58, 70, 72]</P>
+    <P Name="ZOrder">1</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_id_ref</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="iq_ref" SID="1413">
+    <P Name="Position">[40, 88, 70, 102]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Port">2</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_iq_ref</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="id_meas" SID="1414">
+    <P Name="Position">[40, 118, 70, 132]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">3</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_id</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="iq_meas" SID="1415">
+    <P Name="Position">[40, 148, 70, 162]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">4</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_iq</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="we" SID="1416">
+    <P Name="Position">[40, 358, 70, 372]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Inport" Name="delta_id_hat_corr" SID="1417">
+    <P Name="Position">[40, 178, 70, 192]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Inport" Name="delta_iq_hat_corr" SID="1418">
+    <P Name="Position">[40, 208, 70, 222]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Inport" Name="D_hat_d_corr" SID="1419">
+    <P Name="Position">[40, 298, 70, 312]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Port">8</P>
+  </Block>
+  <Block BlockType="Inport" Name="D_hat_q_corr" SID="1420">
+    <P Name="Position">[40, 328, 70, 342]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="Port">9</P>
+  </Block>
+  <Block BlockType="Inport" Name="delta_ud_prev" SID="1421">
+    <P Name="Position">[40, 238, 70, 252]</P>
+    <P Name="ZOrder">10</P>
+    <P Name="Port">10</P>
+  </Block>
+  <Block BlockType="Inport" Name="delta_uq_prev" SID="1422">
+    <P Name="Position">[40, 268, 70, 282]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="Port">11</P>
+  </Block>
+  <Block BlockType="Inport" Name="U_limited_prev_d" SID="1423">
+    <P Name="Position">[440, 138, 470, 152]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="Port">12</P>
+  </Block>
+  <Block BlockType="Inport" Name="U_limited_prev_q" SID="1424">
+    <P Name="Position">[440, 248, 470, 262]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="Port">13</P>
+  </Block>
+  <Block BlockType="Gain" Name="U_picdo_comp_d" SID="1462">
+    <P Name="Position">[340, 420, 370, 450]</P>
+    <P Name="ZOrder">24</P>
+    <P Name="Gain">-(DPICC_Ld_Factor*PMLSM_Ld_H)/(Ts_DPICC/2)</P>
+  </Block>
+  <Block BlockType="Gain" Name="U_picdo_comp_q" SID="1463">
+    <P Name="Position">[340, 480, 370, 510]</P>
+    <P Name="ZOrder">25</P>
+    <P Name="Gain">-(DPICC_Lq_Factor*PMLSM_Lq_H)/(Ts_DPICC/2)</P>
+  </Block>
+  <Block BlockType="Mux" Name="control_inputs" SID="1457">
+    <PortCounts in="11" out="1"/>
+    <P Name="Position">[260, 45, 265, 375]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="BackgroundColor">black</P>
+    <P Name="Inputs">11</P>
+  </Block>
+  <Block BlockType="Fcn" Name="delta_ud_cmd" SID="1458">
+    <P Name="Position">[340, 130, 400, 160]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="Expr">(2*(DPICC_Ld_Factor*PMLSM_Ld_H)/Ts_DPICC)*(u[1]-u[3]-(((1-PMLSM_Rs_ohm*(Ts_DPICC/2)/(DPICC_Ld_Factor*PMLSM_Ld_H))^2-(u[11]*(Ts_DPICC/2))^2)*u[5]+2*(1-PMLSM_Rs_ohm*(Ts_DPICC/2)/(DPICC_Ld_Factor*PMLSM_Ld_H))*(u[11]*(Ts_DPICC/2))*u[6]+((Ts_DPICC/2)/(DPICC_Ld_Factor*PMLSM_Ld_H))*((1-PMLSM_Rs_ohm*(Ts_DPICC/2)/(DPICC_Ld_Factor*PMLSM_Ld_H))*u[7]+(u[11]*(Ts_DPICC/2))*u[8]))-u[9])</P>
+  </Block>
+  <Block BlockType="Fcn" Name="delta_uq_cmd" SID="1459">
+    <P Name="Position">[340, 240, 400, 270]</P>
+    <P Name="ZOrder">21</P>
+    <P Name="Expr">(2*(DPICC_Lq_Factor*PMLSM_Lq_H)/Ts_DPICC)*(u[2]-u[4]-(-2*(1-PMLSM_Rs_ohm*(Ts_DPICC/2)/(DPICC_Lq_Factor*PMLSM_Lq_H))*(u[11]*(Ts_DPICC/2))*u[5]+((1-PMLSM_Rs_ohm*(Ts_DPICC/2)/(DPICC_Lq_Factor*PMLSM_Lq_H))^2-(u[11]*(Ts_DPICC/2))^2)*u[6]+((Ts_DPICC/2)/(DPICC_Lq_Factor*PMLSM_Lq_H))*(-(u[11]*(Ts_DPICC/2))*u[7]+(1-PMLSM_Rs_ohm*(Ts_DPICC/2)/(DPICC_Lq_Factor*PMLSM_Lq_H))*u[8]))-u[10])</P>
+  </Block>
+  <Block BlockType="Mux" Name="mux_delta_u_cmd" SID="1465">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[450, 177, 455, 228]</P>
+    <P Name="ZOrder">27</P>
+    <P Name="BackgroundColor">black</P>
+    <P Name="Inputs">2</P>
+  </Block>
+  <Block BlockType="Mux" Name="mux_numeric_check" SID="1466">
+    <PortCounts in="4" out="1"/>
+    <P Name="Position">[560, 312, 565, 413]</P>
+    <P Name="ZOrder">28</P>
+    <P Name="BackgroundColor">black</P>
+  </Block>
+  <Block BlockType="Mux" Name="mux_picdo_comp" SID="1464">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[450, 432, 455, 483]</P>
+    <P Name="ZOrder">26</P>
+    <P Name="BackgroundColor">black</P>
+    <P Name="Inputs">2</P>
+  </Block>
+  <Block BlockType="Sum" Name="ud_raw_sum" SID="1460">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[520, 130, 540, 150]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="Inputs">|++</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">ud_raw</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Sum" Name="uq_raw_sum" SID="1461">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[520, 240, 540, 260]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="Inputs">|++</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">uq_raw</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Outport" Name="ud_raw" SID="1425">
+    <P Name="Position">[620, 133, 650, 147]</P>
+    <P Name="ZOrder">14</P>
+  </Block>
+  <Block BlockType="Outport" Name="uq_raw" SID="1426">
+    <P Name="Position">[620, 243, 650, 257]</P>
+    <P Name="ZOrder">15</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="picdo_comp_diag" SID="1427">
+    <P Name="Position">[540, 448, 570, 462]</P>
+    <P Name="ZOrder">16</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="delta_u_cmd_diag" SID="1428">
+    <P Name="Position">[540, 193, 570, 207]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Outport" Name="numeric_check_control" SID="1429">
+    <P Name="Position">[650, 353, 680, 367]</P>
+    <P Name="ZOrder">18</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">152</P>
+    <P Name="Src">1466#out:1</P>
+    <P Name="Points">[33, 0; 0, -5]</P>
+    <P Name="Dst">1429#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">153</P>
+    <P Name="Src">1465#out:1</P>
+    <P Name="Points">[38, 0; 0, -5]</P>
+    <P Name="Dst">1428#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">154</P>
+    <P Name="Src">1464#out:1</P>
+    <P Name="Points">[33, 0; 0, -5]</P>
+    <P Name="Dst">1427#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">155</P>
+    <P Name="Src">1463#out:1</P>
+    <P Name="Points">[18, 0; 0, -25]</P>
+    <P Name="Dst">1464#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">156</P>
+    <P Name="Src">1462#out:1</P>
+    <P Name="Points">[35, 0; 0, 10]</P>
+    <P Name="Dst">1464#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">157</P>
+    <P Name="Src">1412#out:1</P>
+    <P Name="Points">[85, 0; 0, -5]</P>
+    <P Name="Dst">1457#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">158</P>
+    <P Name="Src">1413#out:1</P>
+    <P Name="Points">[85, 0; 0, -5]</P>
+    <P Name="Dst">1457#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">159</P>
+    <P Name="Src">1414#out:1</P>
+    <P Name="Points">[85, 0; 0, -5]</P>
+    <P Name="Dst">1457#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">160</P>
+    <P Name="Src">1415#out:1</P>
+    <P Name="Points">[90, 0; 0, -5]</P>
+    <P Name="Dst">1457#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">161</P>
+    <P Name="Src">1417#out:1</P>
+    <P Name="Points">[85, 0; 0, -5]</P>
+    <P Name="Dst">1457#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">162</P>
+    <P Name="Src">1418#out:1</P>
+    <P Name="Points">[90, 0; 0, -5]</P>
+    <P Name="Dst">1457#in:6</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">163</P>
+    <P Name="Src">1421#out:1</P>
+    <P Name="Points">[90, 0; 0, -5]</P>
+    <P Name="Dst">1457#in:7</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">164</P>
+    <P Name="Src">1422#out:1</P>
+    <P Name="Points">[90, 0; 0, -5]</P>
+    <P Name="Dst">1457#in:8</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">165</P>
+    <P Name="Src">1419#out:1</P>
+    <P Name="Points">[83, 0]</P>
+    <Branch>
+      <P Name="ZOrder">168</P>
+      <P Name="Points">[0, 130]</P>
+      <P Name="Dst">1462#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">167</P>
+      <P Name="Points">[0, -5]</P>
+      <P Name="Dst">1457#in:9</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">169</P>
+    <P Name="Src">1420#out:1</P>
+    <P Name="Points">[46, 0; 0, 160; 84, 0]</P>
+    <Branch>
+      <P Name="ZOrder">171</P>
+      <P Name="Points">[0, -165]</P>
+      <P Name="Dst">1457#in:10</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">170</P>
+      <P Name="Dst">1463#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">172</P>
+    <P Name="Src">1416#out:1</P>
+    <P Name="Points">[21, 0; 0, -5]</P>
+    <P Name="Dst">1457#in:11</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">173</P>
+    <P Name="Src">1457#out:1</P>
+    <P Name="Points">[33, 0]</P>
+    <Branch>
+      <P Name="ZOrder">176</P>
+      <P Name="Points">[0, -65]</P>
+      <P Name="Dst">1458#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">175</P>
+      <P Name="Points">[0, 45]</P>
+      <P Name="Dst">1459#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">177</P>
+    <P Name="Src">1423#out:1</P>
+    <P Name="Points">[20, 0; 0, -5]</P>
+    <P Name="Dst">1460#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">178</P>
+    <P Name="Src">1458#out:1</P>
+    <P Name="Points">[4, 0; 0, 23]</P>
+    <Branch>
+      <P Name="ZOrder">182</P>
+      <P Name="Points">[0, 22]</P>
+      <Branch>
+        <P Name="ZOrder">181</P>
+        <P Name="Points">[0, 135]</P>
+        <P Name="Dst">1466#in:1</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">179</P>
+        <P Name="Dst">1465#in:1</P>
+      </Branch>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">180</P>
+      <P Name="Points">[121, 0]</P>
+      <P Name="Dst">1460#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">183</P>
+    <P Name="Src">1424#out:1</P>
+    <P Name="Points">[20, 0; 0, -5]</P>
+    <P Name="Dst">1461#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">184</P>
+    <P Name="Src">1459#out:1</P>
+    <P Name="Points">[0, 0]</P>
+    <Branch>
+      <P Name="ZOrder">189</P>
+      <P Name="Points">[0, 43]</P>
+      <Branch>
+        <P Name="ZOrder">188</P>
+        <P Name="Points">[0, 52]</P>
+        <P Name="Dst">1466#in:2</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">186</P>
+        <P Name="Points">[125, 0]</P>
+        <P Name="Dst">1461#in:2</P>
+      </Branch>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">187</P>
+      <P Name="Points">[0, -40]</P>
+      <P Name="Dst">1465#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">ud_raw</P>
+    <P Name="ZOrder">190</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">1460#out:1</P>
+    <P Name="Points">[35, 0]</P>
+    <Branch>
+      <P Name="ZOrder">192</P>
+      <P Name="Points">[0, -34; -258, 0; 0, 269]</P>
+      <P Name="Dst">1466#in:3</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">191</P>
+      <P Name="Dst">1425#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">uq_raw</P>
+    <P Name="ZOrder">193</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">1461#out:1</P>
+    <P Name="Points">[35, 0]</P>
+    <Branch>
+      <P Name="ZOrder">195</P>
+      <P Name="Points">[0, 42; -36, 0; 0, 108]</P>
+      <P Name="Dst">1466#in:4</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">194</P>
+      <P Name="Dst">1426#in:1</P>
+    </Branch>
+  </Line>
+</System>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sltp_editor version="1.1" packageUris="http://schema.mathworks.com/mf0/DiagramEditor/R2019a_20181107 http://schema.mathworks.com/mf0/SltpSyntax/R2025a_202406271400">
+  <sltp.mm.syntax.Context type="sltp.mm.syntax.Context" uuid="20dc8e00-e5db-4ba2-930d-fb200eb49fdc">
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="4a2f59cc-b712-4358-b666-a5f89e4d73e7">
+      <dataName>portClose_Loop_EN</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="372a9417-e313-4ccd-811d-fa190adf1a31">
+      <dataName>portInit_Done</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="00aa885f-faea-4ba8-837d-152a64a8ae1f">
+      <dataName>portTheta_Offset_auto</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="6bc01d09-a99f-4180-8011-1ee61dafdf10">
+      <dataName>portclose_loop_en_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="17f19b02-b1e6-4d79-8b4d-eaec0016d15e">
+      <dataName>portdiq_ref_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="04032769-f82c-4bca-b18a-96b60662d3ea">
+      <dataName>portduty_a</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="6b3365de-73a9-4604-9a61-59333bedf92c">
+      <dataName>portduty_b</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="8ebd7d19-6bf8-409f-8666-1ce08784c398">
+      <dataName>portduty_c</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="87f95461-7111-4f13-b376-3e5ac82c3a8c">
+      <dataName>porte_v_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="8fcdfe40-beed-4943-a4b8-fc65530185f6">
+      <dataName>portenable_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="64f0ca24-cd4e-4a2b-ab7c-8bf67197e671">
+      <dataName>portfault_i</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="b391f746-62c7-4850-ab62-11a429d94582">
+      <dataName>portfault_latch</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="6d38d932-dca2-4db5-bc9e-a4bcdf6261d5">
+      <dataName>portfault_u</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="0c2bbf7e-c641-4600-aaff-12e8da22fb5a">
+      <dataName>portia</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="251896f4-33de-484d-8978-c5c8349d84ba">
+      <dataName>portib</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="93aa536d-61e7-4a4c-9674-b5ad0ef14d65">
+      <dataName>portic</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="52b7423f-14bf-4b6f-af41-b4c2e3df616d">
+      <dataName>portid_meas</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="bd1134bc-12f0-48a7-acdc-a16397363c69">
+      <dataName>portid_ref</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="d4d145fe-3be7-44ae-b3ee-2eb6732ae1a4">
+      <dataName>portid_ref_set_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="73ee16d6-ff24-43dd-b006-5567a874421a">
+      <dataName>portinit_reset_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="f0b26820-adbc-42d2-bc25-9bdb2cf75d0c">
+      <dataName>portinit_start_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="39c7822d-22e3-4317-a20c-4eb08292aafd">
+      <dataName>portiq_lim_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="097d4f78-086c-469d-83f6-f8f0a02fbd2f">
+      <dataName>portiq_meas</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="0ec553c8-b170-4258-be7b-328bb906f307">
+      <dataName>portiq_raw_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="1406a14c-a2b0-44e6-9ccb-bcb3b7cfcb4e">
+      <dataName>portiq_ref</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="d356238b-8dcd-4dd3-811c-0ad15ff5b075">
+      <dataName>portiq_ref_normal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="b9a55cc7-d124-456f-8d3b-16ce655f576e">
+      <dataName>portiq_test_mode_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="b907ba36-f1dd-4b2f-9e9b-bbcf84d970f9">
+      <dataName>portiq_test_ref_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="69d8aaa3-aa2d-45d9-b18e-66a9f5d1ab2b">
+      <dataName>portpi_reset_en_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="93786382-2bb6-49e4-8e9a-71d1f57b1566">
+      <dataName>portpos_loop_en_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="c8e52f84-9d5c-41d3-83b0-37507baf9f20">
+      <dataName>portspeed_loop_tick</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="4154ce40-605a-4c34-88ac-625ea227ade6">
+      <dataName>porttheta_e</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="07f42f92-a098-4bf4-afde-d5cb2a4be805">
+      <dataName>portv_fb_for_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="3c0d5919-017d-4e6e-9c2b-2d8b06930a44">
+      <dataName>portv_ideal_mmps</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="5a34d4a6-f068-451b-97a1-589490d64f84">
+      <dataName>portv_ref</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="4354de3b-dede-4ba9-9719-117e170eded3">
+      <dataName>portv_ref_cmd_mmps</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="c46025a8-9433-4287-ae2c-9000a3063e99">
+      <dataName>portv_ref_cmd_mmps_in</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="6712994c-40a5-40ef-b59e-d5d903e111ba">
+      <dataName>portv_ref_safe</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="9a1d65d4-1c39-4af3-a910-c619595c334c">
+      <dataName>portvd_cmd</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="d710100a-42de-4e4e-a37b-cc05950fe5c4">
+      <dataName>portvq_cmd</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="8e1df9cb-7988-4ec1-9e32-0bbfc8992d61">
+      <dataName>portx_align_mm_latch</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="150984cf-0956-42ae-8d6a-2d7ab559ad1f">
+      <dataName>portx_mm</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="5d7a1986-52d3-4152-9ab3-f273f0e5d77b">
+      <dataName>portx_ref_mm_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.syntax.GlobalData" uuid="0f391a4a-b42f-4d42-9345-f608b0b0440e">
+      <dataName>portx_s_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <rootGraph type="sltp.mm.syntax.Graph" uuid="84c33d9c-247d-48a2-b7cd-264b26e58866">
+      <children type="sltp.mm.syntax.Node" uuid="42bb0f05-005e-4789-8687-411257f0f044">
+        <priority>40</priority>
+        <rates type="sltp.mm.syntax.RateData">
+          <color>#ff453a</color>
+          <hasBlocks>true</hasBlocks>
+          <rate>0.0001</rate>
+          <title>D1</title>
+        </rates>
+        <title>D1</title>
+        <type>implicit-periodic</type>
+        <diagramElement type="diagram.editor.model.Entity" uuid="5fcbdef4-2efa-4e90-8354-650f3bdba77e"/>
+        <subgraph type="sltp.mm.syntax.Graph" uuid="0005ab43-89a6-4053-84fc-1f3557298d79">
+          <title>D1</title>
+          <diagramElement type="diagram.editor.model.Diagram" uuid="235e269d-fa91-4ca9-a4a3-1bac2404ea76"/>
+        </subgraph>
+      </children>
+      <title>Default</title>
+      <diagramElement type="diagram.editor.model.Diagram" uuid="7cbaad6a-f060-49fb-a3cb-a251878007c0"/>
+    </rootGraph>
+  </sltp.mm.syntax.Context>
+  <diagram.editor.model.Diagram type="diagram.editor.model.Diagram" uuid="7cbaad6a-f060-49fb-a3cb-a251878007c0">
+    <entities type="diagram.editor.model.Entity" uuid="5fcbdef4-2efa-4e90-8354-650f3bdba77e">
+      <position>0,0</position>
+      <size>0,0,0,0</size>
+      <syntaxElement type="sltp.mm.syntax.Node" uuid="42bb0f05-005e-4789-8687-411257f0f044"/>
+      <title>D1</title>
+      <type>implicit-periodic</type>
+      <subDiagram type="diagram.editor.model.Diagram" uuid="235e269d-fa91-4ca9-a4a3-1bac2404ea76">
+        <position>0,0</position>
+        <syntaxElement type="sltp.mm.syntax.Graph" uuid="0005ab43-89a6-4053-84fc-1f3557298d79"/>
+        <title>D1</title>
+        <type>graph.Graph</type>
+      </subDiagram>
+    </entities>
+    <syntaxElement type="sltp.mm.syntax.Graph" uuid="84c33d9c-247d-48a2-b7cd-264b26e58866"/>
+    <title>Default</title>
+    <type>graph.Graph</type>
+  </diagram.editor.model.Diagram>
+</sltp_editor>

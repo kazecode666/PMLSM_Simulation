@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">117</P>
+  <Block BlockType="Inport" Name="Startup_Bus" SID="138">
+    <P Name="Position">[1325, -252, 1355, -238]</P>
+    <P Name="ZOrder">1</P>
+  </Block>
+  <Block BlockType="Inport" Name="ControlCore_Bus" SID="146">
+    <P Name="Position">[1325, -57, 1355, -43]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="BusSelector" Name="ControlCore_Bus_Selector" SID="147">
+    <PortCounts in="1" out="6"/>
+    <P Name="Position">[1410, -136, 1425, 31]</P>
+    <P Name="ZOrder">10</P>
+    <P Name="OutputSignals">vd_cmd,vq_cmd,duty_a,duty_b,duty_c,theta_e</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">&lt;vd_cmd&gt;</P>
+      </Port>
+      <Port Type="out" Index="2">
+        <P Name="Name">&lt;vq_cmd&gt;</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="Name">&lt;duty_a&gt;</P>
+      </Port>
+      <Port Type="out" Index="4">
+        <P Name="Name">&lt;duty_b&gt;</P>
+      </Port>
+      <Port Type="out" Index="5">
+        <P Name="Name">&lt;duty_c&gt;</P>
+      </Port>
+      <Port Type="out" Index="6">
+        <P Name="Name">&lt;theta_e&gt;</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="SubSystem" Name="Inverter_Model" SID="154">
+    <PortCounts in="12" out="2"/>
+    <P Name="Position">[755, -78, 960, 408]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_154"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="PMLSM_Plant_Model" SID="184">
+    <PortCounts in="3" out="9"/>
+    <P Name="Position">[1200, 55, 1380, 275]</P>
+    <P Name="ZOrder">18</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_184"/>
+  </Block>
+  <Block BlockType="BusCreator" Name="Plant_Bus_Creator" SID="256">
+    <PortCounts in="13" out="1"/>
+    <P Name="Position">[2325, -12, 2345, 392]</P>
+    <P Name="ZOrder">47</P>
+    <P Name="Inputs">13</P>
+    <P Name="DisplayOption">bar</P>
+    <P Name="InheritFromInputs">on</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="Sensor_Model" SID="215">
+    <PortCounts in="4" out="5"/>
+    <P Name="Position">[1560, 78, 1730, 232]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_215"/>
+  </Block>
+  <Block BlockType="BusSelector" Name="Startup_Bus_Selector" SID="139">
+    <PortCounts in="1" out="6"/>
+    <P Name="Position">[1410, -321, 1425, -174]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="OutputSignals">vdc,pwm_enable,plant_input_mode,load_force,x_override_mm,x_override_enable</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">&lt;vdc&gt;</P>
+      </Port>
+      <Port Type="out" Index="2">
+        <P Name="Name">&lt;pwm_enable&gt;</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="Name">&lt;plant_input_mode&gt;</P>
+      </Port>
+      <Port Type="out" Index="4">
+        <P Name="Name">&lt;load_force&gt;</P>
+      </Port>
+      <Port Type="out" Index="5">
+        <P Name="Name">&lt;x_override_mm&gt;</P>
+      </Port>
+      <Port Type="out" Index="6">
+        <P Name="Name">&lt;x_override_enable&gt;</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Goto" Name="input_ControlCore_duty_a" SID="150">
+    <P Name="Position">[1580, -73, 1715, -57]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">duty_a</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="input_ControlCore_duty_b" SID="151">
+    <P Name="Position">[1580, -49, 1715, -31]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">duty_b</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="input_ControlCore_duty_c" SID="152">
+    <P Name="Position">[1580, -23, 1715, -7]</P>
+    <P Name="ZOrder">15</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">duty_c</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="input_ControlCore_theta_e" SID="153">
+    <P Name="Position">[1580, 2, 1715, 18]</P>
+    <P Name="ZOrder">16</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">theta_e</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="input_ControlCore_vd_cmd" SID="148">
+    <P Name="Position">[1580, -123, 1715, -107]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vd_cmd</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="input_ControlCore_vq_cmd" SID="149">
+    <P Name="Position">[1580, -100, 1715, -80]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vq_cmd</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="input_Startup_load_force" SID="143">
+    <P Name="Position">[1580, -243, 1715, -227]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">load_force</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="input_Startup_plant_input_mode" SID="142">
+    <P Name="Position">[1580, -268, 1715, -252]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">plant_input_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="input_Startup_pwm_enable" SID="141">
+    <P Name="Position">[1580, -294, 1715, -276]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pwm_enable</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="input_Startup_vdc" SID="140">
+    <P Name="Position">[1580, -319, 1715, -301]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vdc</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="input_Startup_x_override_enable" SID="145">
+    <P Name="Position">[1580, -193, 1715, -177]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_override_enable</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="input_Startup_x_override_mm" SID="144">
+    <P Name="Position">[1580, -218, 1715, -202]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_override_mm</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_ia_feedback" SID="257">
+    <P Name="Position">[2085, -3, 2220, 23]</P>
+    <P Name="ZOrder">48</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ia_feedback</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">ia_feedback</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_ib_feedback" SID="258">
+    <P Name="Position">[2085, 29, 2220, 51]</P>
+    <P Name="ZOrder">49</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ib_feedback</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">ib_feedback</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_ic_feedback" SID="259">
+    <P Name="Position">[2085, 59, 2220, 81]</P>
+    <P Name="ZOrder">50</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ic_feedback</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">ic_feedback</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_id" SID="261">
+    <P Name="Position">[2085, 119, 2220, 141]</P>
+    <P Name="ZOrder">52</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">id</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">id</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_iq" SID="262">
+    <P Name="Position">[2085, 149, 2220, 171]</P>
+    <P Name="ZOrder">53</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">iq</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">iq</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_v_meas_mmps" SID="268">
+    <P Name="Position">[2085, 329, 2220, 351]</P>
+    <P Name="ZOrder">59</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">v_meas_mmps</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">v_meas_mmps</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_v_mmps" SID="264">
+    <P Name="Position">[2085, 209, 2220, 231]</P>
+    <P Name="ZOrder">55</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">v_mmps</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">v_mmps</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_vd" SID="265">
+    <P Name="Position">[2085, 238, 2220, 262]</P>
+    <P Name="ZOrder">56</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">plant_vd</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">plant_vd</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_vq" SID="266">
+    <P Name="Position">[2085, 269, 2220, 291]</P>
+    <P Name="ZOrder">57</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">plant_vq</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">plant_vq</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_x_feedback" SID="260">
+    <P Name="Position">[2085, 89, 2220, 111]</P>
+    <P Name="ZOrder">51</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_feedback</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">x_feedback</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_x_feedback_used" SID="269">
+    <P Name="Position">[2085, 357, 2220, 383]</P>
+    <P Name="ZOrder">60</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_feedback_used</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">x_feedback_used</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_x_meas_mm" SID="267">
+    <P Name="Position">[2085, 298, 2220, 322]</P>
+    <P Name="ZOrder">58</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_meas_mm</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">x_meas_mm</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Plant_x_mm" SID="263">
+    <P Name="Position">[2085, 179, 2220, 201]</P>
+    <P Name="ZOrder">54</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_mm</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">x_mm</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_ControlCore_duty_a" SID="233">
+    <P Name="Position">[595, 14, 710, 36]</P>
+    <P Name="ZOrder">24</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">duty_a</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">duty_a</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_ControlCore_duty_b" SID="234">
+    <P Name="Position">[595, 51, 710, 79]</P>
+    <P Name="ZOrder">25</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">duty_b</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">duty_b</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_ControlCore_duty_c" SID="235">
+    <P Name="Position">[595, 94, 710, 116]</P>
+    <P Name="ZOrder">26</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">duty_c</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">duty_c</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_ControlCore_theta_e" SID="236">
+    <P Name="Position">[595, 131, 710, 159]</P>
+    <P Name="ZOrder">27</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">theta_e</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">theta_e</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_ControlCore_vd_cmd" SID="231">
+    <P Name="Position">[595, -68, 710, -42]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vd_cmd</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">vd_cmd</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_ControlCore_vq_cmd" SID="232">
+    <P Name="Position">[595, -29, 710, -1]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vq_cmd</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">vq_cmd</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_Startup_plant_input_mode" SID="239">
+    <P Name="Position">[595, 253, 730, 277]</P>
+    <P Name="ZOrder">30</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">plant_input_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">plant_input_mode</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_Startup_pwm_enable" SID="238">
+    <P Name="Position">[595, 213, 710, 237]</P>
+    <P Name="ZOrder">29</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pwm_enable</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">pwm_enable</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_Startup_vdc" SID="237">
+    <P Name="Position">[595, 174, 710, 196]</P>
+    <P Name="ZOrder">28</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vdc</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">vdc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_inverter_ia_feedback" SID="447">
+    <P Name="Position">[595, 292, 695, 318]</P>
+    <P Name="ZOrder">62</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ia_feedback</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="read_inverter_ib_feedback" SID="448">
+    <P Name="Position">[595, 332, 695, 358]</P>
+    <P Name="ZOrder">63</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ib_feedback</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="read_inverter_ic_feedback" SID="449">
+    <P Name="Position">[600, 372, 690, 398]</P>
+    <P Name="ZOrder">64</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ic_feedback</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="read_load_force" SID="240">
+    <P Name="Position">[1020, 228, 1115, 252]</P>
+    <P Name="ZOrder">31</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">load_force</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">load_force</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_x_override_enable" SID="242">
+    <P Name="Position">[1595, 293, 1740, 317]</P>
+    <P Name="ZOrder">33</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_override_enable</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">x_override_enable</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="read_x_override_mm" SID="241">
+    <P Name="Position">[1595, 258, 1720, 282]</P>
+    <P Name="ZOrder">32</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_override_mm</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">x_override_mm</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_ia_feedback" SID="243">
+    <P Name="Position">[1810, 87, 1925, 103]</P>
+    <P Name="ZOrder">34</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ia_feedback</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_ib_feedback" SID="244">
+    <P Name="Position">[1810, 117, 1925, 133]</P>
+    <P Name="ZOrder">35</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ib_feedback</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_ic_feedback" SID="245">
+    <P Name="Position">[1810, 147, 1925, 163]</P>
+    <P Name="ZOrder">36</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ic_feedback</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_id" SID="247">
+    <P Name="Position">[1440, 55, 1520, 75]</P>
+    <P Name="ZOrder">38</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">id</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_iq" SID="248">
+    <P Name="Position">[1440, 80, 1520, 100]</P>
+    <P Name="ZOrder">39</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">iq</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_v_meas_mmps" SID="254">
+    <P Name="Position">[1930, 406, 2065, 424]</P>
+    <P Name="ZOrder">45</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">v_meas_mmps</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_v_mmps" SID="250">
+    <P Name="Position">[1465, 227, 1545, 253]</P>
+    <P Name="ZOrder">41</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">v_mmps</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_vd" SID="251">
+    <P Name="Position">[1160, -15, 1270, 5]</P>
+    <P Name="ZOrder">42</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">plant_vd</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_vq" SID="252">
+    <P Name="Position">[1150, 353, 1285, 377]</P>
+    <P Name="ZOrder">43</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">plant_vq</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_x_feedback" SID="246">
+    <P Name="Position">[1925, 293, 2045, 317]</P>
+    <P Name="ZOrder">37</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_feedback</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_x_feedback_used" SID="255">
+    <P Name="Position">[1930, 439, 2065, 461]</P>
+    <P Name="ZOrder">46</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_feedback_used</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_x_meas_mm" SID="253">
+    <P Name="Position">[1930, 371, 2065, 389]</P>
+    <P Name="ZOrder">44</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_meas_mm</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_x_mm" SID="249">
+    <P Name="Position">[1475, 180, 1550, 200]</P>
+    <P Name="ZOrder">40</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_mm</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Switch" Name="x_feedback_select" SID="230">
+    <P Name="Position">[1810, 255, 1860, 355]</P>
+    <P Name="ZOrder">21</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Outport" Name="Plant_Bus" SID="270">
+    <P Name="Position">[2395, 183, 2425, 197]</P>
+    <P Name="ZOrder">61</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">138#out:1</P>
+    <P Name="Dst">139#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;vdc&gt;</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">139#out:1</P>
+    <P Name="Dst">140#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;pwm_enable&gt;</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">139#out:2</P>
+    <P Name="Dst">141#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;plant_input_mode&gt;</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">139#out:3</P>
+    <P Name="Dst">142#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;load_force&gt;</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">139#out:4</P>
+    <P Name="Dst">143#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;x_override_mm&gt;</P>
+    <P Name="ZOrder">7</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">139#out:5</P>
+    <P Name="Dst">144#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;x_override_enable&gt;</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">139#out:6</P>
+    <P Name="Dst">145#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">146#out:1</P>
+    <P Name="Dst">147#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;vd_cmd&gt;</P>
+    <P Name="ZOrder">10</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">147#out:1</P>
+    <P Name="Dst">148#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;vq_cmd&gt;</P>
+    <P Name="ZOrder">11</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">147#out:2</P>
+    <P Name="Dst">149#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;duty_a&gt;</P>
+    <P Name="ZOrder">12</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">147#out:3</P>
+    <P Name="Dst">150#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;duty_b&gt;</P>
+    <P Name="ZOrder">13</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">147#out:4</P>
+    <P Name="Dst">151#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;duty_c&gt;</P>
+    <P Name="ZOrder">14</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">147#out:5</P>
+    <P Name="Dst">152#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;theta_e&gt;</P>
+    <P Name="ZOrder">15</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">147#out:6</P>
+    <P Name="Dst">153#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">231#out:1</P>
+    <P Name="Dst">154#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">17</P>
+    <P Name="Src">232#out:1</P>
+    <P Name="Dst">154#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">18</P>
+    <P Name="Src">233#out:1</P>
+    <P Name="Dst">154#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">19</P>
+    <P Name="Src">234#out:1</P>
+    <P Name="Dst">154#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">20</P>
+    <P Name="Src">235#out:1</P>
+    <P Name="Dst">154#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">21</P>
+    <P Name="Src">236#out:1</P>
+    <P Name="Dst">154#in:6</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">22</P>
+    <P Name="Src">237#out:1</P>
+    <P Name="Dst">154#in:7</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">23</P>
+    <P Name="Src">238#out:1</P>
+    <P Name="Dst">154#in:8</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">24</P>
+    <P Name="Src">239#out:1</P>
+    <P Name="Dst">154#in:9</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">25</P>
+    <P Name="Src">240#out:1</P>
+    <P Name="Dst">184#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">47</P>
+    <P Name="Src">154#out:1</P>
+    <P Name="Points">[163, 0]</P>
+    <Branch>
+      <P Name="ZOrder">335</P>
+      <P Name="Points">[0, -50]</P>
+      <P Name="Dst">251#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">333</P>
+      <P Name="Points">[0, 45]</P>
+      <P Name="Dst">184#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">49</P>
+    <P Name="Src">154#out:2</P>
+    <P Name="Points">[163, 0]</P>
+    <Branch>
+      <P Name="ZOrder">334</P>
+      <P Name="Points">[0, -125]</P>
+      <P Name="Dst">184#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">332</P>
+      <P Name="Points">[0, 75]</P>
+      <P Name="Dst">252#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">28</P>
+    <P Name="Src">184#out:3</P>
+    <P Name="Points">[146, 0; 0, -20]</P>
+    <P Name="Dst">215#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">29</P>
+    <P Name="Src">184#out:4</P>
+    <P Name="Points">[153, 0; 0, -5]</P>
+    <P Name="Dst">215#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">185</P>
+    <P Name="Src">184#out:6</P>
+    <P Name="Points">[65, 0]</P>
+    <Branch>
+      <P Name="ZOrder">284</P>
+      <P Name="Points">[0, 25]</P>
+      <P Name="Dst">215#in:4</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">184</P>
+      <P Name="Dst">249#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">190</P>
+    <P Name="Src">215#out:1</P>
+    <P Name="Dst">243#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">38</P>
+    <P Name="Src">215#out:2</P>
+    <P Name="Dst">244#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">33</P>
+    <P Name="Src">241#out:1</P>
+    <P Name="Points">[85, 0]</P>
+    <P Name="Dst">230#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">34</P>
+    <P Name="Src">242#out:1</P>
+    <P Name="Points">[65, 0]</P>
+    <P Name="Dst">230#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">193</P>
+    <P Name="Src">215#out:4</P>
+    <P Name="Points">[30, 0; 0, 155]</P>
+    <Branch>
+      <P Name="ZOrder">257</P>
+      <P Name="Points">[0, 40]</P>
+      <P Name="Dst">253#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">192</P>
+      <P Name="Dst">230#in:3</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">54</P>
+    <P Name="Src">230#out:1</P>
+    <P Name="Points">[25, 0]</P>
+    <Branch>
+      <P Name="ZOrder">337</P>
+      <P Name="Points">[0, 145]</P>
+      <P Name="Dst">255#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">41</P>
+      <P Name="Dst">246#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">42</P>
+    <P Name="Src">184#out:1</P>
+    <P Name="Dst">247#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">43</P>
+    <P Name="Src">184#out:2</P>
+    <P Name="Dst">248#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">46</P>
+    <P Name="Src">184#out:7</P>
+    <P Name="Points">[33, 0; 0, 25]</P>
+    <P Name="Dst">250#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">ia_feedback</P>
+    <P Name="ZOrder">56</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">257#out:1</P>
+    <P Name="Dst">256#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">ib_feedback</P>
+    <P Name="ZOrder">57</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">258#out:1</P>
+    <P Name="Dst">256#in:2</P>
+  </Line>
+  <Line>
+    <P Name="Name">ic_feedback</P>
+    <P Name="ZOrder">58</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">259#out:1</P>
+    <P Name="Dst">256#in:3</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_feedback</P>
+    <P Name="ZOrder">59</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">260#out:1</P>
+    <P Name="Dst">256#in:4</P>
+  </Line>
+  <Line>
+    <P Name="Name">id</P>
+    <P Name="ZOrder">60</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">261#out:1</P>
+    <P Name="Dst">256#in:5</P>
+  </Line>
+  <Line>
+    <P Name="Name">iq</P>
+    <P Name="ZOrder">61</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">262#out:1</P>
+    <P Name="Dst">256#in:6</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_mm</P>
+    <P Name="ZOrder">62</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">263#out:1</P>
+    <P Name="Dst">256#in:7</P>
+  </Line>
+  <Line>
+    <P Name="Name">v_mmps</P>
+    <P Name="ZOrder">63</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">264#out:1</P>
+    <P Name="Dst">256#in:8</P>
+  </Line>
+  <Line>
+    <P Name="Name">plant_vd</P>
+    <P Name="ZOrder">64</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">265#out:1</P>
+    <P Name="Dst">256#in:9</P>
+  </Line>
+  <Line>
+    <P Name="Name">plant_vq</P>
+    <P Name="ZOrder">65</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">266#out:1</P>
+    <P Name="Dst">256#in:10</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_meas_mm</P>
+    <P Name="ZOrder">66</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">267#out:1</P>
+    <P Name="Dst">256#in:11</P>
+  </Line>
+  <Line>
+    <P Name="Name">v_meas_mmps</P>
+    <P Name="ZOrder">67</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">268#out:1</P>
+    <P Name="Dst">256#in:12</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_feedback_used</P>
+    <P Name="ZOrder">68</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">269#out:1</P>
+    <P Name="Dst">256#in:13</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">69</P>
+    <P Name="Src">256#out:1</P>
+    <P Name="Dst">270#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">221</P>
+    <P Name="Src">215#out:3</P>
+    <P Name="Dst">245#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">195</P>
+    <P Name="Src">215#out:5</P>
+    <P Name="Points">[18, 0; 0, 200]</P>
+    <P Name="Dst">254#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">222</P>
+    <P Name="Src">184#out:5</P>
+    <P Name="Points">[160, 0]</P>
+    <P Name="Dst">215#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">322</P>
+    <P Name="Src">447#out:1</P>
+    <P Name="Dst">154#in:10</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">323</P>
+    <P Name="Src">448#out:1</P>
+    <P Name="Dst">154#in:11</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">324</P>
+    <P Name="Src">449#out:1</P>
+    <P Name="Dst">154#in:12</P>
+  </Line>
+</System>

@@ -1,0 +1,47 @@
+PMLSM MIL R2023b export validation
+Date: 2026-09-07
+Host: MATLAB 26.1.0.3346908 (R2026a) Update 5
+Target file release: R2023b (verified in both SLX archives)
+
+EXPORT
+Both current source models exported successfully using Simulink.exportToVersion.
+BreakUserLinks=false; BreakToolboxLinks=false.
+The model reference remains PMLSM_ControlCore_Block.
+No hardware/code-generation models or compiled caches are included.
+
+DEPENDENCIES
+User runtime files: 2 SLX models + 4 initialization scripts.
+Also included: combined initialization entry point and 2 launch/check functions.
+Missing files: none reported by dependencies.fileDependencyAnalysis.
+Required products reported by dependencies.toolboxDependencyAnalysis:
+MATLAB; Simulink; Stateflow; Motor Control Blockset.
+Exported package tested in a temporary directory outside the source project.
+All analyzed user dependencies resolved within that isolated directory.
+
+SIMULATION
+Original model: completed 7 seconds of the default simulation.
+Exported model: completed 7 seconds of the default simulation.
+Compared logged timeseries: 76, including nested bus signals.
+Time vectors and dimensions: identical.
+Exported logged data: finite.
+Maximum absolute sample difference: 0.
+Packaged start_PMLSM_MIL/check_PMLSM_MIL entry points: PASS in a fresh
+MATLAB process using the isolated copy; default simulation reached 7 seconds.
+This comparison covers the current default DPCC/static-current-step case;
+it does not constitute a sweep of every controller mode and fault condition.
+
+STRUCTURE AND SOURCE INTEGRITY
+Serialized blocks: main model 579; control core 1310.
+Block identity, position, orientation, port index: unchanged.
+Serialized lines and branches, including routing: unchanged.
+No replacement-mask placeholders found by the XML audit.
+Original model and initialization file hashes: unchanged after export/testing.
+Packaged original initialization scripts: byte-identical to source.
+Automatic export compatibility mappings observed:
+- Park Transform: mcbeeMathTransformLib -> mcbcontrolslib.
+- Inverse Park Transform: mcbeeMathTransformLib -> mcbcontrolslib.
+- FunctionCallGenerator native block -> older Simulink library reference.
+
+R2023b RUNTIME
+Not tested: this computer only has R2026a installed.
+On the receiving R2023b computer, run: out = check_PMLSM_MIL;

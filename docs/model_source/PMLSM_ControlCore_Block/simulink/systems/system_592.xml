@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">150</P>
+  <Block BlockType="Inport" Name="x_ref_mm" SID="593">
+    <P Name="Position">[90, 68, 120, 82]</P>
+    <P Name="ZOrder">177</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">x_ref_mm_safe</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="x_mm" SID="594">
+    <P Name="Position">[90, 163, 120, 177]</P>
+    <P Name="ZOrder">178</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="pos_pi_reset" SID="595">
+    <P Name="Position">[90, 248, 120, 262]</P>
+    <P Name="ZOrder">179</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="v_ff_pos" SID="596">
+    <P Name="Position">[90, 333, 120, 347]</P>
+    <P Name="ZOrder">180</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="TriggerPort" Name="Trigger" SID="597">
+    <PortCounts/>
+    <P Name="Position">[345, -20, 365, 0]</P>
+    <P Name="ZOrder">-2</P>
+    <P Name="VariantControl">(inherit)</P>
+    <P Name="StatesWhenEnabling">held</P>
+  </Block>
+  <Block BlockType="DeadZone" Name="Dead Zone" SID="598">
+    <P Name="Position">[290, 60, 320, 90]</P>
+    <P Name="ZOrder">186</P>
+    <P Name="LowerValue">-Pos_deadband</P>
+    <P Name="UpperValue">+Pos_deadband</P>
+  </Block>
+  <Block BlockType="Gain" Name="Gain" SID="599">
+    <P Name="Position">[385, 55, 455, 95]</P>
+    <P Name="ZOrder">184</P>
+    <P Name="Gain">Kp_pos </P>
+  </Block>
+  <Block BlockType="Saturate" Name="Saturation" SID="600">
+    <P Name="Position">[555, 60, 585, 90]</P>
+    <P Name="ZOrder">185</P>
+    <P Name="UpperLimit">V_pos_max_mmps</P>
+    <P Name="LowerLimit">-V_pos_max_mmps</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">obs_v_ref_pos</P>
+        <P Name="MustResolveToSignalObject">on</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Sum" Name="Sum" SID="601">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[195, 65, 215, 85]</P>
+    <P Name="ZOrder">183</P>
+    <P Name="Inputs">|+-</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">e_pos</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Sum" Name="Sum1" SID="602">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[490, 65, 510, 85]</P>
+    <P Name="ZOrder">188</P>
+    <P Name="Inputs">|++</P>
+  </Block>
+  <Block BlockType="Terminator" Name="Terminator" SID="603">
+    <P Name="Position">[175, 245, 195, 265]</P>
+    <P Name="ZOrder">189</P>
+  </Block>
+  <Block BlockType="Outport" Name="v_ref_pos" SID="604">
+    <P Name="Position">[680, 68, 710, 82]</P>
+    <P Name="ZOrder">181</P>
+  </Block>
+  <Line>
+    <P Name="Name">obs_v_ref_pos</P>
+    <P Name="ZOrder">1</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">600#out:1</P>
+    <P Name="Dst">604#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">595#out:1</P>
+    <P Name="Dst">603#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">602#out:1</P>
+    <P Name="Dst">600#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">596#out:1</P>
+    <P Name="Points">[375, 0]</P>
+    <P Name="Dst">602#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">599#out:1</P>
+    <P Name="Dst">602#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Src">598#out:1</P>
+    <P Name="Dst">599#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">e_pos</P>
+    <P Name="ZOrder">7</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">601#out:1</P>
+    <P Name="Dst">598#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">594#out:1</P>
+    <P Name="Points">[80, 0]</P>
+    <P Name="Dst">601#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">593#out:1</P>
+    <P Name="Dst">601#in:1</P>
+  </Line>
+</System>

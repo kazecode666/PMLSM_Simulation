@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[-1, -7, 1707, 961]</P>
+  <P Name="ZoomFactor">200</P>
+  <Block BlockType="Inport" Name="Valpha" SID="296">
+    <P Name="Position">[85, 203, 115, 217]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="Inport" Name="Vbeta" SID="297">
+    <P Name="Position">[85, 243, 115, 257]</P>
+    <P Name="ZOrder">-2</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="Duty&#xA;Calculate" SID="298">
+    <PortCounts in="3" out="3"/>
+    <P Name="Position">[440, 142, 525, 278]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="RTWSystemCode">Reusable function</P>
+    <P Name="RTWFcnNameOpts">User specified</P>
+    <P Name="RTWFcnName">Duty_Caculate_Fun</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">DutyU</P>
+      </Port>
+      <Port Type="out" Index="2">
+        <P Name="PropagatedSignals">DutyV</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="PropagatedSignals">DutyW</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_298"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="Sector&#xA;Caculate" SID="316">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[195, 64, 260, 151]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="RTWSystemCode">Reusable function</P>
+    <P Name="RTWFcnNameOpts">User specified</P>
+    <P Name="RTWFcnName">Sector_Caculate_Fun</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">N</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_316"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="T1T2&#xA;Calculate" SID="331">
+    <PortCounts in="4" out="2"/>
+    <P Name="Position">[305, 146, 360, 314]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="RTWSystemCode">Reusable function</P>
+    <P Name="RTWFcnNameOpts">User specified</P>
+    <P Name="RTWFcnName">T1T2Caculate_Fun</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">T1</P>
+      </Port>
+      <Port Type="out" Index="2">
+        <P Name="PropagatedSignals">T2</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_331"/>
+  </Block>
+  <Block BlockType="Constant" Name="Udc" SID="350">
+    <P Name="Position">[75, 278, 125, 302]</P>
+    <P Name="ZOrder">-11</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">Udc</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="XYZ&#xA;Calculate" SID="351">
+    <PortCounts in="3" out="3"/>
+    <P Name="Position">[205, 187, 260, 313]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="RTWSystemCode">Reusable function</P>
+    <P Name="RTWFcnNameOpts">User specified</P>
+    <P Name="RTWFcnName">XYZ_Caculate_Fun</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">X</P>
+      </Port>
+      <Port Type="out" Index="2">
+        <P Name="PropagatedSignals">Y</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="PropagatedSignals">Z</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_351"/>
+  </Block>
+  <Block BlockType="Outport" Name="Duty_A" SID="369">
+    <P Name="Position">[600, 158, 630, 172]</P>
+    <P Name="ZOrder">1290</P>
+  </Block>
+  <Block BlockType="Outport" Name="Duty_B" SID="370">
+    <P Name="Position">[600, 203, 630, 217]</P>
+    <P Name="ZOrder">1291</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="Duty_C" SID="371">
+    <P Name="Position">[600, 248, 630, 262]</P>
+    <P Name="ZOrder">1292</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="N " SID="372">
+    <P Name="Position">[600, 103, 630, 117]</P>
+    <P Name="ZOrder">1293</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">298#out:3</P>
+    <P Name="Dst">371#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">298#out:2</P>
+    <P Name="Dst">370#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">298#out:1</P>
+    <P Name="Dst">369#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">351#out:3</P>
+    <P Name="Dst">331#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">351#out:2</P>
+    <P Name="Dst">331#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Src">351#out:1</P>
+    <P Name="Dst">331#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">350#out:1</P>
+    <P Name="Dst">351#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">316#out:1</P>
+    <P Name="Points">[10, 0]</P>
+    <Branch>
+      <P Name="ZOrder">9</P>
+      <P Name="Points">[0, 60]</P>
+      <P Name="Dst">331#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">10</P>
+      <P Name="Points">[125, 0]</P>
+      <Branch>
+        <P Name="ZOrder">11</P>
+        <P Name="Points">[0, 55]</P>
+        <P Name="Dst">298#in:1</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">12</P>
+        <P Name="Dst">372#in:1</P>
+      </Branch>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">331#out:2</P>
+    <P Name="Points">[30, 0; 0, -20]</P>
+    <P Name="Dst">298#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">14</P>
+    <P Name="Src">296#out:1</P>
+    <P Name="Points">[30, 0]</P>
+    <Branch>
+      <P Name="ZOrder">15</P>
+      <P Name="Dst">351#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">16</P>
+      <P Name="Points">[0, -125]</P>
+      <P Name="Dst">316#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">17</P>
+    <P Name="Src">331#out:1</P>
+    <P Name="Points">[30, 0; 0, 20]</P>
+    <P Name="Dst">298#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">18</P>
+    <P Name="Src">297#out:1</P>
+    <P Name="Points">[50, 0]</P>
+    <Branch>
+      <P Name="ZOrder">19</P>
+      <P Name="Dst">351#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">20</P>
+      <P Name="Points">[0, -120]</P>
+      <P Name="Dst">316#in:2</P>
+    </Branch>
+  </Line>
+</System>

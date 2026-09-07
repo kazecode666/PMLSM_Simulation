@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">150</P>
+  <Block BlockType="Inport" Name="ud_dpcc" SID="1078">
+    <P Name="Position">[20, 168, 50, 182]</P>
+    <P Name="ZOrder">1</P>
+  </Block>
+  <Block BlockType="Inport" Name="uq_dpcc" SID="1079">
+    <P Name="Position">[20, 348, 50, 362]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="ud_dpicc" SID="1080">
+    <P Name="Position">[20, 48, 50, 62]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">3</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">ud_dpicc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="uq_dpicc" SID="1081">
+    <P Name="Position">[20, 218, 50, 232]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">4</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">uq_dpicc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="dpicc_active" SID="1082">
+    <P Name="Position">[20, 258, 50, 272]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Port">5</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">active</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="Current_Control_Mode" SID="1083">
+    <P Name="Position">[340, 203, 370, 217]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Inport" Name="ud_pi" SID="1084">
+    <P Name="Position">[20, 108, 50, 122]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="Port">7</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_ud_raw</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="uq_pi" SID="1085">
+    <P Name="Position">[20, 298, 50, 312]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Port">8</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_uq_raw</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Switch" Name="d_active_select" SID="1102">
+    <P Name="Position">[250, 37, 300, 133]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="Threshold">0.5</P>
+  </Block>
+  <Block BlockType="Switch" Name="d_mode_select" SID="1104">
+    <P Name="Position">[500, 65, 550, 195]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="Threshold">2.5</P>
+  </Block>
+  <Block BlockType="Switch" Name="q_active_select" SID="1103">
+    <P Name="Position">[240, 203, 300, 327]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="Threshold">0.5</P>
+  </Block>
+  <Block BlockType="Switch" Name="q_mode_select" SID="1105">
+    <P Name="Position">[500, 243, 550, 377]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="Threshold">2.5</P>
+  </Block>
+  <Block BlockType="Outport" Name="ud_selected" SID="1086">
+    <P Name="Position">[750, 123, 780, 137]</P>
+    <P Name="ZOrder">9</P>
+  </Block>
+  <Block BlockType="Outport" Name="uq_selected" SID="1087">
+    <P Name="Position">[750, 303, 780, 317]</P>
+    <P Name="ZOrder">10</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">22</P>
+    <P Name="Src">1105#out:1</P>
+    <P Name="Dst">1087#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">23</P>
+    <P Name="Src">1104#out:1</P>
+    <P Name="Dst">1086#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">24</P>
+    <P Name="Src">1079#out:1</P>
+    <P Name="Dst">1105#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">25</P>
+    <P Name="Src">1103#out:1</P>
+    <P Name="Dst">1105#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">26</P>
+    <P Name="Src">1078#out:1</P>
+    <P Name="Dst">1104#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">28</P>
+    <P Name="Src">1083#out:1</P>
+    <P Name="Points">[20, 0]</P>
+    <Branch>
+      <P Name="ZOrder">39</P>
+      <P Name="Points">[0, 100]</P>
+      <P Name="Dst">1105#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">27</P>
+      <P Name="Points">[0, -80]</P>
+      <P Name="Dst">1104#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">30</P>
+    <P Name="Src">1102#out:1</P>
+    <P Name="Dst">1104#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">31</P>
+    <P Name="Src">1085#out:1</P>
+    <P Name="Dst">1103#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">32</P>
+    <P Name="Src">1081#out:1</P>
+    <P Name="Dst">1103#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">33</P>
+    <P Name="Src">1084#out:1</P>
+    <P Name="Dst">1102#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">35</P>
+    <P Name="Src">1082#out:1</P>
+    <P Name="Points">[58, 0]</P>
+    <Branch>
+      <P Name="ZOrder">40</P>
+      <P Name="Points">[0, -180]</P>
+      <P Name="Dst">1102#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">36</P>
+      <P Name="Dst">1103#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">37</P>
+    <P Name="Src">1080#out:1</P>
+    <P Name="Dst">1102#in:1</P>
+  </Line>
+</System>

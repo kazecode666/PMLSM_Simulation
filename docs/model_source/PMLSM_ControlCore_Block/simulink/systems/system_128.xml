@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="SIDHighWatermark">125</P>
+  <Block BlockType="Inport" Name="Init_Start" SID="128::113">
+    <P Name="Position">[20, 101, 40, 119]</P>
+    <P Name="ZOrder">93</P>
+  </Block>
+  <Block BlockType="Inport" Name="Init_Reset" SID="128::114">
+    <P Name="Position">[20, 136, 40, 154]</P>
+    <P Name="ZOrder">94</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="travel_fault_latch" SID="128::115">
+    <P Name="Position">[20, 171, 40, 189]</P>
+    <P Name="ZOrder">95</P>
+    <P Name="Port">3</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">fault_latch</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="x_mm" SID="128::120">
+    <P Name="Position">[20, 206, 40, 224]</P>
+    <P Name="ZOrder">100</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Demux" Name=" Demux " SID="128::124">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[270, 350, 320, 390]</P>
+    <P Name="ZOrder">104</P>
+    <P Name="Outputs">1</P>
+  </Block>
+  <Block BlockType="S-Function" Name=" SFunction " SID="128::123">
+    <P Name="Tag">Stateflow S-Function 3</P>
+    <PortCounts in="4" out="7"/>
+    <P Name="Position">[180, 100, 230, 260]</P>
+    <P Name="ZOrder">103</P>
+    <P Name="FunctionName">sf_sfun</P>
+    <P Name="Parameters">Hold_Ticks,Id_Init_Step,Id_Init_Target,Id_Release_Ramp_Ticks,Ramp_Ticks,Tau_e_mm,theta_align_const</P>
+    <P Name="PortCounts">[4 7]</P>
+    <P Name="SFunctionDeploymentMode">off</P>
+    <P Name="EnableBusSupport">off</P>
+    <P Name="SFcnIsStateOwnerBlock">off</P>
+    <PortProperties>
+      <Port Type="out" Index="2">
+        <P Name="Name">Init_Done</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="Name">Init_State_Num</P>
+      </Port>
+      <Port Type="out" Index="4">
+        <P Name="Name">id_init_ref</P>
+      </Port>
+      <Port Type="out" Index="5">
+        <P Name="Name">Angle_Init_EN</P>
+      </Port>
+      <Port Type="out" Index="6">
+        <P Name="Name">Theta_Offset_auto</P>
+      </Port>
+      <Port Type="out" Index="7">
+        <P Name="Name">x_align_mm_latch</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Terminator" Name=" Terminator " SID="128::125">
+    <P Name="Position">[460, 361, 480, 379]</P>
+    <P Name="ZOrder">105</P>
+  </Block>
+  <Block BlockType="Outport" Name="Init_Done" SID="128::116">
+    <P Name="Position">[460, 101, 480, 119]</P>
+    <P Name="ZOrder">96</P>
+  </Block>
+  <Block BlockType="Outport" Name="Init_State_Num" SID="128::117">
+    <P Name="Position">[460, 136, 480, 154]</P>
+    <P Name="ZOrder">97</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="id_init_ref" SID="128::118">
+    <P Name="Position">[460, 171, 480, 189]</P>
+    <P Name="ZOrder">98</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="Angle_Init_EN" SID="128::119">
+    <P Name="Position">[460, 206, 480, 224]</P>
+    <P Name="ZOrder">99</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Outport" Name="Theta_Offset_auto" SID="128::121">
+    <P Name="Position">[460, 246, 480, 264]</P>
+    <P Name="ZOrder">101</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Outport" Name="x_align_mm_latch" SID="128::122">
+    <P Name="Position">[460, 281, 480, 299]</P>
+    <P Name="ZOrder">102</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">128::113#out:1</P>
+    <P Name="Dst">128::123#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">14</P>
+    <P Name="Src">128::114#out:1</P>
+    <P Name="Dst">128::123#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">15</P>
+    <P Name="Src">128::115#out:1</P>
+    <P Name="Dst">128::123#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">128::120#out:1</P>
+    <P Name="Dst">128::123#in:4</P>
+  </Line>
+  <Line>
+    <P Name="Name">Init_Done</P>
+    <P Name="ZOrder">17</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">128::123#out:2</P>
+    <P Name="Points">[0, -30]</P>
+    <P Name="Dst">128::116#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">Init_State_Num</P>
+    <P Name="ZOrder">18</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">128::123#out:3</P>
+    <P Name="Dst">128::117#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">id_init_ref</P>
+    <P Name="ZOrder">19</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">128::123#out:4</P>
+    <P Name="Dst">128::118#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">Angle_Init_EN</P>
+    <P Name="ZOrder">20</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">128::123#out:5</P>
+    <P Name="Dst">128::119#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">Theta_Offset_auto</P>
+    <P Name="ZOrder">21</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">128::123#out:6</P>
+    <P Name="Dst">128::121#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_align_mm_latch</P>
+    <P Name="ZOrder">22</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">128::123#out:7</P>
+    <P Name="Dst">128::122#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">23</P>
+    <P Name="Src">128::124#out:1</P>
+    <P Name="Dst">128::125#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">24</P>
+    <P Name="Src">128::123#out:1</P>
+    <P Name="Points">[20, 0]</P>
+    <P Name="Dst">128::124#in:1</P>
+  </Line>
+</System>

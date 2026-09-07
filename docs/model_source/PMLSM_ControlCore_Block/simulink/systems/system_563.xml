@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">175</P>
+  <Block BlockType="Sum" Name="Add1" SID="564">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[290, 121, 320, 199]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="IconShape">rectangular</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">spd_cnt_inc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Sum" Name="Add2" SID="565">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[290, 356, 320, 434]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="IconShape">rectangular</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">pos_cnt_inc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Sum" Name="Add3" SID="566">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[930, 131, 960, 209]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="IconShape">rectangular</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">UART_cnt_inc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Constant" Name="Constant1" SID="567">
+    <P Name="Position">[230, 165, 260, 195]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant2" SID="568">
+    <P Name="Position">[455, 105, 485, 135]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">0</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant3" SID="569">
+    <P Name="Position">[220, 400, 250, 430]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant4" SID="570">
+    <P Name="Position">[450, 340, 480, 370]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">0</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant5" SID="571">
+    <P Name="Position">[870, 175, 900, 205]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant6" SID="572">
+    <P Name="Position">[1095, 115, 1125, 145]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">0</P>
+  </Block>
+  <Block BlockType="Logic" Name="Logical&#xA;Operator" SID="574">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[675, 502, 705, 578]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="AllPortsSameDT">off</P>
+    <P Name="OutDataTypeStr">boolean</P>
+  </Block>
+  <Block BlockType="Switch" Name="UART_cnt_next_sel" SID="575">
+    <P Name="Position">[1180, 110, 1245, 230]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="UART_cnt_z" SID="576">
+    <P Name="Position">[815, 133, 850, 167]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="SampleTime">-1</P>
+  </Block>
+  <Block BlockType="Reference" Name="UART_tc" SID="577">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[1085, 155, 1115, 185]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="LibraryVersion">9.1</P>
+    <P Name="SourceBlock">simulink/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="relop">&gt;=</P>
+      <P Name="const">10</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Switch" Name="pos_cnt_hold_sel" SID="578">
+    <P Name="Position">[730, 375, 795, 495]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Switch" Name="pos_cnt_update_sel" SID="579">
+    <P Name="Position">[530, 335, 595, 455]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">pos_cnt_update_candidate</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="UnitDelay" Name="pos_cnt_z" SID="580">
+    <P Name="Position">[170, 358, 205, 392]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="SampleTime">-1</P>
+  </Block>
+  <Block BlockType="Reference" Name="pos_tc" SID="581">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[435, 380, 465, 410]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="LibraryVersion">9.1</P>
+    <P Name="SourceBlock">simulink/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="relop">&gt;=</P>
+      <P Name="const">10</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Switch" Name="spd_cnt_next_sel" SID="582">
+    <P Name="Position">[540, 100, 605, 220]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="spd_cnt_z" SID="583">
+    <P Name="Position">[175, 123, 210, 157]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="SampleTime">-1</P>
+  </Block>
+  <Block BlockType="Reference" Name="spd_tc" SID="584">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[445, 145, 475, 175]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="LibraryVersion">9.1</P>
+    <P Name="SourceBlock">simulink/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="relop">&gt;=</P>
+      <P Name="const">10</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Outport" Name="UART_tick" SID="585">
+    <P Name="Position">[1330, 263, 1360, 277]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Outport" Name="speed_tick" SID="586">
+    <P Name="Position">[690, 253, 720, 267]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="pos_tick" SID="587">
+    <P Name="Position">[750, 533, 780, 547]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">571#out:1</P>
+    <P Name="Dst">566#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">576#out:1</P>
+    <P Name="Dst">566#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">UART_cnt_inc</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">566#out:1</P>
+    <P Name="Points">[86, 0]</P>
+    <Branch>
+      <P Name="ZOrder">4</P>
+      <P Name="Dst">577#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">5</P>
+      <P Name="Points">[0, 40]</P>
+      <P Name="Dst">575#in:3</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Src">575#out:1</P>
+    <P Name="Points">[22, 0; 0, -114; -474, 0; 0, 94]</P>
+    <P Name="Dst">576#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">577#out:1</P>
+    <P Name="Points">[18, 0]</P>
+    <Branch>
+      <P Name="ZOrder">8</P>
+      <P Name="Dst">575#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">9</P>
+      <P Name="Points">[0, 100]</P>
+      <P Name="Dst">585#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">10</P>
+    <P Name="Src">572#out:1</P>
+    <P Name="Dst">575#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">574#out:1</P>
+    <P Name="Dst">587#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">12</P>
+    <P Name="Src">578#out:1</P>
+    <P Name="Points">[19, 0; 0, -124; -673, 0; 0, 64]</P>
+    <P Name="Dst">580#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">pos_cnt_update_candidate</P>
+    <P Name="ZOrder">13</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">579#out:1</P>
+    <P Name="Dst">578#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">14</P>
+    <P Name="Src">570#out:1</P>
+    <P Name="Dst">579#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">15</P>
+    <P Name="Src">581#out:1</P>
+    <P Name="Points">[25, 0]</P>
+    <Branch>
+      <P Name="ZOrder">16</P>
+      <P Name="Dst">579#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">17</P>
+      <P Name="Points">[0, 165]</P>
+      <P Name="Dst">574#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">pos_cnt_inc</P>
+    <P Name="ZOrder">18</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">565#out:1</P>
+    <P Name="Points">[68, 0]</P>
+    <Branch>
+      <P Name="ZOrder">19</P>
+      <P Name="Dst">581#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">20</P>
+      <P Name="Points">[0, 40]</P>
+      <P Name="Dst">579#in:3</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">21</P>
+    <P Name="Src">569#out:1</P>
+    <P Name="Dst">565#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">22</P>
+    <P Name="Src">580#out:1</P>
+    <P Name="Points">[50, 0]</P>
+    <Branch>
+      <P Name="ZOrder">23</P>
+      <P Name="Points">[0, 100]</P>
+      <P Name="Dst">578#in:3</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">24</P>
+      <P Name="Dst">565#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">spd_cnt_inc</P>
+    <P Name="ZOrder">25</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">564#out:1</P>
+    <P Name="Points">[86, 0]</P>
+    <Branch>
+      <P Name="ZOrder">26</P>
+      <P Name="Dst">584#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">27</P>
+      <P Name="Points">[0, 40]</P>
+      <P Name="Dst">582#in:3</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">28</P>
+    <P Name="Src">582#out:1</P>
+    <P Name="Points">[22, 0; 0, -114; -474, 0; 0, 94]</P>
+    <P Name="Dst">583#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">29</P>
+    <P Name="Src">568#out:1</P>
+    <P Name="Dst">582#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">30</P>
+    <P Name="Src">567#out:1</P>
+    <P Name="Dst">564#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">31</P>
+    <P Name="Src">584#out:1</P>
+    <P Name="Points">[18, 0]</P>
+    <Branch>
+      <P Name="ZOrder">32</P>
+      <P Name="Dst">582#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">33</P>
+      <P Name="Points">[0, 100; 150, 0]</P>
+      <Branch>
+        <P Name="ZOrder">34</P>
+        <P Name="Points">[0, 175]</P>
+        <Branch>
+          <P Name="ZOrder">35</P>
+          <P Name="Points">[82, 0]</P>
+          <P Name="Dst">578#in:2</P>
+        </Branch>
+        <Branch>
+          <P Name="ZOrder">36</P>
+          <P Name="Points">[0, 85]</P>
+          <P Name="Dst">574#in:1</P>
+        </Branch>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">37</P>
+        <P Name="Dst">586#in:1</P>
+      </Branch>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">38</P>
+    <P Name="Src">583#out:1</P>
+    <P Name="Dst">564#in:1</P>
+  </Line>
+  <Annotation SID="590">
+    <P Name="Name">speed 计数链(/10)</P>
+    <P Name="Position">[349, 20, 431, 34]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-1</P>
+  </Annotation>
+  <Annotation SID="589">
+    <P Name="Name">position 计数链(/100)</P>
+    <P Name="Position">[342, 279, 437, 293]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-2</P>
+  </Annotation>
+  <Annotation SID="588">
+    <P Name="Name">串口计数链(/10)</P>
+    <P Name="Position">[1014, 29, 1086, 43]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-3</P>
+  </Annotation>
+</System>

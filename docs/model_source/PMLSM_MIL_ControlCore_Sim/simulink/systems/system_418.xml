@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[223, 338, 826, 833]</P>
+  <P Name="SIDHighWatermark">117</P>
+  <Block BlockType="Inport" Name="t" SID="418::1">
+    <P Name="Position">[20, 101, 40, 119]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="Inport" Name="init_done" SID="418::28">
+    <P Name="Position">[20, 136, 40, 154]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="close_loop_en" SID="418::29">
+    <P Name="Position">[20, 171, 40, 189]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="Port">3</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">close_loop_en</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="MIL_Mode" SID="418::30">
+    <P Name="Position">[20, 206, 40, 224]</P>
+    <P Name="ZOrder">21</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Demux" Name=" Demux " SID="418::114">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[270, 495, 320, 535]</P>
+    <P Name="ZOrder">32</P>
+    <P Name="Outputs">1</P>
+  </Block>
+  <Block BlockType="S-Function" Name=" SFunction " SID="418::113">
+    <P Name="Tag">Stateflow S-Function 1</P>
+    <PortCounts in="4" out="11"/>
+    <P Name="Position">[180, 95, 230, 335]</P>
+    <P Name="ZOrder">31</P>
+    <P Name="FunctionName">sf_sfun</P>
+    <P Name="Parameters">MIL_IqCycleCount,MIL_IqInjectionDelay_s,MIL_IqInjection_A,MIL_IqNegativeDuration_s,MIL_IqPositiveDuration_s,MIL_IqRefRampTime_s,MIL_IqZeroDuration_s,MIL_LoadEndRel_s,MIL_LoadForce_N,MIL_LoadStartRel_s,MIL_NegativeSpeedDuration_s,MIL_PositionStepDelay_s,MIL_PositionStep_mm,MIL_PositiveSpeedDuration_s,MIL_SpeedCommand_mmps,MIL_Ts_s,MIL_Vdc_V,MIL_ZeroSpeedDuration_s</P>
+    <P Name="PortCounts">[4 11]</P>
+    <P Name="SFunctionDeploymentMode">off</P>
+    <P Name="EnableBusSupport">off</P>
+    <P Name="SFcnIsStateOwnerBlock">off</P>
+    <PortProperties>
+      <Port Type="out" Index="2">
+        <P Name="Name">iq_test_mode</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="Name">iq_test_ref</P>
+      </Port>
+      <Port Type="out" Index="4">
+        <P Name="Name">v_ref_cmd_mmps</P>
+      </Port>
+      <Port Type="out" Index="5">
+        <P Name="Name">x_ref_mm</P>
+      </Port>
+      <Port Type="out" Index="6">
+        <P Name="Name">load_force</P>
+      </Port>
+      <Port Type="out" Index="7">
+        <P Name="Name">vdc</P>
+      </Port>
+      <Port Type="out" Index="8">
+        <P Name="Name">pos_loop_en</P>
+      </Port>
+      <Port Type="out" Index="9">
+        <P Name="Name">id_ref_set</P>
+      </Port>
+      <Port Type="out" Index="10">
+        <P Name="Name">x_override_enable</P>
+      </Port>
+      <Port Type="out" Index="11">
+        <P Name="Name">x_override_mm</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Terminator" Name=" Terminator " SID="418::115">
+    <P Name="Position">[460, 506, 480, 524]</P>
+    <P Name="ZOrder">33</P>
+  </Block>
+  <Block BlockType="Outport" Name="iq_test_mode" SID="418::5">
+    <P Name="Position">[460, 101, 480, 119]</P>
+    <P Name="ZOrder">-5</P>
+  </Block>
+  <Block BlockType="Outport" Name="iq_test_ref" SID="418::31">
+    <P Name="Position">[460, 136, 480, 154]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="v_ref_cmd_mmps" SID="418::32">
+    <P Name="Position">[460, 171, 480, 189]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="x_ref_mm" SID="418::33">
+    <P Name="Position">[460, 206, 480, 224]</P>
+    <P Name="ZOrder">24</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Outport" Name="load_force" SID="418::34">
+    <P Name="Position">[460, 246, 480, 264]</P>
+    <P Name="ZOrder">25</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Outport" Name="vdc" SID="418::35">
+    <P Name="Position">[460, 281, 480, 299]</P>
+    <P Name="ZOrder">26</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Outport" Name="pos_loop_en" SID="418::36">
+    <P Name="Position">[460, 316, 480, 334]</P>
+    <P Name="ZOrder">27</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Outport" Name="id_ref_set" SID="418::37">
+    <P Name="Position">[460, 351, 480, 369]</P>
+    <P Name="ZOrder">28</P>
+    <P Name="Port">8</P>
+  </Block>
+  <Block BlockType="Outport" Name="x_override_enable" SID="418::38">
+    <P Name="Position">[460, 386, 480, 404]</P>
+    <P Name="ZOrder">29</P>
+    <P Name="Port">9</P>
+  </Block>
+  <Block BlockType="Outport" Name="x_override_mm" SID="418::39">
+    <P Name="Position">[460, 426, 480, 444]</P>
+    <P Name="ZOrder">30</P>
+    <P Name="Port">10</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">2610</P>
+    <P Name="Src">418::1#out:1</P>
+    <P Name="Dst">418::113#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2611</P>
+    <P Name="Src">418::28#out:1</P>
+    <P Name="Dst">418::113#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2612</P>
+    <P Name="Src">418::29#out:1</P>
+    <P Name="Dst">418::113#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2613</P>
+    <P Name="Src">418::30#out:1</P>
+    <P Name="Dst">418::113#in:4</P>
+  </Line>
+  <Line>
+    <P Name="Name">iq_test_mode</P>
+    <P Name="ZOrder">2614</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">418::113#out:2</P>
+    <P Name="Dst">418::5#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">iq_test_ref</P>
+    <P Name="ZOrder">2615</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">418::113#out:3</P>
+    <P Name="Dst">418::31#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">v_ref_cmd_mmps</P>
+    <P Name="ZOrder">2616</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">418::113#out:4</P>
+    <P Name="Dst">418::32#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_ref_mm</P>
+    <P Name="ZOrder">2617</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">418::113#out:5</P>
+    <P Name="Dst">418::33#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">load_force</P>
+    <P Name="ZOrder">2618</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">418::113#out:6</P>
+    <P Name="Dst">418::34#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">vdc</P>
+    <P Name="ZOrder">2619</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">418::113#out:7</P>
+    <P Name="Dst">418::35#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">pos_loop_en</P>
+    <P Name="ZOrder">2620</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">418::113#out:8</P>
+    <P Name="Dst">418::36#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">id_ref_set</P>
+    <P Name="ZOrder">2621</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">418::113#out:9</P>
+    <P Name="Dst">418::37#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_override_enable</P>
+    <P Name="ZOrder">2622</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">418::113#out:10</P>
+    <P Name="Dst">418::38#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_override_mm</P>
+    <P Name="ZOrder">2623</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">418::113#out:11</P>
+    <P Name="Dst">418::39#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2624</P>
+    <P Name="Src">418::114#out:1</P>
+    <P Name="Dst">418::115#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2625</P>
+    <P Name="Src">418::113#out:1</P>
+    <P Name="Dst">418::114#in:1</P>
+  </Line>
+</System>

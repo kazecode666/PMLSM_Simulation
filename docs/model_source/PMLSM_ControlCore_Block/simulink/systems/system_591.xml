@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[223, 338, 826, 833]</P>
+  <P Name="SIDHighWatermark">37</P>
+  <Block BlockType="Inport" Name="x_mm" SID="591::1">
+    <P Name="Position">[20, 101, 40, 119]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="Inport" Name="v_ref" SID="591::28">
+    <P Name="Position">[20, 136, 40, 154]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="Port">2</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_v_ref</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="X_max_soft" SID="591::29">
+    <P Name="Position">[20, 171, 40, 189]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="X_min_soft" SID="591::30">
+    <P Name="Position">[20, 206, 40, 224]</P>
+    <P Name="ZOrder">21</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Inport" Name="X_max_hard" SID="591::31">
+    <P Name="Position">[20, 246, 40, 264]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Inport" Name="X_min_hard" SID="591::32">
+    <P Name="Position">[20, 281, 40, 299]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Inport" Name="travel_fault_latch_z" SID="591::34">
+    <P Name="Position">[20, 316, 40, 334]</P>
+    <P Name="ZOrder">25</P>
+    <P Name="Port">7</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">travel_fault_latch_z</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Demux" Name=" Demux " SID="591::36">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[270, 230, 320, 270]</P>
+    <P Name="ZOrder">27</P>
+    <P Name="Outputs">1</P>
+  </Block>
+  <Block BlockType="S-Function" Name=" SFunction " SID="591::35">
+    <P Name="Tag">Stateflow S-Function 2</P>
+    <PortCounts in="7" out="3"/>
+    <P Name="Position">[180, 100, 230, 260]</P>
+    <P Name="ZOrder">26</P>
+    <P Name="FunctionName">sf_sfun</P>
+    <P Name="PortCounts">[7 3]</P>
+    <P Name="SFunctionDeploymentMode">off</P>
+    <P Name="EnableBusSupport">off</P>
+    <P Name="SFcnIsStateOwnerBlock">off</P>
+    <PortProperties>
+      <Port Type="out" Index="2">
+        <P Name="Name">v_ref_safe</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="Name">travel_fault_latch</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Terminator" Name=" Terminator " SID="591::37">
+    <P Name="Position">[460, 241, 480, 259]</P>
+    <P Name="ZOrder">28</P>
+  </Block>
+  <Block BlockType="Outport" Name="v_ref_safe" SID="591::33">
+    <P Name="Position">[460, 101, 480, 119]</P>
+    <P Name="ZOrder">24</P>
+  </Block>
+  <Block BlockType="Outport" Name="travel_fault_latch" SID="591::5">
+    <P Name="Position">[460, 136, 480, 154]</P>
+    <P Name="ZOrder">-5</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">12</P>
+    <P Name="Src">591::1#out:1</P>
+    <P Name="Points">[60, 0; 0, 10]</P>
+    <P Name="Dst">591::35#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">591::28#out:1</P>
+    <P Name="Points">[20, 0; 0, -5]</P>
+    <P Name="Dst">591::35#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">14</P>
+    <P Name="Src">591::29#out:1</P>
+    <P Name="Points">[35, 0; 0, -20]</P>
+    <P Name="Dst">591::35#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">15</P>
+    <P Name="Src">591::30#out:1</P>
+    <P Name="Points">[51, 0; 0, -35]</P>
+    <P Name="Dst">591::35#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">591::31#out:1</P>
+    <P Name="Points">[68, 0; 0, -55]</P>
+    <P Name="Dst">591::35#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">17</P>
+    <P Name="Src">591::32#out:1</P>
+    <P Name="Points">[84, 0; 0, -70]</P>
+    <P Name="Dst">591::35#in:6</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">18</P>
+    <P Name="Src">591::34#out:1</P>
+    <P Name="Points">[99, 0; 0, -85]</P>
+    <P Name="Dst">591::35#in:7</P>
+  </Line>
+  <Line>
+    <P Name="Name">v_ref_safe</P>
+    <P Name="ZOrder">19</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">591::35#out:2</P>
+    <P Name="Points">[10, 0; 0, -70]</P>
+    <P Name="Dst">591::33#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">travel_fault_latch</P>
+    <P Name="ZOrder">20</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">591::35#out:3</P>
+    <P Name="Points">[20, 0; 0, -90]</P>
+    <P Name="Dst">591::5#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">21</P>
+    <P Name="Src">591::36#out:1</P>
+    <P Name="Dst">591::37#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">22</P>
+    <P Name="Src">591::35#out:1</P>
+    <P Name="Points">[3, 0; 0, 125]</P>
+    <P Name="Dst">591::36#in:1</P>
+  </Line>
+</System>

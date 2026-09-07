@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">200</P>
+  <Block BlockType="Inport" Name="duty" SID="749">
+    <P Name="Position">[-20, 23, 10, 37]</P>
+    <P Name="ZOrder">1</P>
+  </Block>
+  <Block BlockType="Inport" Name="deadtime_mode" SID="752">
+    <P Name="Position">[-20, 123, 10, 137]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="i_phase" SID="750">
+    <P Name="Position">[-20, 173, 10, 187]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="deadtime_ratio" SID="753">
+    <P Name="Position">[-20, 223, 10, 237]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Inport" Name="vdc" SID="751">
+    <P Name="Position">[-20, 288, 10, 302]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">5</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">vdc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Saturate" Name="d_sat" SID="761">
+    <P Name="Position">[515, 50, 565, 90]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="UpperLimit">1</P>
+    <P Name="LowerLimit">0</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">inv_a_d_eff</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Sum" Name="d_sum" SID="760">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[435, 55, 465, 85]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="Inputs">+-</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">inv_a_d_unsat</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Product" Name="delta_d" SID="759">
+    <PortCounts in="3" out="1"/>
+    <P Name="Position">[375, 104, 420, 256]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="Inputs">3</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">inv_a_delta_d</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Bias" Name="duty_active_high" SID="756">
+    <P Name="Position">[310, 12, 360, 48]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Bias">1</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">inv_a_d_ideal</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Gain" Name="duty_norm" SID="755">
+    <P Name="Position">[65, 0, 290, 60]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="Gain">-1/PMLSM_pwm_period_counts</P>
+  </Block>
+  <Block BlockType="DeadZone" Name="i_deadzone" SID="757">
+    <P Name="Position">[120, 162, 170, 198]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="LowerValue">-PMLSM_deadtime_current_eps_A</P>
+    <P Name="UpperValue">PMLSM_deadtime_current_eps_A</P>
+  </Block>
+  <Block BlockType="Signum" Name="sign_i" SID="758">
+    <P Name="Position">[215, 162, 250, 198]</P>
+    <P Name="ZOrder">10</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">inv_a_sign_i</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Product" Name="v0_eff_calc" SID="762">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[615, 122, 650, 173]</P>
+    <P Name="ZOrder">14</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">inv_a_v0_eff</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Outport" Name="v0_eff" SID="754">
+    <P Name="Position">[730, 143, 760, 157]</P>
+    <P Name="ZOrder">6</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">749#out:1</P>
+    <P Name="Dst">755#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">755#out:1</P>
+    <P Name="Dst">756#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">inv_a_d_ideal</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">756#out:1</P>
+    <P Name="Points">[85, 0]</P>
+    <P Name="Dst">760#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">750#out:1</P>
+    <P Name="Dst">757#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Src">757#out:1</P>
+    <P Name="Dst">758#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">752#out:1</P>
+    <P Name="Dst">759#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">inv_a_sign_i</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">758#out:1</P>
+    <P Name="Dst">759#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">753#out:1</P>
+    <P Name="Dst">759#in:3</P>
+  </Line>
+  <Line>
+    <P Name="Name">inv_a_delta_d</P>
+    <P Name="ZOrder">10</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">759#out:1</P>
+    <P Name="Points">[25, 0]</P>
+    <P Name="Dst">760#in:2</P>
+  </Line>
+  <Line>
+    <P Name="Name">inv_a_d_unsat</P>
+    <P Name="ZOrder">11</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">760#out:1</P>
+    <P Name="Dst">761#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">inv_a_d_eff</P>
+    <P Name="ZOrder">12</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">761#out:1</P>
+    <P Name="Points">[20, 0; 0, 65]</P>
+    <P Name="Dst">762#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">751#out:1</P>
+    <P Name="Points">[509, 0; 0, -135]</P>
+    <P Name="Dst">762#in:2</P>
+  </Line>
+  <Line>
+    <P Name="Name">inv_a_v0_eff</P>
+    <P Name="ZOrder">14</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">762#out:1</P>
+    <P Name="Dst">754#in:1</P>
+  </Line>
+</System>

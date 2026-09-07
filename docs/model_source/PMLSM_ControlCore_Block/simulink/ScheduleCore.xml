@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2025b_202504071000">
+  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="9163d92d-0590-41fc-b13d-3bf36253804b">
+    <globalData type="sltp.mm.core.GlobalData" uuid="452d9d39-1a9e-4df7-8c4e-6ad66a2b8d3f">
+      <dataName>portClose_Loop_EN</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="d204eb7a-9fc2-4706-8757-192ce31c3f81">
+      <dataName>portInit_Done</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="de9ee283-716c-4e38-b568-eda38f1caecc">
+      <dataName>portTheta_Offset_auto</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="404e1092-7f03-4fbf-afdd-64ef9784efb7">
+      <dataName>portclose_loop_en_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="126caf3a-c53f-40dd-b7be-7490088d7ce7">
+      <dataName>portdiq_ref_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="69b25aa6-d77f-4e6a-b8b1-53ccdb7e6dee">
+      <dataName>portduty_a</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="922fed75-a58b-46a1-88bd-2d9c91b81944">
+      <dataName>portduty_b</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="27732a1b-b03f-48f1-83b7-819724d78166">
+      <dataName>portduty_c</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="b66d6985-28cb-488b-a700-b5aacd7c9201">
+      <dataName>porte_v_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="902d0c84-d4a5-47d7-812b-757538e843b7">
+      <dataName>portenable_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="2348588e-de4a-4c1c-afd2-1c684d1a1b0c">
+      <dataName>portfault_i</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="15e2b3c2-4b0f-48fa-a94a-33064ce46adb">
+      <dataName>portfault_latch</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="74c05fb0-eafd-4932-8124-d0e253871862">
+      <dataName>portfault_u</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="d94382a1-99ea-47fd-ab2b-d10933a2f897">
+      <dataName>portia</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="473ae6c0-9935-4686-90d8-bd14c4350ec8">
+      <dataName>portib</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="6d527469-3dfe-4cda-bc38-410def9bf8d9">
+      <dataName>portic</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="4854572a-a883-45a7-8436-bd9b6067ba1a">
+      <dataName>portid_meas</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="494b5c0b-85d9-43e8-a791-5e3c9e709198">
+      <dataName>portid_ref</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="e24bd867-698c-4df6-bac3-44a20a95a165">
+      <dataName>portid_ref_set_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="1afd1292-ea96-4a53-97e4-e12f275eb631">
+      <dataName>portinit_reset_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="85a09387-0751-4295-be02-4a2f68c3a2c9">
+      <dataName>portinit_start_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="78a96e6c-81e3-4bf8-9319-2bf240767bf0">
+      <dataName>portiq_lim_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="35217d89-5641-49f6-84bf-8428053d733f">
+      <dataName>portiq_meas</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="537d1c15-996d-4080-a09f-3051f234ef02">
+      <dataName>portiq_raw_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="58af7f4d-7adc-4206-95df-9fa9a4e31e9d">
+      <dataName>portiq_ref</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="c32aef2c-6a5e-45f0-af17-3afc2f186427">
+      <dataName>portiq_ref_normal</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="1973bce0-7d73-4dd6-a9ba-4e8b3f9f28ab">
+      <dataName>portiq_test_mode_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="9a7dc4dc-fd30-414e-8448-4e162d9d7501">
+      <dataName>portiq_test_ref_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="d395da7f-9d2e-4321-a521-a0a831344522">
+      <dataName>portpi_reset_en_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="c7a86cc0-aab2-4e72-ab38-51c9bc4eb509">
+      <dataName>portpos_loop_en_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="470326cd-e949-4d72-83b9-95f1a733e000">
+      <dataName>portspeed_loop_tick</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="aef83ec4-2937-4959-a12a-b19a3b95d0e1">
+      <dataName>porttheta_e</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="244631cc-f5a2-4150-8a89-24a5604ee51d">
+      <dataName>portv_fb_for_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="a69b4639-4c96-4a49-af34-b9f68f7c5973">
+      <dataName>portv_ideal_mmps</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="b159935f-e987-47cf-8773-a3a66d240c50">
+      <dataName>portv_ref</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="d39d715c-2ca6-4794-93b3-708dea8b0044">
+      <dataName>portv_ref_cmd_mmps</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="c770fca3-b7ee-422f-b5cd-320e14288072">
+      <dataName>portv_ref_cmd_mmps_in</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="170d615f-3022-499d-a474-06f7dc5ba417">
+      <dataName>portv_ref_safe</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="94b914a0-ffea-4bcd-8ed6-22afbcad2535">
+      <dataName>portvd_cmd</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="d87ee106-4ba4-4274-9035-70cc16c6c514">
+      <dataName>portvq_cmd</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="050adcb3-7a4a-4662-9299-204beed4417b">
+      <dataName>portx_align_mm_latch</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="91b15223-b8b7-49a1-b77d-24d8ca6af5dd">
+      <dataName>portx_mm</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="1826032d-072e-435c-a463-33e8b24e5b7a">
+      <dataName>portx_ref_mm_cmd</dataName>
+      <type>RootInport</type>
+    </globalData>
+    <globalData type="sltp.mm.core.GlobalData" uuid="41acfc71-9afb-4618-b6c8-1ac6788a7aa0">
+      <dataName>portx_s_ASR</dataName>
+      <type>RootOutport</type>
+    </globalData>
+    <priorityDirection>HighNumberLast</priorityDirection>
+    <defaultBarrierBehavior type="sltp.mm.core.BarrierBehavior" uuid="a01ca0e2-f5fe-4bf8-9401-093a7dce9157"/>
+    <defaultEventBehavior type="sltp.mm.core.EventBehavior" uuid="20acfb17-c6b5-4a78-9c36-261814a06c6d"/>
+    <editorState type="sltp.mm.core.EditorState" uuid="ef1cfea2-484a-420d-ae76-3d2ab30b0402">
+      <isSynchronized>true</isSynchronized>
+      <panelState type="sltp.mm.core.EditorPanelState" uuid="0bb34eb9-3f07-403c-a299-ffd7020be893"/>
+    </editorState>
+    <rootTask type="sltp.mm.core.Task" uuid="59365742-cebd-49a8-88f4-2a1a60c73799">
+      <context type="sltp.mm.core.Context" uuid="9163d92d-0590-41fc-b13d-3bf36253804b"/>
+      <explicit>false</explicit>
+      <name>Default</name>
+      <priority>-2147483648</priority>
+      <subgraph type="sltp.mm.core.Graph" uuid="8211f6f3-6456-4fdd-9fdd-6db8c05fb759">
+        <tasks type="sltp.mm.core.Task" uuid="5d304497-5c79-452f-96d0-6eeab8d82e3e">
+          <context type="sltp.mm.core.Context" uuid="9163d92d-0590-41fc-b13d-3bf36253804b"/>
+          <explicit>false</explicit>
+          <id>1</id>
+          <isTimed>true</isTimed>
+          <name>D1</name>
+          <priority>40</priority>
+          <rates type="sltp.mm.core.Rate" uuid="907cdf42-871a-4ba1-8e09-caaa1c67f439">
+            <annotation>D1</annotation>
+            <color>-12240129</color>
+            <hasBlocks>true</hasBlocks>
+            <identifier>ClassicPeriodicDiscrete0.00010</identifier>
+            <rateIndex>0</rateIndex>
+            <rateSpec type="sltp.mm.core.RateSpec">
+              <period>.0001</period>
+            </rateSpec>
+            <sti>0</sti>
+          </rates>
+        </tasks>
+      </subgraph>
+    </rootTask>
+  </sltp.mm.core.Context>
+</sltp_graph>

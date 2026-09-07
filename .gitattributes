@@ -1,0 +1,5 @@
+*.slx binary
+*.zip binary
+*.m -text
+*.md text eol=lf
+*.py text eol=lf

@@ -1,0 +1,21 @@
+# Track only the explicitly selected simulation source files.
+/*
+!/.gitignore
+!/.gitattributes
+!/AGENTS.md
+!/README.md
+!/AI_PROJECT_CONTEXT.md
+!/PMLSM_MIL_ControlCore_Sim.slx
+!/PMLSM_ControlCore_Block.slx
+!/PMSLM_Init_Params_MBDL4.m
+!/init_PMLSM_control_params.m
+!/init_PMLSM_plant_params.m
+!/init_PMLSM_mil_test_params.m
+!/init_PMLSM_MIL_params.m
+!/docs/
+!/tools/
+!/compatibility/
+**/__pycache__/
+**/work/
+**/*.slxc
+**/slprj/

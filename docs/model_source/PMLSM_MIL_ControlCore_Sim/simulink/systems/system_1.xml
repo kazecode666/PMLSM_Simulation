@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">125</P>
+  <Block BlockType="Inport" Name="ControlCore_Bus" SID="9">
+    <P Name="Position">[755, 88, 785, 102]</P>
+    <P Name="ZOrder">6</P>
+  </Block>
+  <Block BlockType="Clock" Name="Clock" SID="4">
+    <P Name="Position">[-50, -5, -15, 25]</P>
+    <P Name="ZOrder">1</P>
+  </Block>
+  <Block BlockType="BusSelector" Name="ControlCore_Bus_Selector" SID="10">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[835, 86, 910, 104]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="OutputSignals">Init_Done</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">&lt;Init_Done&gt;</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="Init_Done_feedback" SID="12">
+    <P Name="Position">[-195, 283, -105, 317]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Init_Done</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">Init_Done</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="UnitDelay" Name="Init_Done_z" SID="8">
+    <P Name="Position">[-70, 283, -35, 317]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="SampleTime">1e-4</P>
+  </Block>
+  <Block BlockType="Constant" Name="MIL_Mode" SID="5">
+    <P Name="Position">[-140, 745, -65, 765]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">MIL_Mode</P>
+  </Block>
+  <Block BlockType="Constant" Name="Plant_Input_Mode" SID="6">
+    <P Name="Position">[755, 38, 860, 62]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">Plant_Input_Mode</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="Simple_Command_Profile" SID="418">
+    <PortCounts in="4" out="10"/>
+    <P Name="Position">[120, 302, 400, 818]</P>
+    <P Name="ZOrder">58</P>
+    <P Name="ErrorFcn">Stateflow.Translate.translate</P>
+    <P Name="PermitHierarchicalResolution">ExplicitOnly</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="SFBlockType">MATLAB Function</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">iq_test_mode</P>
+      </Port>
+      <Port Type="out" Index="2">
+        <P Name="PropagatedSignals">iq_test_ref</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="PropagatedSignals">v_ref_cmd_mmps</P>
+      </Port>
+      <Port Type="out" Index="4">
+        <P Name="PropagatedSignals">x_ref_mm</P>
+      </Port>
+      <Port Type="out" Index="5">
+        <P Name="PropagatedSignals">load_force</P>
+      </Port>
+      <Port Type="out" Index="6">
+        <P Name="PropagatedSignals">vdc</P>
+      </Port>
+      <Port Type="out" Index="7">
+        <P Name="PropagatedSignals">pos_loop_en</P>
+      </Port>
+      <Port Type="out" Index="8">
+        <P Name="PropagatedSignals">id_ref_set</P>
+      </Port>
+      <Port Type="out" Index="9">
+        <P Name="PropagatedSignals">x_override_enable</P>
+      </Port>
+      <Port Type="out" Index="10">
+        <P Name="PropagatedSignals">x_override_mm</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_418"/>
+  </Block>
+  <Block BlockType="BusCreator" Name="Startup_Bus_Creator" SID="32">
+    <PortCounts in="19" out="1"/>
+    <P Name="Position">[1080, 192, 1110, 798]</P>
+    <P Name="ZOrder">29</P>
+    <P Name="Inputs">19</P>
+    <P Name="DisplayOption">bar</P>
+    <P Name="InheritFromInputs">on</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="Startup_Enable_Sequencer" SID="417">
+    <PortCounts in="3" out="8"/>
+    <P Name="Position">[120, -41, 400, 271]</P>
+    <P Name="ZOrder">57</P>
+    <P Name="ErrorFcn">Stateflow.Translate.translate</P>
+    <P Name="PermitHierarchicalResolution">ExplicitOnly</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="SFBlockType">MATLAB Function</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">enable_cmd</P>
+      </Port>
+      <Port Type="out" Index="2">
+        <P Name="PropagatedSignals">fault_i</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="PropagatedSignals">fault_u</P>
+      </Port>
+      <Port Type="out" Index="4">
+        <P Name="PropagatedSignals">close_loop_en</P>
+      </Port>
+      <Port Type="out" Index="5">
+        <P Name="PropagatedSignals">init_start</P>
+      </Port>
+      <Port Type="out" Index="6">
+        <P Name="PropagatedSignals">init_reset</P>
+      </Port>
+      <Port Type="out" Index="7">
+        <P Name="PropagatedSignals">pi_reset_en</P>
+      </Port>
+      <Port Type="out" Index="8">
+        <P Name="PropagatedSignals">pwm_enable</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_417"/>
+  </Block>
+  <Block BlockType="Goto" Name="input_ControlCore_Init_Done" SID="11">
+    <P Name="Position">[1035, 85, 1170, 105]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Init_Done</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_close_loop" SID="42">
+    <P Name="Position">[830, 483, 965, 507]</P>
+    <P Name="ZOrder">39</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">close_loop</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">close_loop</P>
+        <P Name="PropagatedSignals">close_loop_en</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_close_loop1" SID="414">
+    <P Name="Position">[-90, 613, 45, 637]</P>
+    <P Name="ZOrder">54</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">close_loop</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">close_loop_en</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_enable_cmd" SID="33">
+    <P Name="Position">[830, 214, 965, 236]</P>
+    <P Name="ZOrder">30</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">enable_cmd</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">enable_cmd</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_fault_i" SID="34">
+    <P Name="Position">[830, 244, 965, 266]</P>
+    <P Name="ZOrder">31</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">fault_i</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">fault_i</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_fault_u" SID="35">
+    <P Name="Position">[830, 274, 965, 296]</P>
+    <P Name="ZOrder">32</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">fault_u</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">fault_u</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_id_ref_set" SID="47">
+    <P Name="Position">[830, 634, 965, 656]</P>
+    <P Name="ZOrder">44</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">id_ref_set</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">id_ref_set</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_init_reset" SID="45">
+    <P Name="Position">[830, 574, 965, 596]</P>
+    <P Name="ZOrder">42</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">init_reset</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">init_reset</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_init_start" SID="44">
+    <P Name="Position">[830, 543, 965, 567]</P>
+    <P Name="ZOrder">41</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">init_start</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">init_start</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_iq_test_mode" SID="36">
+    <P Name="Position">[830, 304, 965, 326]</P>
+    <P Name="ZOrder">33</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">iq_test_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">iq_test_mode</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_iq_test_ref" SID="37">
+    <P Name="Position">[830, 334, 965, 356]</P>
+    <P Name="ZOrder">34</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">iq_test_ref</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">iq_test_ref</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_load_force" SID="40">
+    <P Name="Position">[830, 423, 965, 447]</P>
+    <P Name="ZOrder">37</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">load_force</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">load_force</P>
+        <P Name="PropagatedSignals">iq_test_mode</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_pi_reset" SID="46">
+    <P Name="Position">[830, 604, 965, 626]</P>
+    <P Name="ZOrder">43</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pi_reset</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">pi_reset</P>
+        <P Name="PropagatedSignals">pi_reset_en</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_plant_input_mode" SID="51">
+    <P Name="Position">[830, 753, 965, 777]</P>
+    <P Name="ZOrder">48</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">plant_input_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">plant_input_mode</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_pos_loop" SID="43">
+    <P Name="Position">[830, 514, 965, 536]</P>
+    <P Name="ZOrder">40</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pos_loop</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">pos_loop</P>
+        <P Name="PropagatedSignals">pos_loop_en</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_pwm_enable" SID="48">
+    <P Name="Position">[830, 664, 965, 686]</P>
+    <P Name="ZOrder">45</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pwm_enable</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">pwm_enable</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_v_ref" SID="38">
+    <P Name="Position">[830, 364, 965, 386]</P>
+    <P Name="ZOrder">35</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">v_ref</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">v_ref</P>
+        <P Name="PropagatedSignals">v_ref_cmd_mmps</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_vdc" SID="41">
+    <P Name="Position">[830, 453, 965, 477]</P>
+    <P Name="ZOrder">38</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vdc</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">vdc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_x_override_enable" SID="49">
+    <P Name="Position">[830, 692, 965, 718]</P>
+    <P Name="ZOrder">46</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_override_enable</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">x_override_enable</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_x_override_mm" SID="50">
+    <P Name="Position">[830, 724, 965, 746]</P>
+    <P Name="ZOrder">47</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_override_mm</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">x_override_mm</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="output_Startup_x_ref" SID="39">
+    <P Name="Position">[830, 394, 965, 416]</P>
+    <P Name="ZOrder">36</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_ref</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">x_ref</P>
+        <P Name="PropagatedSignals">x_ref_mm</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_close_loop" SID="22">
+    <P Name="Position">[505, 87, 610, 103]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">close_loop</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_enable_cmd" SID="13">
+    <P Name="Position">[505, -37, 610, -13]</P>
+    <P Name="ZOrder">10</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">enable_cmd</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_fault_i" SID="14">
+    <P Name="Position">[505, 5, 610, 25]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">fault_i</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_fault_u" SID="15">
+    <P Name="Position">[505, 46, 610, 64]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">fault_u</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_id_ref_set" SID="27">
+    <P Name="Position">[510, 676, 615, 694]</P>
+    <P Name="ZOrder">24</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">id_ref_set</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_init_reset" SID="25">
+    <P Name="Position">[505, 167, 610, 183]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">init_reset</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_init_start" SID="24">
+    <P Name="Position">[505, 127, 610, 143]</P>
+    <P Name="ZOrder">21</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">init_start</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_iq_test_mode" SID="16">
+    <P Name="Position">[490, 323, 625, 347]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">iq_test_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_iq_test_ref" SID="17">
+    <P Name="Position">[505, 375, 610, 395]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">iq_test_ref</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_load_force" SID="20">
+    <P Name="Position">[505, 527, 610, 543]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">load_force</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_pi_reset" SID="26">
+    <P Name="Position">[505, 207, 610, 223]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pi_reset</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_pos_loop" SID="23">
+    <P Name="Position">[510, 627, 615, 643]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pos_loop</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_pwm_enable" SID="28">
+    <P Name="Position">[490, 243, 625, 267]</P>
+    <P Name="ZOrder">25</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">pwm_enable</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_v_ref" SID="18">
+    <P Name="Position">[505, 426, 610, 444]</P>
+    <P Name="ZOrder">15</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">v_ref</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_vdc" SID="21">
+    <P Name="Position">[505, 577, 610, 593]</P>
+    <P Name="ZOrder">18</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vdc</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_x_override_enable" SID="29">
+    <P Name="Position">[480, 723, 640, 747]</P>
+    <P Name="ZOrder">26</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_override_enable</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_x_override_mm" SID="30">
+    <P Name="Position">[480, 775, 640, 795]</P>
+    <P Name="ZOrder">27</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_override_mm</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_x_ref" SID="19">
+    <P Name="Position">[505, 477, 610, 493]</P>
+    <P Name="ZOrder">16</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_ref</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_plant_input_mode" SID="31">
+    <P Name="Position">[925, 35, 1065, 65]</P>
+    <P Name="ZOrder">28</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">plant_input_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Outport" Name="Startup_Bus" SID="52">
+    <P Name="Position">[1155, 488, 1185, 502]</P>
+    <P Name="ZOrder">49</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">9#out:1</P>
+    <P Name="Dst">10#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">&lt;Init_Done&gt;</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">10#out:1</P>
+    <P Name="Dst">11#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">12#out:1</P>
+    <P Name="Dst">8#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">359</P>
+    <P Name="Src">8#out:1</P>
+    <P Name="Points">[75, 0]</P>
+    <Branch>
+      <P Name="ZOrder">486</P>
+      <P Name="Points">[0, 195]</P>
+      <P Name="Dst">418#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">424</P>
+      <P Name="Points">[0, -185]</P>
+      <P Name="Dst">417#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">26</P>
+    <P Name="Src">6#out:1</P>
+    <P Name="Dst">31#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">enable_cmd</P>
+    <P Name="ZOrder">27</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">33#out:1</P>
+    <P Name="Dst">32#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">fault_i</P>
+    <P Name="ZOrder">28</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">34#out:1</P>
+    <P Name="Dst">32#in:2</P>
+  </Line>
+  <Line>
+    <P Name="Name">fault_u</P>
+    <P Name="ZOrder">29</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">35#out:1</P>
+    <P Name="Dst">32#in:3</P>
+  </Line>
+  <Line>
+    <P Name="Name">iq_test_mode</P>
+    <P Name="ZOrder">30</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">36#out:1</P>
+    <P Name="Dst">32#in:4</P>
+  </Line>
+  <Line>
+    <P Name="Name">iq_test_ref</P>
+    <P Name="ZOrder">31</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">37#out:1</P>
+    <P Name="Dst">32#in:5</P>
+  </Line>
+  <Line>
+    <P Name="Name">v_ref</P>
+    <P Name="ZOrder">32</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">38#out:1</P>
+    <P Name="Dst">32#in:6</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_ref</P>
+    <P Name="ZOrder">33</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">39#out:1</P>
+    <P Name="Dst">32#in:7</P>
+  </Line>
+  <Line>
+    <P Name="Name">load_force</P>
+    <P Name="ZOrder">34</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">40#out:1</P>
+    <P Name="Dst">32#in:8</P>
+  </Line>
+  <Line>
+    <P Name="Name">vdc</P>
+    <P Name="ZOrder">35</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">41#out:1</P>
+    <P Name="Dst">32#in:9</P>
+  </Line>
+  <Line>
+    <P Name="Name">close_loop</P>
+    <P Name="ZOrder">36</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">42#out:1</P>
+    <P Name="Dst">32#in:10</P>
+  </Line>
+  <Line>
+    <P Name="Name">pos_loop</P>
+    <P Name="ZOrder">37</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">43#out:1</P>
+    <P Name="Dst">32#in:11</P>
+  </Line>
+  <Line>
+    <P Name="Name">init_start</P>
+    <P Name="ZOrder">38</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">44#out:1</P>
+    <P Name="Dst">32#in:12</P>
+  </Line>
+  <Line>
+    <P Name="Name">init_reset</P>
+    <P Name="ZOrder">39</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">45#out:1</P>
+    <P Name="Dst">32#in:13</P>
+  </Line>
+  <Line>
+    <P Name="Name">pi_reset</P>
+    <P Name="ZOrder">40</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">46#out:1</P>
+    <P Name="Dst">32#in:14</P>
+  </Line>
+  <Line>
+    <P Name="Name">id_ref_set</P>
+    <P Name="ZOrder">41</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">47#out:1</P>
+    <P Name="Dst">32#in:15</P>
+  </Line>
+  <Line>
+    <P Name="Name">pwm_enable</P>
+    <P Name="ZOrder">42</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">48#out:1</P>
+    <P Name="Dst">32#in:16</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_override_enable</P>
+    <P Name="ZOrder">43</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">49#out:1</P>
+    <P Name="Dst">32#in:17</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_override_mm</P>
+    <P Name="ZOrder">44</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">50#out:1</P>
+    <P Name="Dst">32#in:18</P>
+  </Line>
+  <Line>
+    <P Name="Name">plant_input_mode</P>
+    <P Name="ZOrder">45</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">51#out:1</P>
+    <P Name="Dst">32#in:19</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">46</P>
+    <P Name="Src">32#out:1</P>
+    <P Name="Dst">52#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">357</P>
+    <P Name="Src">4#out:1</P>
+    <P Name="Points">[85, 0]</P>
+    <Branch>
+      <P Name="ZOrder">485</P>
+      <P Name="Points">[0, 355]</P>
+      <P Name="Dst">418#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">484</P>
+      <P Name="Dst">417#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">370</P>
+    <P Name="Src">417#out:4</P>
+    <P Name="Dst">22#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">367</P>
+    <P Name="Src">417#out:1</P>
+    <P Name="Dst">13#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">368</P>
+    <P Name="Src">417#out:2</P>
+    <P Name="Dst">14#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">369</P>
+    <P Name="Src">417#out:3</P>
+    <P Name="Dst">15#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">372</P>
+    <P Name="Src">417#out:5</P>
+    <P Name="Dst">24#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">373</P>
+    <P Name="Src">417#out:6</P>
+    <P Name="Dst">25#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">374</P>
+    <P Name="Src">417#out:7</P>
+    <P Name="Dst">26#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">375</P>
+    <P Name="Src">417#out:8</P>
+    <P Name="Dst">28#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">376</P>
+    <P Name="Src">418#out:1</P>
+    <P Name="Dst">16#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">377</P>
+    <P Name="Src">418#out:2</P>
+    <P Name="Dst">17#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">378</P>
+    <P Name="Src">418#out:3</P>
+    <P Name="Dst">18#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">379</P>
+    <P Name="Src">418#out:4</P>
+    <P Name="Dst">19#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">380</P>
+    <P Name="Src">418#out:5</P>
+    <P Name="Dst">20#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">381</P>
+    <P Name="Src">418#out:6</P>
+    <P Name="Dst">21#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">382</P>
+    <P Name="Src">418#out:7</P>
+    <P Name="Dst">23#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">383</P>
+    <P Name="Src">418#out:8</P>
+    <P Name="Dst">27#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">384</P>
+    <P Name="Src">418#out:9</P>
+    <P Name="Dst">29#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">385</P>
+    <P Name="Src">418#out:10</P>
+    <P Name="Dst">30#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">477</P>
+    <P Name="Src">5#out:1</P>
+    <P Name="Points">[160, 0]</P>
+    <Branch>
+      <P Name="ZOrder">479</P>
+      <P Name="Points">[0, -535]</P>
+      <P Name="Dst">417#in:3</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">478</P>
+      <P Name="Dst">418#in:4</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">481</P>
+    <P Name="Src">414#out:1</P>
+    <P Name="Dst">418#in:3</P>
+  </Line>
+</System>

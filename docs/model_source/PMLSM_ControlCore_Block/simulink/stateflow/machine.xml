@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Stateflow>
+  <machine id="49">
+    <P Name="sfVersion">82600000</P>
+    <Children>
+      <target id="107" name="sfun">
+        <P Name="description">Default Simulink S-Function Target.</P>
+      </target>
+      <chart Ref="chart_50"/>
+      <chart Ref="chart_57"/>
+      <chart Ref="chart_71"/>
+    </Children>
+  </machine>
+  <instance id="56">
+    <P Name="machine">49</P>
+    <P Name="name">PMLSM_ControlCore/FOC_Algorithm/DPCC_Current_Controller/PICDO_DPICC_Core/PICDO_Numeric_Protection/finite_check</P>
+    <P Name="chart">50</P>
+  </instance>
+  <instance id="70">
+    <P Name="machine">49</P>
+    <P Name="name">PMLSM_ControlCore/Travel_Safety_Manager</P>
+    <P Name="chart">57</P>
+  </instance>
+  <instance id="106">
+    <P Name="machine">49</P>
+    <P Name="name">PMLSM_ControlCore/Angle_Init</P>
+    <P Name="chart">71</P>
+  </instance>
+</Stateflow>

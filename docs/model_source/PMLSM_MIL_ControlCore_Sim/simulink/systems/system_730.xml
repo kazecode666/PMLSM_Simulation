@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">150</P>
+  <Block BlockType="Inport" Name="duty_a" SID="733">
+    <P Name="Position">[160, 113, 190, 127]</P>
+    <P Name="ZOrder">1</P>
+  </Block>
+  <Block BlockType="Inport" Name="duty_b" SID="734">
+    <P Name="Position">[160, 293, 190, 307]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="duty_c" SID="735">
+    <P Name="Position">[160, 473, 190, 487]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="theta_e" SID="736">
+    <P Name="Position">[160, 633, 190, 647]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">4</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">theta_e</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="vdc" SID="737">
+    <P Name="Position">[160, 53, 190, 67]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Port">5</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">vdc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="pwm_enable" SID="738">
+    <P Name="Position">[160, 723, 190, 737]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Port">6</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">pwm_enable</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="ia_phase" SID="739">
+    <P Name="Position">[160, 173, 190, 187]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Inport" Name="ib_phase" SID="740">
+    <P Name="Position">[160, 353, 190, 367]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Port">8</P>
+  </Block>
+  <Block BlockType="Inport" Name="ic_phase" SID="741">
+    <P Name="Position">[160, 533, 190, 547]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="Port">9</P>
+  </Block>
+  <Block BlockType="Inport" Name="deadtime_mode" SID="742">
+    <P Name="Position">[415, 53, 445, 67]</P>
+    <P Name="ZOrder">10</P>
+    <P Name="Port">10</P>
+  </Block>
+  <Block BlockType="Inport" Name="deadtime_ratio" SID="743">
+    <P Name="Position">[670, 53, 700, 67]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="Port">11</P>
+  </Block>
+  <Block BlockType="From" Name="From" SID="804">
+    <P Name="Position">[260, 196, 360, 224]</P>
+    <P Name="ZOrder">293</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">deadtime_ratio</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="From1" SID="807">
+    <P Name="Position">[270, 227, 350, 253]</P>
+    <P Name="ZOrder">296</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vdc</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">vdc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="From2" SID="808">
+    <P Name="Position">[260, 407, 340, 433]</P>
+    <P Name="ZOrder">297</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vdc</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">vdc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="From3" SID="809">
+    <P Name="Position">[275, 587, 355, 613]</P>
+    <P Name="ZOrder">298</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vdc</P>
+    <P Name="IconDisplay">Signal name</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">vdc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="From4" SID="811">
+    <P Name="Position">[260, 136, 360, 164]</P>
+    <P Name="ZOrder">300</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">deadtime_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="From5" SID="813">
+    <P Name="Position">[250, 316, 350, 344]</P>
+    <P Name="ZOrder">301</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">deadtime_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="From6" SID="814">
+    <P Name="Position">[265, 496, 365, 524]</P>
+    <P Name="ZOrder">302</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">deadtime_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="From7" SID="815">
+    <P Name="Position">[250, 375, 350, 405]</P>
+    <P Name="ZOrder">303</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">deadtime_ratio</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="From8" SID="816">
+    <P Name="Position">[265, 557, 365, 583]</P>
+    <P Name="ZOrder">304</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">deadtime_ratio</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="Goto" SID="805">
+    <P Name="Position">[765, 49, 855, 71]</P>
+    <P Name="ZOrder">294</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">deadtime_ratio</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="Goto1" SID="806">
+    <P Name="Position">[260, 49, 345, 71]</P>
+    <P Name="ZOrder">295</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">vdc</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="Goto2" SID="810">
+    <P Name="Position">[505, 45, 610, 75]</P>
+    <P Name="ZOrder">299</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">deadtime_mode</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="Phase_A_DeadTime" SID="746">
+    <PortCounts in="5" out="1"/>
+    <P Name="Position">[420, 109, 635, 251]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_746"/>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">inv_a_v0_eff</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_746"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="Phase_B_DeadTime" SID="763">
+    <PortCounts in="5" out="1"/>
+    <P Name="Position">[420, 282, 635, 438]</P>
+    <P Name="ZOrder">15</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_763"/>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">inv_b_v0_eff</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_763"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="Phase_C_DeadTime" SID="780">
+    <PortCounts in="5" out="1"/>
+    <P Name="Position">[420, 469, 635, 611]</P>
+    <P Name="ZOrder">16</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_780"/>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">inv_c_v0_eff</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_780"/>
+  </Block>
+  <Block BlockType="Fcn" Name="phase_to_vd" SID="798">
+    <P Name="Position">[880, 290, 1020, 340]</P>
+    <P Name="ZOrder">289</P>
+    <P Name="Expr">((2*u[1]-u[2]-u[3])/3)*cos(u[4])+((u[2]-u[3])/sqrt(3))*sin(u[4])</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">inv_vd_before_pwm_enable</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Fcn" Name="phase_to_vq" SID="799">
+    <P Name="Position">[880, 510, 1020, 560]</P>
+    <P Name="ZOrder">290</P>
+    <P Name="Expr">-((2*u[1]-u[2]-u[3])/3)*sin(u[4])+((u[2]-u[3])/sqrt(3))*cos(u[4])</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">inv_vq_before_pwm_enable</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Mux" Name="phase_voltage_theta_mux" SID="797">
+    <PortCounts in="4" out="1"/>
+    <P Name="Position">[780, 149, 800, 711]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="DisplayOption">bar</P>
+  </Block>
+  <Block BlockType="Product" Name="vd_pwm_enable" SID="800">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[1175, 305, 1210, 340]</P>
+    <P Name="ZOrder">291</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">inv_vd_from_duty</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Product" Name="vq_pwm_enable" SID="801">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[1175, 525, 1210, 560]</P>
+    <P Name="ZOrder">292</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">inv_vq_from_duty</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Outport" Name="vd_from_duty" SID="744">
+    <P Name="Position">[1320, 318, 1350, 332]</P>
+    <P Name="ZOrder">12</P>
+  </Block>
+  <Block BlockType="Outport" Name="vq_from_duty" SID="745">
+    <P Name="Position">[1320, 538, 1350, 552]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">733#out:1</P>
+    <P Name="Dst">746#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">739#out:1</P>
+    <P Name="Dst">746#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">734#out:1</P>
+    <P Name="Dst">763#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">740#out:1</P>
+    <P Name="Dst">763#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">15</P>
+    <P Name="Src">735#out:1</P>
+    <P Name="Dst">780#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">741#out:1</P>
+    <P Name="Dst">780#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">20</P>
+    <P Name="Src">746#out:1</P>
+    <P Name="Points">[68, 0; 0, 40]</P>
+    <P Name="Dst">797#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">21</P>
+    <P Name="Src">763#out:1</P>
+    <P Name="Dst">797#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">22</P>
+    <P Name="Src">780#out:1</P>
+    <P Name="Points">[52, 0; 0, -40]</P>
+    <P Name="Dst">797#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">23</P>
+    <P Name="Src">736#out:1</P>
+    <P Name="Dst">797#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">25</P>
+    <P Name="Src">797#out:1</P>
+    <P Name="Points">[25, 0]</P>
+    <Branch>
+      <P Name="ZOrder">75</P>
+      <P Name="Points">[0, 105]</P>
+      <P Name="Dst">799#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">74</P>
+      <P Name="Points">[0, -115]</P>
+      <P Name="Dst">798#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">inv_vd_before_pwm_enable</P>
+    <P Name="ZOrder">27</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">798#out:1</P>
+    <P Name="Dst">800#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">30</P>
+    <P Name="Src">738#out:1</P>
+    <P Name="Points">[955, 0; 0, -180]</P>
+    <Branch>
+      <P Name="ZOrder">28</P>
+      <P Name="Points">[0, -220]</P>
+      <P Name="Dst">800#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">31</P>
+      <P Name="Dst">801#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">inv_vq_before_pwm_enable</P>
+    <P Name="ZOrder">29</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">799#out:1</P>
+    <P Name="Dst">801#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">inv_vd_from_duty</P>
+    <P Name="ZOrder">32</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">800#out:1</P>
+    <P Name="Dst">744#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">inv_vq_from_duty</P>
+    <P Name="ZOrder">33</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">801#out:1</P>
+    <P Name="Dst">745#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">56</P>
+    <P Name="Src">743#out:1</P>
+    <P Name="Dst">805#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">60</P>
+    <P Name="Src">737#out:1</P>
+    <P Name="Dst">806#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">61</P>
+    <P Name="Src">807#out:1</P>
+    <P Name="Dst">746#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">65</P>
+    <P Name="Src">808#out:1</P>
+    <P Name="Dst">763#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">66</P>
+    <P Name="Src">809#out:1</P>
+    <P Name="Dst">780#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">67</P>
+    <P Name="Src">742#out:1</P>
+    <P Name="Dst">810#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">68</P>
+    <P Name="Src">811#out:1</P>
+    <P Name="Dst">746#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">69</P>
+    <P Name="Src">813#out:1</P>
+    <P Name="Dst">763#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">70</P>
+    <P Name="Src">814#out:1</P>
+    <P Name="Dst">780#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">71</P>
+    <P Name="Src">804#out:1</P>
+    <P Name="Dst">746#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">72</P>
+    <P Name="Src">815#out:1</P>
+    <P Name="Dst">763#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">73</P>
+    <P Name="Src">816#out:1</P>
+    <P Name="Dst">780#in:4</P>
+  </Line>
+</System>

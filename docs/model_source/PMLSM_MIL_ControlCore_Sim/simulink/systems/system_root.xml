@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="Open">on</P>
+  <P Name="ZoomFactor">175</P>
+  <P Name="ReportName">simulink-default.rpt</P>
+  <P Name="SIDHighWatermark">979</P>
+  <Block BlockType="SubSystem" Name="Control_Core" SID="53">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[830, 127, 1110, 298]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_53"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="MIL_Logging" SID="271">
+    <PortCounts in="3"/>
+    <P Name="Position">[850, 404, 1130, 576]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_271"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="Power_Plant_Feedback" SID="135">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[200, 402, 480, 573]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_135"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="Startup_And_Commands" SID="1">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[220, 145, 460, 275]</P>
+    <P Name="ZOrder">1</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_1"/>
+  </Block>
+  <Block BlockType="From" Name="read_Control_for_Logging" SID="398">
+    <P Name="Position">[655, 478, 800, 502]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Bus_ControlCore</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="read_Control_for_Plant" SID="397">
+    <P Name="Position">[35, 517, 180, 543]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Bus_ControlCore</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="read_Control_for_Startup" SID="396">
+    <P Name="Position">[55, 197, 200, 223]</P>
+    <P Name="ZOrder">10</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Bus_ControlCore</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="read_Plant_for_Control" SID="400">
+    <P Name="Position">[670, 241, 785, 269]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Bus_Plant</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="read_Plant_for_Logging" SID="401">
+    <P Name="Position">[670, 534, 785, 556]</P>
+    <P Name="ZOrder">15</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Bus_Plant</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="read_Startup_for_Control" SID="392">
+    <P Name="Position">[655, 157, 800, 183]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Bus_Startup</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="read_Startup_for_Logging" SID="394">
+    <P Name="Position">[655, 418, 800, 452]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Bus_Startup</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="From" Name="read_Startup_for_Plant" SID="393">
+    <P Name="Position">[35, 432, 180, 458]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Bus_Startup</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_ControlCore_Bus" SID="395">
+    <P Name="Position">[1155, 205, 1310, 225]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Bus_ControlCore</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Plant_Bus" SID="399">
+    <P Name="Position">[510, 477, 625, 503]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Bus_Plant</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Block BlockType="Goto" Name="route_Startup_Bus" SID="391">
+    <P Name="Position">[495, 196, 630, 224]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">Bus_Startup</P>
+    <P Name="IconDisplay">Signal name</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">1#out:1</P>
+    <P Name="Dst">391#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">392#out:1</P>
+    <P Name="Dst">53#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">393#out:1</P>
+    <P Name="Dst">135#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">394#out:1</P>
+    <P Name="Dst">271#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">53#out:1</P>
+    <P Name="Dst">395#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Src">396#out:1</P>
+    <P Name="Dst">1#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">397#out:1</P>
+    <P Name="Dst">135#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">398#out:1</P>
+    <P Name="Dst">271#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">135#out:1</P>
+    <P Name="Dst">399#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">10</P>
+    <P Name="Src">400#out:1</P>
+    <P Name="Dst">53#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">401#out:1</P>
+    <P Name="Dst">271#in:3</P>
+  </Line>
+</System>

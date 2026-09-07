@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -7, 1707, 960]</P>
+  <P Name="ZoomFactor">132</P>
+  <Block BlockType="Inport" Name="numeric_check_observer" SID="1433">
+    <P Name="Position">[40, 58, 70, 72]</P>
+    <P Name="ZOrder">1</P>
+  </Block>
+  <Block BlockType="Inport" Name="numeric_check_control" SID="1434">
+    <P Name="Position">[40, 98, 70, 112]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="ud_raw" SID="1435">
+    <P Name="Position">[40, 258, 70, 272]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">3</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">ud_raw</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="uq_raw" SID="1436">
+    <P Name="Position">[40, 358, 70, 372]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">4</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">uq_raw</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="ud_lim" SID="1437">
+    <P Name="Position">[40, 298, 70, 312]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Port">5</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_ud_lim</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="uq_lim" SID="1438">
+    <P Name="Position">[40, 398, 70, 412]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Port">6</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_uq_lim</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="Dhat_saturation_flag" SID="1439">
+    <P Name="Position">[40, 388, 70, 402]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Inport" Name="PICDO_valid" SID="1440">
+    <P Name="Position">[40, 468, 70, 482]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Port">8</P>
+  </Block>
+  <Block BlockType="Inport" Name="picdo_active" SID="1441">
+    <P Name="Position">[40, 508, 70, 522]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="Port">9</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">picdo_active</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="DataTypeConversion" Name="Dhat_sat_to_double" SID="1531">
+    <P Name="Position">[560, 368, 650, 402]</P>
+    <P Name="ZOrder">26</P>
+    <P Name="OutDataTypeStr">double</P>
+  </Block>
+  <Block BlockType="DataTypeConversion" Name="PICDO_valid_to_double" SID="1533">
+    <P Name="Position">[560, 448, 650, 482]</P>
+    <P Name="ZOrder">28</P>
+    <P Name="OutDataTypeStr">double</P>
+  </Block>
+  <Block BlockType="SubSystem" Name="finite_check" SID="1520">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[230, 45, 280, 95]</P>
+    <P Name="ZOrder">15</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_1520"/>
+    <P Name="ErrorFcn">Stateflow.Translate.translate</P>
+    <P Name="PermitHierarchicalResolution">ExplicitOnly</P>
+    <P Name="TreatAsAtomicUnit">on</P>
+    <P Name="SFBlockType">MATLAB Function</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">numeric_ok</P>
+        <P Name="PropagatedSignals">y</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_1520"/>
+  </Block>
+  <Block BlockType="Mux" Name="mux_flags_diag" SID="1535">
+    <PortCounts in="5" out="1"/>
+    <P Name="Position">[720, 332, 725, 458]</P>
+    <P Name="ZOrder">30</P>
+    <P Name="BackgroundColor">black</P>
+    <P Name="Inputs">5</P>
+  </Block>
+  <Block BlockType="Mux" Name="mux_numeric_inputs" SID="1519">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[150, 47, 155, 98]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="BackgroundColor">black</P>
+    <P Name="Inputs">2</P>
+  </Block>
+  <Block BlockType="Logic" Name="numeric_fault_logic" SID="1522">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[330, 164, 380, 216]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="Operator">NOT</P>
+    <P Name="IconShape">distinctive</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">PICDO_Numeric_Fault</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="DataTypeConversion" Name="numeric_fault_to_double" SID="1532">
+    <P Name="Position">[560, 408, 650, 442]</P>
+    <P Name="ZOrder">27</P>
+    <P Name="OutDataTypeStr">double</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="numeric_ok_z1" SID="1521">
+    <P Name="Position">[330, 103, 365, 137]</P>
+    <P Name="ZOrder">16</P>
+    <P Name="InitialCondition">1</P>
+    <P Name="SampleTime">-1</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">numeric_ok_prev</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="DataTypeConversion" Name="picdo_active_to_double" SID="1534">
+    <P Name="Position">[560, 488, 650, 522]</P>
+    <P Name="ZOrder">29</P>
+    <P Name="OutDataTypeStr">double</P>
+  </Block>
+  <Block BlockType="Reference" Name="ud_saturated" SID="1527">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[320, 265, 350, 295]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="LibraryVersion">12.5</P>
+    <P Name="SourceBlock">hdlsllib/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">off</P>
+      <P Name="relop">&gt;</P>
+      <P Name="const">1e-8</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Abs" Name="ud_saturation_abs" SID="1525">
+    <P Name="Position">[230, 265, 260, 295]</P>
+    <P Name="ZOrder">20</P>
+  </Block>
+  <Block BlockType="Sum" Name="ud_saturation_difference" SID="1523">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[150, 270, 170, 290]</P>
+    <P Name="ZOrder">18</P>
+    <P Name="Inputs">+-</P>
+  </Block>
+  <Block BlockType="Reference" Name="uq_saturated" SID="1528">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[320, 365, 350, 395]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="LibraryVersion">12.5</P>
+    <P Name="SourceBlock">hdlsllib/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">off</P>
+      <P Name="relop">&gt;</P>
+      <P Name="const">1e-8</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Abs" Name="uq_saturation_abs" SID="1526">
+    <P Name="Position">[230, 365, 260, 395]</P>
+    <P Name="ZOrder">21</P>
+  </Block>
+  <Block BlockType="Sum" Name="uq_saturation_difference" SID="1524">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[150, 370, 170, 390]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="Inputs">+-</P>
+  </Block>
+  <Block BlockType="DataTypeConversion" Name="voltage_sat_to_double" SID="1530">
+    <P Name="Position">[560, 328, 650, 362]</P>
+    <P Name="ZOrder">25</P>
+    <P Name="OutDataTypeStr">double</P>
+  </Block>
+  <Block BlockType="Logic" Name="voltage_saturation_flag" SID="1529">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[410, 303, 460, 357]</P>
+    <P Name="ZOrder">24</P>
+    <P Name="Operator">OR</P>
+    <P Name="IconShape">distinctive</P>
+  </Block>
+  <Block BlockType="Outport" Name="numeric_ok" SID="1442">
+    <P Name="Position">[370, 53, 400, 67]</P>
+    <P Name="ZOrder">10</P>
+  </Block>
+  <Block BlockType="Outport" Name="numeric_ok_prev" SID="1443">
+    <P Name="Position">[450, 113, 480, 127]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="numeric_fault" SID="1444">
+    <P Name="Position">[480, 183, 510, 197]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="flags_diag" SID="1445">
+    <P Name="Position">[800, 388, 830, 402]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">83</P>
+    <P Name="Src">1433#out:1</P>
+    <P Name="Points">[30, 0; 0, -5]</P>
+    <P Name="Dst">1519#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">84</P>
+    <P Name="Src">1434#out:1</P>
+    <P Name="Points">[14, 0; 0, -12; 41, 0; 0, -8]</P>
+    <P Name="Dst">1519#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">85</P>
+    <P Name="Src">1519#out:1</P>
+    <P Name="Points">[33, 0; 0, -5]</P>
+    <P Name="Dst">1520#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">numeric_ok</P>
+    <P Name="ZOrder">86</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">1520#out:1</P>
+    <P Name="Points">[13, 0]</P>
+    <Branch>
+      <P Name="ZOrder">91</P>
+      <P Name="Points">[0, 50]</P>
+      <Branch>
+        <P Name="ZOrder">89</P>
+        <P Name="Points">[0, 70]</P>
+        <P Name="Dst">1522#in:1</P>
+      </Branch>
+      <Branch>
+        <P Name="ZOrder">88</P>
+        <P Name="Dst">1521#in:1</P>
+      </Branch>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">90</P>
+      <P Name="Labels">[0, 0]</P>
+      <P Name="Points">[0, -10]</P>
+      <P Name="Dst">1442#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">numeric_ok_prev</P>
+    <P Name="ZOrder">92</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">1521#out:1</P>
+    <P Name="Dst">1443#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">98</P>
+    <P Name="Src">1435#out:1</P>
+    <P Name="Points">[85, 0]</P>
+    <P Name="Dst">1523#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">99</P>
+    <P Name="Src">1437#out:1</P>
+    <P Name="Dst">1523#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">100</P>
+    <P Name="Src">1436#out:1</P>
+    <P Name="Points">[85, 0]</P>
+    <P Name="Dst">1524#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">101</P>
+    <P Name="Src">1438#out:1</P>
+    <P Name="Dst">1524#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">102</P>
+    <P Name="Src">1523#out:1</P>
+    <P Name="Dst">1525#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">103</P>
+    <P Name="Src">1524#out:1</P>
+    <P Name="Dst">1526#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">104</P>
+    <P Name="Src">1525#out:1</P>
+    <P Name="Dst">1527#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">105</P>
+    <P Name="Src">1526#out:1</P>
+    <P Name="Dst">1528#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">106</P>
+    <P Name="Src">1527#out:1</P>
+    <P Name="Points">[31, 0; 0, 40]</P>
+    <P Name="Dst">1529#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">107</P>
+    <P Name="Src">1528#out:1</P>
+    <P Name="Points">[9, 0; 0, -40]</P>
+    <P Name="Dst">1529#in:2</P>
+  </Line>
+  <Line>
+    <P Name="Name">PICDO_Numeric_Fault</P>
+    <P Name="ZOrder">119</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">1522#out:1</P>
+    <P Name="Points">[47, 0; 0, 66; 13, 0]</P>
+    <Branch>
+      <P Name="ZOrder">122</P>
+      <P Name="Points">[95, 0; 0, 169]</P>
+      <P Name="Dst">1532#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">121</P>
+      <P Name="Labels">[0, 0]</P>
+      <P Name="Points">[0, -66]</P>
+      <P Name="Dst">1444#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">123</P>
+    <P Name="Src">1529#out:1</P>
+    <P Name="Points">[35, 0; 0, 15]</P>
+    <P Name="Dst">1530#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">124</P>
+    <P Name="Src">1439#out:1</P>
+    <P Name="Points">[15, 0; 0, -43; 287, 0; 0, 33]</P>
+    <P Name="Dst">1531#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">125</P>
+    <P Name="Src">1440#out:1</P>
+    <P Name="Points">[240, 0; 0, -10]</P>
+    <P Name="Dst">1533#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">126</P>
+    <P Name="Src">1441#out:1</P>
+    <P Name="Points">[235, 0; 0, -10]</P>
+    <P Name="Dst">1534#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">127</P>
+    <P Name="Src">1530#out:1</P>
+    <P Name="Dst">1535#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">128</P>
+    <P Name="Src">1531#out:1</P>
+    <P Name="Points">[31, 0; 0, -15]</P>
+    <P Name="Dst">1535#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">129</P>
+    <P Name="Src">1532#out:1</P>
+    <P Name="Points">[30, 0; 0, -30]</P>
+    <P Name="Dst">1535#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">130</P>
+    <P Name="Src">1533#out:1</P>
+    <P Name="Points">[16, 0; 0, -45]</P>
+    <P Name="Dst">1535#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">131</P>
+    <P Name="Src">1534#out:1</P>
+    <P Name="Points">[9, 0; 0, -60]</P>
+    <P Name="Dst">1535#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">132</P>
+    <P Name="Src">1535#out:1</P>
+    <P Name="Dst">1445#in:1</P>
+  </Line>
+</System>

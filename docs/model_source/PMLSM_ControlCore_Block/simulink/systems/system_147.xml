@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">155</P>
+  <Block BlockType="Inport" Name="In1" SID="148">
+    <P Name="Position">[110, 103, 140, 117]</P>
+    <P Name="ZOrder">5</P>
+  </Block>
+  <Block BlockType="ResetPort" Name="Reset" SID="149">
+    <P Name="Position">[235, 20, 255, 40]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="DisableCoverage">on</P>
+  </Block>
+  <Block BlockType="Reference" Name="IIR Filter" SID="150">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[210, 97, 285, 123]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="HideAutomaticName">off</P>
+    <P Name="LibraryVersion">11.38</P>
+    <P Name="SourceBlock">mcbcontrolslib/IIR Filter</P>
+    <P Name="SourceType">IIR Filter</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantControl">Low Pass Filter</P>
+      <P Name="ContentPreviewEnabled">off</P>
+      <P Name="VariantSelect">Low-pass</P>
+      <P Name="FilterConstantInputType">Specify via dialog</P>
+      <P Name="Filter_constant">0.1</P>
+      <P Name="InitialOutput">Specify via dialog</P>
+      <P Name="InitialOutputValue">0</P>
+      <P Name="ExternalReset">none</P>
+      <P Name="advancedSettings">on</P>
+      <P Name="Ts">100e-6</P>
+      <P Name="cutOff_freq">176.8388</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Outport" Name="Out1" SID="151">
+    <P Name="Position">[360, 103, 390, 117]</P>
+    <P Name="ZOrder">6</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">150#out:1</P>
+    <P Name="Dst">151#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">148#out:1</P>
+    <P Name="Dst">150#in:1</P>
+  </Line>
+</System>

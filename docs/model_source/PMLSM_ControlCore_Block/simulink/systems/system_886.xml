@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">195</P>
+  <Block BlockType="Inport" Name="Valpha" SID="889">
+    <P Name="Position">[360, 83, 390, 97]</P>
+    <P Name="ZOrder">1</P>
+  </Block>
+  <Block BlockType="Inport" Name="Vbeta" SID="890">
+    <P Name="Position">[360, 213, 390, 227]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="ia" SID="891">
+    <P Name="Position">[0, 178, 30, 192]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="ib" SID="892">
+    <P Name="Position">[0, 243, 30, 257]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Inport" Name="ic" SID="893">
+    <P Name="Position">[0, 308, 30, 322]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Sum" Name="add_valpha_comp" SID="905">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[450, 110, 470, 130]</P>
+    <P Name="ZOrder">297</P>
+  </Block>
+  <Block BlockType="Sum" Name="add_vbeta_comp" SID="906">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[475, 240, 495, 260]</P>
+    <P Name="ZOrder">298</P>
+  </Block>
+  <Block BlockType="Mux" Name="phase_comp_mux" SID="896">
+    <PortCounts in="3" out="1"/>
+    <P Name="Position">[275, 150, 285, 350]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Inputs">3</P>
+    <P Name="DisplayOption">bar</P>
+  </Block>
+  <Block BlockType="Fcn" Name="phase_to_valpha_comp" SID="903">
+    <P Name="Position">[325, 150, 430, 180]</P>
+    <P Name="ZOrder">295</P>
+    <P Name="Expr">(2/3)*(u[1]-0.5*u[2]-0.5*u[3])</P>
+  </Block>
+  <Block BlockType="Fcn" Name="phase_to_vbeta_comp" SID="904">
+    <P Name="Position">[325, 320, 430, 350]</P>
+    <P Name="ZOrder">296</P>
+    <P Name="Expr">0.577350269189626*(u[2]-u[3])</P>
+  </Block>
+  <Block BlockType="Fcn" Name="sign_a" SID="897">
+    <P Name="Position">[70, 170, 170, 200]</P>
+    <P Name="ZOrder">289</P>
+    <P Name="Expr">(u &gt; PMLSM_deadtime_current_eps_A) - (u &lt; -PMLSM_deadtime_current_eps_A)</P>
+  </Block>
+  <Block BlockType="Fcn" Name="sign_b" SID="899">
+    <P Name="Position">[70, 235, 170, 265]</P>
+    <P Name="ZOrder">291</P>
+    <P Name="Expr">(u &gt; PMLSM_deadtime_current_eps_A) - (u &lt; -PMLSM_deadtime_current_eps_A)</P>
+  </Block>
+  <Block BlockType="Fcn" Name="sign_c" SID="901">
+    <P Name="Position">[70, 300, 170, 330]</P>
+    <P Name="ZOrder">293</P>
+    <P Name="Expr">(u &gt; PMLSM_deadtime_current_eps_A) - (u &lt; -PMLSM_deadtime_current_eps_A)</P>
+  </Block>
+  <Block BlockType="Gain" Name="vcomp_a" SID="898">
+    <P Name="Position">[190, 170, 235, 200]</P>
+    <P Name="ZOrder">290</P>
+    <P Name="Gain">Udc*PMLSM_deadtime_ratio*DeadTime_Comp_Enable</P>
+  </Block>
+  <Block BlockType="Gain" Name="vcomp_b" SID="900">
+    <P Name="Position">[190, 235, 235, 265]</P>
+    <P Name="ZOrder">292</P>
+    <P Name="Gain">Udc*PMLSM_deadtime_ratio*DeadTime_Comp_Enable</P>
+  </Block>
+  <Block BlockType="Gain" Name="vcomp_c" SID="902">
+    <P Name="Position">[190, 300, 235, 330]</P>
+    <P Name="ZOrder">294</P>
+    <P Name="Gain">Udc*PMLSM_deadtime_ratio*DeadTime_Comp_Enable</P>
+  </Block>
+  <Block BlockType="Outport" Name="Valpha_comp" SID="894">
+    <P Name="Position">[585, 113, 615, 127]</P>
+    <P Name="ZOrder">6</P>
+  </Block>
+  <Block BlockType="Outport" Name="Vbeta_comp" SID="895">
+    <P Name="Position">[585, 243, 615, 257]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">891#out:1</P>
+    <P Name="Dst">897#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">897#out:1</P>
+    <P Name="Dst">898#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">898#out:1</P>
+    <P Name="Dst">896#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">892#out:1</P>
+    <P Name="Dst">899#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Src">899#out:1</P>
+    <P Name="Dst">900#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">900#out:1</P>
+    <P Name="Dst">896#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">893#out:1</P>
+    <P Name="Dst">901#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">901#out:1</P>
+    <P Name="Dst">902#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">10</P>
+    <P Name="Src">902#out:1</P>
+    <P Name="Dst">896#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">889#out:1</P>
+    <P Name="Points">[65, 0]</P>
+    <P Name="Dst">905#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">12</P>
+    <P Name="Src">890#out:1</P>
+    <P Name="Points">[90, 0]</P>
+    <P Name="Dst">906#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">903#out:1</P>
+    <P Name="Points">[25, 0]</P>
+    <P Name="Dst">905#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">14</P>
+    <P Name="Src">904#out:1</P>
+    <P Name="Points">[50, 0]</P>
+    <P Name="Dst">906#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">15</P>
+    <P Name="Src">905#out:1</P>
+    <P Name="Dst">894#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">906#out:1</P>
+    <P Name="Dst">895#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">18</P>
+    <P Name="Src">896#out:1</P>
+    <P Name="Points">[5, 0]</P>
+    <Branch>
+      <P Name="ZOrder">24</P>
+      <P Name="Points">[0, -85]</P>
+      <P Name="Dst">903#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">19</P>
+      <P Name="Points">[0, 85]</P>
+      <P Name="Dst">904#in:1</P>
+    </Branch>
+  </Line>
+</System>

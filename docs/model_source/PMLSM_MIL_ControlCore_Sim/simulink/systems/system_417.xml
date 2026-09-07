@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[223, 338, 826, 833]</P>
+  <P Name="SIDHighWatermark">44</P>
+  <Block BlockType="Inport" Name="t" SID="417::1">
+    <P Name="Position">[20, 101, 40, 119]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="Inport" Name="init_done" SID="417::28">
+    <P Name="Position">[20, 136, 40, 154]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="MIL_Mode" SID="417::29">
+    <P Name="Position">[20, 171, 40, 189]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Demux" Name=" Demux " SID="417::43">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[270, 425, 320, 465]</P>
+    <P Name="ZOrder">29</P>
+    <P Name="Outputs">1</P>
+  </Block>
+  <Block BlockType="S-Function" Name=" SFunction " SID="417::42">
+    <P Name="Tag">Stateflow S-Function 2</P>
+    <PortCounts in="3" out="9"/>
+    <P Name="Position">[180, 100, 230, 300]</P>
+    <P Name="ZOrder">28</P>
+    <P Name="FunctionName">sf_sfun</P>
+    <P Name="Parameters">MIL_EnableTime_s,MIL_Fault_Start_s,MIL_Fault_Test_Case,MIL_InitDoneDelay_s,MIL_Ts_s</P>
+    <P Name="PortCounts">[3 9]</P>
+    <P Name="SFunctionDeploymentMode">off</P>
+    <P Name="EnableBusSupport">off</P>
+    <P Name="SFcnIsStateOwnerBlock">off</P>
+    <PortProperties>
+      <Port Type="out" Index="2">
+        <P Name="Name">enable_cmd</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="Name">fault_i</P>
+      </Port>
+      <Port Type="out" Index="4">
+        <P Name="Name">fault_u</P>
+      </Port>
+      <Port Type="out" Index="5">
+        <P Name="Name">close_loop_en</P>
+      </Port>
+      <Port Type="out" Index="6">
+        <P Name="Name">init_start</P>
+      </Port>
+      <Port Type="out" Index="7">
+        <P Name="Name">init_reset</P>
+      </Port>
+      <Port Type="out" Index="8">
+        <P Name="Name">pi_reset_en</P>
+      </Port>
+      <Port Type="out" Index="9">
+        <P Name="Name">pwm_enable</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Terminator" Name=" Terminator " SID="417::44">
+    <P Name="Position">[460, 436, 480, 454]</P>
+    <P Name="ZOrder">30</P>
+  </Block>
+  <Block BlockType="Outport" Name="enable_cmd" SID="417::5">
+    <P Name="Position">[460, 101, 480, 119]</P>
+    <P Name="ZOrder">-5</P>
+  </Block>
+  <Block BlockType="Outport" Name="fault_i" SID="417::30">
+    <P Name="Position">[460, 136, 480, 154]</P>
+    <P Name="ZOrder">21</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="fault_u" SID="417::31">
+    <P Name="Position">[460, 171, 480, 189]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="close_loop_en" SID="417::32">
+    <P Name="Position">[460, 206, 480, 224]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Outport" Name="init_start" SID="417::33">
+    <P Name="Position">[460, 246, 480, 264]</P>
+    <P Name="ZOrder">24</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Outport" Name="init_reset" SID="417::34">
+    <P Name="Position">[460, 281, 480, 299]</P>
+    <P Name="ZOrder">25</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Outport" Name="pi_reset_en" SID="417::35">
+    <P Name="Position">[460, 316, 480, 334]</P>
+    <P Name="ZOrder">26</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Outport" Name="pwm_enable" SID="417::36">
+    <P Name="Position">[460, 351, 480, 369]</P>
+    <P Name="ZOrder">27</P>
+    <P Name="Port">8</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">225</P>
+    <P Name="Src">417::1#out:1</P>
+    <P Name="Dst">417::42#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">226</P>
+    <P Name="Src">417::28#out:1</P>
+    <P Name="Dst">417::42#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">227</P>
+    <P Name="Src">417::29#out:1</P>
+    <P Name="Dst">417::42#in:3</P>
+  </Line>
+  <Line>
+    <P Name="Name">enable_cmd</P>
+    <P Name="ZOrder">228</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">417::42#out:2</P>
+    <P Name="Dst">417::5#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">fault_i</P>
+    <P Name="ZOrder">229</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">417::42#out:3</P>
+    <P Name="Dst">417::30#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">fault_u</P>
+    <P Name="ZOrder">230</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">417::42#out:4</P>
+    <P Name="Dst">417::31#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">close_loop_en</P>
+    <P Name="ZOrder">231</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">417::42#out:5</P>
+    <P Name="Dst">417::32#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">init_start</P>
+    <P Name="ZOrder">232</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">417::42#out:6</P>
+    <P Name="Dst">417::33#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">init_reset</P>
+    <P Name="ZOrder">233</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">417::42#out:7</P>
+    <P Name="Dst">417::34#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">pi_reset_en</P>
+    <P Name="ZOrder">234</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">417::42#out:8</P>
+    <P Name="Dst">417::35#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">pwm_enable</P>
+    <P Name="ZOrder">235</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">417::42#out:9</P>
+    <P Name="Dst">417::36#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">236</P>
+    <P Name="Src">417::43#out:1</P>
+    <P Name="Dst">417::44#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">237</P>
+    <P Name="Src">417::42#out:1</P>
+    <P Name="Points">[20, 0]</P>
+    <P Name="Dst">417::43#in:1</P>
+  </Line>
+</System>
