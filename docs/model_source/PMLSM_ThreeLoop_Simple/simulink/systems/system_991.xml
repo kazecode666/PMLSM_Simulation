@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">125</P>
+  <Block BlockType="Inport" Name="iq_ref_normal" SID="992">
+    <P Name="Position">[405, 368, 435, 382]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Inport" Name="v_ref_pos" SID="993">
+    <P Name="Position">[395, 483, 425, 497]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">2</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_v_ref_pos</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="Pos_Loop_EN" SID="994">
+    <P Name="Position">[395, 543, 425, 557]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">3</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">Position_Loop_EN</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="Close_Loop_EN" SID="996">
+    <P Name="Position">[765, 603, 795, 617]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">4</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">Close_Loop_EN</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="v_ref_cmd" SID="1087">
+    <P Name="Position">[270, 603, 300, 617]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">5</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">v_ref_cmd</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="id_ref_cmd" SID="1088">
+    <P Name="Position">[900, 313, 930, 327]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">6</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">id_ref_cmd</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="Iq_Test_Mode" SID="1089">
+    <P Name="Position">[405, 308, 435, 322]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">7</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">iq_test_mode</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="iq_test_ref" SID="1090">
+    <P Name="Position">[405, 248, 435, 262]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">8</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">iq_test_ref</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Constant" Name="Constant15" SID="1004">
+    <P Name="Position">[765, 657, 795, 683]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">0</P>
+  </Block>
+  <Block BlockType="Saturate" Name="Saturation" SID="1020">
+    <P Name="Position">[760, 535, 790, 565]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="UpperLimit">v_ref_max</P>
+    <P Name="LowerLimit">-v_ref_max</P>
+  </Block>
+  <Block BlockType="Switch" Name="Switch" SID="1021">
+    <P Name="Position">[620, 222, 700, 408]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Switch" Name="Switch9" SID="1028">
+    <P Name="Position">[845, 522, 930, 698]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Switch" Name="v_ref_closed_sel" SID="1029">
+    <P Name="Position">[500, 475, 550, 625]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">v_ref_closed</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="SubSystem" Name="v_ref_set_slew_limiter" SID="1030">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[610, 520, 710, 580]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_1030"/>
+  </Block>
+  <Block BlockType="Outport" Name="id_ref" SID="1037">
+    <P Name="Position">[975, 313, 1005, 327]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Outport" Name="iq_ref" SID="1038">
+    <P Name="Position">[765, 308, 795, 322]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="v_ref" SID="1039">
+    <P Name="Position">[975, 603, 1005, 617]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">54</P>
+    <P Name="Src">1021#out:1</P>
+    <P Name="Dst">1038#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">55</P>
+    <P Name="Src">1028#out:1</P>
+    <P Name="Dst">1039#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">57</P>
+    <P Name="Src">996#out:1</P>
+    <P Name="Dst">1028#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">59</P>
+    <P Name="Src">1090#out:1</P>
+    <P Name="Dst">1021#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">60</P>
+    <P Name="Src">1089#out:1</P>
+    <P Name="Dst">1021#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">61</P>
+    <P Name="Src">1004#out:1</P>
+    <P Name="Dst">1028#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">65</P>
+    <P Name="Src">992#out:1</P>
+    <P Name="Dst">1021#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">67</P>
+    <P Name="Src">1088#out:1</P>
+    <P Name="Dst">1037#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">75</P>
+    <P Name="Src">1030#out:1</P>
+    <P Name="Dst">1020#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">76</P>
+    <P Name="Src">993#out:1</P>
+    <P Name="Points">[28, 0; 0, 10]</P>
+    <P Name="Dst">1029#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">v_ref_closed</P>
+    <P Name="ZOrder">77</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">1029#out:1</P>
+    <P Name="Dst">1030#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">78</P>
+    <P Name="Src">994#out:1</P>
+    <P Name="Dst">1029#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">79</P>
+    <P Name="Src">1020#out:1</P>
+    <P Name="Dst">1028#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">80</P>
+    <P Name="Src">1087#out:1</P>
+    <P Name="Points">[153, 0; 0, -10]</P>
+    <P Name="Dst">1029#in:3</P>
+  </Line>
+</System>

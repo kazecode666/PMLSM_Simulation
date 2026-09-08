@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">125</P>
+  <Block BlockType="Inport" Name="Angle_Init_EN" SID="1190">
+    <P Name="Position">[350, 258, 380, 272]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Inport" Name="v_ref" SID="1192">
+    <P Name="Position">[175, 683, 205, 697]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="abs_v_ref" SID="1193">
+    <P Name="Position">[355, 168, 385, 182]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="e_v" SID="1195">
+    <P Name="Position">[235, 718, 265, 732]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">4</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">e_v_ASR</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Reference" Name="Compare&#xA;To Constant1" SID="1196">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[385, 697, 480, 723]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="LibraryVersion">9.1</P>
+    <P Name="SourceBlock">simulink/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="relop">&lt;</P>
+      <P Name="const">-v_over_eps</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Reference" Name="Compare&#xA;To Constant2" SID="1197">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[340, 497, 440, 533]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="LibraryVersion">9.1</P>
+    <P Name="SourceBlock">simulink/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="relop">&lt;</P>
+      <P Name="const">v_ref_zero_eps</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="Reference" Name="Compare&#xA;To Constant4" SID="1199">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[380, 637, 475, 663]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="LibraryVersion">9.1</P>
+    <P Name="SourceBlock">simulink/Logic and Bit
+Operations/Compare
+To Constant</P>
+    <P Name="SourceType">Compare To Constant</P>
+    <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="ContentPreviewEnabled">on</P>
+      <P Name="relop">&gt;</P>
+      <P Name="const">v_ff_eps</P>
+      <P Name="OutDataTypeStr">boolean</P>
+      <P Name="ZeroCross">on</P>
+    </InstanceData>
+  </Block>
+  <Block BlockType="DataStoreRead" Name="Constant" SID="1200">
+    <PortCounts out="1"/>
+    <P Name="Position">[330, 295, 400, 325]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="DataStoreName">PI_Reset_EN_cmd</P>
+    <P Name="IndexOptions">Index vector (dialog)</P>
+    <P Name="Indices">1</P>
+    <P Name="OutputSizes">1</P>
+  </Block>
+  <Block BlockType="DataStoreRead" Name="Constant2" SID="1201">
+    <PortCounts out="1"/>
+    <P Name="Position">[325, 385, 405, 415]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="DataStoreName">Iq_Test_Mode_cmd</P>
+    <P Name="IndexOptions">Index vector (dialog)</P>
+    <P Name="Indices">1</P>
+    <P Name="OutputSizes">1</P>
+  </Block>
+  <Block BlockType="DataStoreRead" Name="Constant3" SID="1202">
+    <PortCounts out="1"/>
+    <P Name="Position">[220, 430, 315, 460]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="DataStoreName">Close_Loop_EN_cmd</P>
+    <P Name="IndexOptions">Index vector (dialog)</P>
+    <P Name="Indices">1</P>
+    <P Name="OutputSizes">1</P>
+  </Block>
+  <Block BlockType="From" Name="From" SID="1203">
+    <P Name="Position">[835, 603, 975, 637]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ASR_RefZero_IntReset</P>
+  </Block>
+  <Block BlockType="From" Name="From10" SID="1204">
+    <P Name="Position">[835, 336, 930, 374]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ASR_Hard_Reset</P>
+  </Block>
+  <Block BlockType="From" Name="From12" SID="1206">
+    <P Name="Position">[835, 551, 930, 589]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ASR_Over_Reset</P>
+  </Block>
+  <Block BlockType="From" Name="From5" SID="1207">
+    <P Name="Position">[205, 501, 285, 529]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">abs_v_ref</P>
+  </Block>
+  <Block BlockType="From" Name="From7" SID="1209">
+    <P Name="Position">[270, 636, 350, 664]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">abs_v_ref</P>
+  </Block>
+  <Block BlockType="Goto" Name="Goto" SID="1210">
+    <P Name="Position">[480, 160, 550, 190]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">abs_v_ref</P>
+  </Block>
+  <Block BlockType="Goto" Name="Goto2" SID="1212">
+    <P Name="Position">[640, 455, 775, 495]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ASR_RefZero_IntReset</P>
+  </Block>
+  <Block BlockType="Goto" Name="Goto5" SID="1213">
+    <P Name="Position">[670, 661, 775, 699]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ASR_Over_Reset</P>
+  </Block>
+  <Block BlockType="Goto" Name="Goto8" SID="1215">
+    <P Name="Position">[670, 337, 775, 373]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ASR_Hard_Reset</P>
+  </Block>
+  <Block BlockType="Logic" Name="Logical&#xA;Operator" SID="1216">
+    <PortCounts in="3" out="1"/>
+    <P Name="Position">[1035, 447, 1075, 643]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Operator">OR</P>
+    <P Name="Inputs">3</P>
+    <P Name="AllPortsSameDT">off</P>
+    <P Name="OutDataTypeStr">boolean</P>
+  </Block>
+  <Block BlockType="Logic" Name="Logical&#xA;Operator1" SID="1217">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[515, 622, 540, 738]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="AllPortsSameDT">off</P>
+    <P Name="OutDataTypeStr">boolean</P>
+  </Block>
+  <Block BlockType="Logic" Name="Logical&#xA;Operator2" SID="1218">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[350, 429, 380, 461]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Operator">NOT</P>
+    <P Name="AllPortsSameDT">off</P>
+    <P Name="OutDataTypeStr">boolean</P>
+  </Block>
+  <Block BlockType="Logic" Name="Logical&#xA;Operator3" SID="1219">
+    <PortCounts in="4" out="1"/>
+    <P Name="Position">[510, 244, 540, 471]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Operator">OR</P>
+    <P Name="Inputs">4</P>
+    <P Name="AllPortsSameDT">off</P>
+    <P Name="OutDataTypeStr">boolean</P>
+  </Block>
+  <Block BlockType="Product" Name="Product2" SID="1222">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[320, 674, 350, 741]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Signum" Name="Sign" SID="1223">
+    <P Name="Position">[235, 675, 265, 705]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Outport" Name="pi_hard_reset" SID="1224">
+    <P Name="Position">[390, 853, 420, 867]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Outport" Name="speed_int_reset" SID="1225">
+    <P Name="Position">[1180, 538, 1210, 552]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">35</P>
+    <P Name="Src">1197#out:1</P>
+    <P Name="Points">[27, 0; 0, -40]</P>
+    <P Name="Dst">1212#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">1207#out:1</P>
+    <P Name="Dst">1197#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">10</P>
+    <P Name="Src">1209#out:1</P>
+    <P Name="Dst">1199#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">1195#out:1</P>
+    <P Name="Dst">1222#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">1223#out:1</P>
+    <P Name="Dst">1222#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">14</P>
+    <P Name="Src">1222#out:1</P>
+    <P Name="Dst">1196#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">15</P>
+    <P Name="Src">1196#out:1</P>
+    <P Name="Dst">1217#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">1199#out:1</P>
+    <P Name="Dst">1217#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">18</P>
+    <P Name="Src">1192#out:1</P>
+    <P Name="Dst">1223#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">19</P>
+    <P Name="Src">1193#out:1</P>
+    <P Name="Dst">1210#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">33</P>
+    <P Name="Src">1217#out:1</P>
+    <P Name="Dst">1213#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">47</P>
+    <P Name="Src">1203#out:1</P>
+    <P Name="Points">[27, 0; 0, -10]</P>
+    <P Name="Dst">1216#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">48</P>
+    <P Name="Src">1216#out:1</P>
+    <P Name="Dst">1225#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">49</P>
+    <P Name="Src">1206#out:1</P>
+    <P Name="Points">[58, 0; 0, -25]</P>
+    <P Name="Dst">1216#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">51</P>
+    <P Name="Src">1204#out:1</P>
+    <P Name="Points">[49, 0; 0, 444; -635, 0]</P>
+    <Branch>
+      <P Name="ZOrder">61</P>
+      <P Name="Points">[0, 61]</P>
+      <P Name="Dst">1224#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">52</P>
+      <P Name="Points">[0, -2; 651, 0; 0, -317]</P>
+      <P Name="Dst">1216#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">53</P>
+    <P Name="Src">1219#out:1</P>
+    <P Name="Points">[60, 0; 0, -5]</P>
+    <P Name="Dst">1215#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">54</P>
+    <P Name="Src">1190#out:1</P>
+    <P Name="Points">[82, 0; 0, 10]</P>
+    <P Name="Dst">1219#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">55</P>
+    <P Name="Src">1218#out:1</P>
+    <P Name="Points">[82, 0; 0, -5]</P>
+    <P Name="Dst">1219#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">56</P>
+    <P Name="Src">1201#out:1</P>
+    <P Name="Points">[28, 0; 0, -15]</P>
+    <P Name="Dst">1219#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">57</P>
+    <P Name="Src">1202#out:1</P>
+    <P Name="Dst">1218#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">58</P>
+    <P Name="Src">1200#out:1</P>
+    <P Name="Points">[46, 0; 0, 20]</P>
+    <P Name="Dst">1219#in:2</P>
+  </Line>
+</System>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WindowsInfo>
+  <Object PropName="BdWindowsInfo" ObjectID="1" ClassName="Simulink.BDWindowsInfo">
+    <Object PropName="WindowsInfo" ObjectID="2" ClassName="Simulink.WindowInfo">
+      <P Name="IsActive" Class="logical">1</P>
+      <P Name="Location" Class="double">[0.0, -8.0, 2560.0, 1448.0]</P>
+      <Object PropName="ModelBrowserInfo" ObjectID="3" ClassName="Simulink.ModelBrowserInfo">
+        <P Name="Visible" Class="logical">0</P>
+        <P Name="DockPosition" Class="char">Left</P>
+        <P Name="Width" Class="int32">50</P>
+        <P Name="Height" Class="int32">50</P>
+        <P Name="Filter" Class="int32">9</P>
+        <P Name="Minimized" Class="char">Unset</P>
+      </Object>
+      <Object PropName="ExplorerBarInfo" ObjectID="4" ClassName="Simulink.ExplorerBarInfo">
+        <P Name="Visible" Class="logical">1</P>
+      </Object>
+      <Array PropName="EditorsInfo" Type="Simulink.EditorInfo" Dimension="1*29">
+        <Object ObjectID="5">
+          <P Name="IsActive" Class="logical">1</P>
+          <P Name="IsTabbed" Class="logical">1</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">771</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.3559959349593496</P>
+          <P Name="Offset" Class="double">[-328.603222025405, -104.44260084653331]</P>
+          <P Name="SceneRectInView" Class="double">[-328.603222025405, -104.44260084653331, 1862.837442853931, 894.54545454545462]</P>
+        </Object>
+        <Object ObjectID="6">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkTopLevel</P>
+          <P Name="LoadSaveID" Class="char">0</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.0</P>
+          <P Name="Offset" Class="double">[-411.38126663580738, -42.662167010082726]</P>
+          <P Name="SceneRectInView" Class="double">[-411.38126663580738, -42.662167010082726, 2526.0, 1213.0]</P>
+        </Object>
+        <Object ObjectID="7">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">StudioAdapterBlock</P>
+          <P Name="LoadSaveID" Class="char">523</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.0</P>
+          <P Name="Offset" Class="double">[0.0, 0.0]</P>
+          <P Name="SceneRectInView" Class="double">[0.0, 0.0, 0.0, 0.0]</P>
+        </Object>
+        <Object ObjectID="8">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">991</P>
+          <P Name="Extents" Class="double">[2526.0, 1001.0]</P>
+          <P Name="ZoomFactor" Class="double">1.25</P>
+          <P Name="Offset" Class="double">[-366.84885819317003, -167.3316177070779]</P>
+          <P Name="SceneRectInView" Class="double">[-366.84885819317003, -167.3316177070779, 2020.8, 800.8]</P>
+        </Object>
+        <Object ObjectID="9">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">505</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.0</P>
+          <P Name="Offset" Class="double">[-485.15034258220561, -103.29040285165718]</P>
+          <P Name="SceneRectInView" Class="double">[-485.15034258220561, -103.29040285165718, 2526.0, 1213.0]</P>
+        </Object>
+        <Object ObjectID="10">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">191</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.25</P>
+          <P Name="Offset" Class="double">[-431.64541584495959, -158.32116459809893]</P>
+          <P Name="SceneRectInView" Class="double">[-431.64541584495959, -158.32116459809893, 2020.8, 970.4]</P>
+        </Object>
+        <Object ObjectID="11">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">1109</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.5</P>
+          <P Name="Offset" Class="double">[-445.328125, -232.5]</P>
+          <P Name="SceneRectInView" Class="double">[-445.328125, -232.5, 1684.0, 808.66666666666663]</P>
+        </Object>
+        <Object ObjectID="12">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">1122</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.25</P>
+          <P Name="Offset" Class="double">[-162.09198312236302, 121.80294554309444]</P>
+          <P Name="SceneRectInView" Class="double">[-162.09198312236302, 121.80294554309444, 2020.8, 970.4]</P>
+        </Object>
+        <Object ObjectID="13">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">1342</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.25</P>
+          <P Name="Offset" Class="double">[-375.34062500000005, -68.199999999999989]</P>
+          <P Name="SceneRectInView" Class="double">[-375.34062500000005, -68.199999999999989, 2020.8, 970.4]</P>
+        </Object>
+        <Object ObjectID="14">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">546</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.25</P>
+          <P Name="Offset" Class="double">[-455.02977070192503, -264.48149777401926]</P>
+          <P Name="SceneRectInView" Class="double">[-455.02977070192503, -264.48149777401926, 2020.8, 970.4]</P>
+        </Object>
+        <Object ObjectID="15">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">790</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.25</P>
+          <P Name="Offset" Class="double">[-318.96027068314942, -74.1660934337436]</P>
+          <P Name="SceneRectInView" Class="double">[-318.96027068314942, -74.1660934337436, 2020.8, 970.4]</P>
+        </Object>
+        <Object ObjectID="16">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">866</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.75</P>
+          <P Name="Offset" Class="double">[-285.72194700460892, -66.613767281105879]</P>
+          <P Name="SceneRectInView" Class="double">[-285.72194700460892, -66.613767281105879, 1443.4285714285713, 693.14285714285711]</P>
+        </Object>
+        <Object ObjectID="17">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">591</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.5</P>
+          <P Name="Offset" Class="double">[-499.29218648789907, -225.81143956345932]</P>
+          <P Name="SceneRectInView" Class="double">[-499.29218648789907, -225.81143956345932, 1684.0, 808.66666666666663]</P>
+        </Object>
+        <Object ObjectID="18">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">1189</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.25</P>
+          <P Name="Offset" Class="double">[-307.15, -30.799999999999955]</P>
+          <P Name="SceneRectInView" Class="double">[-307.15, -30.799999999999955, 2020.8, 970.4]</P>
+        </Object>
+        <Object ObjectID="19">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">1030</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.55</P>
+          <P Name="Offset" Class="double">[-516.24105342741939, -156.58064516129031]</P>
+          <P Name="SceneRectInView" Class="double">[-516.24105342741939, -156.58064516129031, 1629.6774193548388, 782.58064516129025]</P>
+        </Object>
+        <Object ObjectID="20">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">566</P>
+          <P Name="Extents" Class="double">[946.0, 516.0]</P>
+          <P Name="ZoomFactor" Class="double">1.91</P>
+          <P Name="Offset" Class="double">[167.60602094240838, 10.921465968586375]</P>
+          <P Name="SceneRectInView" Class="double">[167.60602094240838, 10.921465968586375, 495.28795811518324, 270.15706806282725]</P>
+        </Object>
+        <Object ObjectID="21">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">531</P>
+          <P Name="Extents" Class="double">[2526.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.9172034539559328</P>
+          <P Name="Offset" Class="double">[-124.4243678635296, -199.84618576789842]</P>
+          <P Name="SceneRectInView" Class="double">[-124.4243678635296, -199.84618576789842, 1317.5440482270592, 632.69237153579684]</P>
+        </Object>
+        <Object ObjectID="22">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">1047</P>
+          <P Name="Extents" Class="double">[946.0, 516.0]</P>
+          <P Name="ZoomFactor" Class="double">0.82993197278911557</P>
+          <P Name="Offset" Class="double">[133.4643954918032, 143.13114754098359]</P>
+          <P Name="SceneRectInView" Class="double">[133.4643954918032, 143.13114754098359, 1139.8524590163936, 621.73770491803282]</P>
+        </Object>
+        <Object ObjectID="23">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">618</P>
+          <P Name="Extents" Class="double">[2460.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">2.0</P>
+          <P Name="Offset" Class="double">[-261.17578125, -100.0]</P>
+          <P Name="SceneRectInView" Class="double">[-261.17578125, -100.0, 1230.0, 606.5]</P>
+        </Object>
+        <Object ObjectID="24">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">621</P>
+          <P Name="Extents" Class="double">[2460.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.6499999999999997</P>
+          <P Name="Offset" Class="double">[-280.82563920454561, -83.772727272727309]</P>
+          <P Name="SceneRectInView" Class="double">[-280.82563920454561, -83.772727272727309, 1490.9090909090912, 735.15151515151524]</P>
+        </Object>
+        <Object ObjectID="25">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">740</P>
+          <P Name="Extents" Class="double">[2460.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.75</P>
+          <P Name="Offset" Class="double">[-233.36784656675295, -51.204364089844908]</P>
+          <P Name="SceneRectInView" Class="double">[-233.36784656675295, -51.204364089844908, 1405.7142857142858, 693.14285714285711]</P>
+        </Object>
+        <Object ObjectID="26">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">524</P>
+          <P Name="Extents" Class="double">[894.0, 524.0]</P>
+          <P Name="ZoomFactor" Class="double">1.9088028654084586</P>
+          <P Name="Offset" Class="double">[9.4702475461893982, -44.258804849884513]</P>
+          <P Name="SceneRectInView" Class="double">[9.4702475461893982, -44.258804849884513, 468.3563799076212, 274.517609699769]</P>
+        </Object>
+        <Object ObjectID="27">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">814</P>
+          <P Name="Extents" Class="double">[2460.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.25</P>
+          <P Name="Offset" Class="double">[-801.04772410535247, -190.32370446607644]</P>
+          <P Name="SceneRectInView" Class="double">[-801.04772410535247, -190.32370446607644, 1968.0, 970.4]</P>
+        </Object>
+        <Object ObjectID="28">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">829</P>
+          <P Name="Extents" Class="double">[2460.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.5</P>
+          <P Name="Offset" Class="double">[-458.76190476190476, -244.87451523770278]</P>
+          <P Name="SceneRectInView" Class="double">[-458.76190476190476, -244.87451523770278, 1640.0, 808.66666666666663]</P>
+        </Object>
+        <Object ObjectID="29">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">844</P>
+          <P Name="Extents" Class="double">[2460.0, 1213.0]</P>
+          <P Name="ZoomFactor" Class="double">1.75</P>
+          <P Name="Offset" Class="double">[-275.45714285714286, -106.79999999999994]</P>
+          <P Name="SceneRectInView" Class="double">[-275.45714285714286, -106.79999999999994, 1405.7142857142858, 693.14285714285711]</P>
+        </Object>
+        <Object ObjectID="30">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">55</P>
+          <P Name="Extents" Class="double">[894.0, 524.0]</P>
+          <P Name="ZoomFactor" Class="double">2.6382978723404253</P>
+          <P Name="Offset" Class="double">[16.756174395161281, 297.69354838709677]</P>
+          <P Name="SceneRectInView" Class="double">[16.756174395161281, 297.69354838709677, 338.85483870967744, 198.61290322580646]</P>
+        </Object>
+        <Object ObjectID="31">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">270</P>
+          <P Name="Extents" Class="double">[894.0, 524.0]</P>
+          <P Name="ZoomFactor" Class="double">1.9099999999999997</P>
+          <P Name="Offset" Class="double">[281.21858638743453, 8.8272251308900422]</P>
+          <P Name="SceneRectInView" Class="double">[281.21858638743453, 8.8272251308900422, 468.06282722513095, 274.34554973821992]</P>
+        </Object>
+        <Object ObjectID="32">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">298</P>
+          <P Name="Extents" Class="double">[894.0, 524.0]</P>
+          <P Name="ZoomFactor" Class="double">1.5</P>
+          <P Name="Offset" Class="double">[0.93359375, 29.333333333333343]</P>
+          <P Name="SceneRectInView" Class="double">[0.93359375, 29.333333333333343, 596.0, 349.33333333333331]</P>
+        </Object>
+        <Object ObjectID="33">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">68</P>
+          <P Name="Extents" Class="double">[894.0, 524.0]</P>
+          <P Name="ZoomFactor" Class="double">0.34758234057463211</P>
+          <P Name="Offset" Class="double">[-798.70589717741927, -19.278225806451587]</P>
+          <P Name="SceneRectInView" Class="double">[-798.70589717741927, -19.278225806451587, 2572.0524193548385, 1507.5564516129032]</P>
+        </Object>
+      </Array>
+      <Array PropName="DockComponentsInfo" Type="Simulink.DockComponentInfo" Dimension="1*2">
+        <Object ObjectID="34">
+          <P Name="Type" Class="char">GLUE2:PropertyInspector</P>
+          <P Name="ID" Class="char">Property Inspector</P>
+          <P Name="Visible" Class="logical">0</P>
+          <P Name="CreateCallback" Class="char"/>
+          <P Name="UserData" Class="char"/>
+          <P Name="Floating" Class="logical">0</P>
+          <P Name="DockPosition" Class="char">Right</P>
+          <P Name="Width" Class="int32">640</P>
+          <P Name="Height" Class="int32">480</P>
+          <P Name="Minimized" Class="char">Unset</P>
+        </Object>
+        <Object ObjectID="35">
+          <P Name="Type" Class="char">Simulink:Editor:ReferencedFiles</P>
+          <P Name="ID" Class="char">Referenced Files</P>
+          <P Name="Visible" Class="logical">0</P>
+          <P Name="CreateCallback" Class="char"/>
+          <P Name="UserData" Class="char">{&quot;filterShowRefModels&quot;:&quot;true&quot;,&quot;filterShowRefSubs&quot;:&quot;true&quot;,&quot;filterShowOnlyDirtyFiles&quot;:&quot;false&quot;}
+</P>
+          <P Name="Floating" Class="logical">0</P>
+          <P Name="DockPosition" Class="char">Left</P>
+          <P Name="Width" Class="int32">640</P>
+          <P Name="Height" Class="int32">480</P>
+          <P Name="Minimized" Class="char">Unset</P>
+        </Object>
+      </Array>
+      <P Name="WindowState" Class="char">AAAA/wAAAAD9AAAAAwAAAAAAAAC9AAAE+vwCAAAABPsAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAAAAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAeQAABPoAAABjAP////sAAABgAFMAaQBtAHUAbABpAG4AawA6AEUAZABpAHQAbwByADoAUgBlAGYAZQByAGUAbgBjAGUAZABGAGkAbABlAHMALwBSAGUAZgBlAHIAZQBuAGMAZQBkACAARgBpAGwAZQBzAAAAAAD/////AAAAjAD///8AAAABAAAAAAAAAAD8AgAAAAH7AAAAVABHAEwAVQBFADIAOgBQAHIAbwBwAGUAcgB0AHkASQBuAHMAcABlAGMAdABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAawA////AAAAAwAACgAAAADQ/AEAAAAB+/////8AAAAAAP////8AAAJ5AP///wAACgAAAAT6AAAAAQAAAAIAAAABAAAAAvwAAAAA</P>
+      <Array PropName="PersistedApps" Type="Cell" Dimension="0*1"/>
+      <P Name="WindowUuid" Class="char">6f4b8c5f-dbea-49d8-8075-51f673ba07a0</P>
+    </Object>
+    <P Name="BDUuid" Class="char">3657fd1d-04c4-4454-b31d-abb2f4475a75</P>
+  </Object>
+</WindowsInfo>

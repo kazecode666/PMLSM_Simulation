@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">175</P>
+  <Block BlockType="Inport" Name="duty_a" SID="867">
+    <P Name="Position">[50, 93, 80, 107]</P>
+    <P Name="ZOrder">1</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">DutyU</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="duty_b" SID="868">
+    <P Name="Position">[50, 193, 80, 207]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">2</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">DutyV</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="duty_c" SID="869">
+    <P Name="Position">[50, 293, 80, 307]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Port">3</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">DutyW</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="ZeroOrderHold" Name="a_cmd_zoh" SID="870">
+    <P Name="Position">[170, 80, 225, 120]</P>
+    <P Name="ZOrder">30</P>
+    <P Name="SampleTime">Ts</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="a_half_Ts" SID="871">
+    <P Name="Position">[350, 80, 405, 120]</P>
+    <P Name="ZOrder">31</P>
+    <P Name="InitialCondition">PMLSM_pwm_period_counts/2</P>
+    <P Name="SampleTime">Ts/2</P>
+  </Block>
+  <Block BlockType="ZeroOrderHold" Name="b_cmd_zoh" SID="875">
+    <P Name="Position">[170, 180, 225, 220]</P>
+    <P Name="ZOrder">33</P>
+    <P Name="SampleTime">Ts</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="b_half_Ts" SID="876">
+    <P Name="Position">[350, 180, 405, 220]</P>
+    <P Name="ZOrder">34</P>
+    <P Name="InitialCondition">PMLSM_pwm_period_counts/2</P>
+    <P Name="SampleTime">Ts/2</P>
+  </Block>
+  <Block BlockType="ZeroOrderHold" Name="c_cmd_zoh" SID="878">
+    <P Name="Position">[170, 280, 225, 320]</P>
+    <P Name="ZOrder">36</P>
+    <P Name="SampleTime">Ts</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="c_half_Ts" SID="879">
+    <P Name="Position">[350, 280, 405, 320]</P>
+    <P Name="ZOrder">37</P>
+    <P Name="InitialCondition">PMLSM_pwm_period_counts/2</P>
+    <P Name="SampleTime">Ts/2</P>
+  </Block>
+  <Block BlockType="Outport" Name="duty_a_delayed" SID="902">
+    <P Name="Position">[525, 93, 555, 107]</P>
+    <P Name="ZOrder">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="duty_b_delayed" SID="903">
+    <P Name="Position">[525, 193, 555, 207]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="duty_c_delayed" SID="904">
+    <P Name="Position">[525, 293, 555, 307]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">94</P>
+    <P Name="Src">869#out:1</P>
+    <P Name="Dst">878#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">87</P>
+    <P Name="Src">868#out:1</P>
+    <P Name="Dst">875#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">80</P>
+    <P Name="Src">867#out:1</P>
+    <P Name="Dst">870#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">98</P>
+    <P Name="Src">879#out:1</P>
+    <P Name="Dst">904#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">99</P>
+    <P Name="Src">876#out:1</P>
+    <P Name="Dst">903#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">100</P>
+    <P Name="Src">871#out:1</P>
+    <P Name="Dst">902#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">101</P>
+    <P Name="Src">870#out:1</P>
+    <P Name="Dst">871#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">102</P>
+    <P Name="Src">875#out:1</P>
+    <P Name="Dst">876#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">103</P>
+    <P Name="Src">878#out:1</P>
+    <P Name="Dst">879#in:1</P>
+  </Line>
+</System>

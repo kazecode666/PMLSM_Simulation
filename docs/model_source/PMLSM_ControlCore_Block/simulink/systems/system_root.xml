@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <System>
   <P Name="Location">[0, -8, 2560, 1440]</P>
-  <P Name="Open">on</P>
   <P Name="ReportName">simulink-default.rpt</P>
   <P Name="SIDHighWatermark">1855</P>
   <Block BlockType="Inport" Name="ia" SID="819">

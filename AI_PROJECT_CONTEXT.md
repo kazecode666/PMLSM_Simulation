@@ -2,6 +2,11 @@
 
 ## Authoritative files
 
+- `PMLSM_ThreeLoop_Simple.slx`: independent three-loop algorithm simulation; current defaults are in `init_PMLSM_ThreeLoop_Simple.m`.
+- `design_PMLSM_three_loop.m`: motor-parameter-based three-loop tuning.
+- `pmlsm_scurve_profile.m`: smooth acceleration / cruise / deceleration position trajectory; required by Simple_Host.
+- `run_PMLSM_ThreeLoop_Simple(100)`: run the simple model with duration based on trajectory length. See `docs/ThreeLoop_SCurve.md` for current cruise-profile validation and historical dead-time comparison.
+
 - `PMLSM_MIL_ControlCore_Sim.slx`: main MIL plant/inverter/sensor/test-bench model.
 - `PMLSM_ControlCore_Block.slx`: referenced controller model.
 - Main InitFcn: `init_PMLSM_control_params; init_PMLSM_plant_params; init_PMLSM_mil_test_params;`

@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 
 root = Path(__file__).resolve().parents[1]
 lines = ['# Model text index', '', 'Generated from current SLX files. XML is read-only derived evidence.', '']
-for model in ('PMLSM_MIL_ControlCore_Sim', 'PMLSM_ControlCore_Block'):
+for model in ('PMLSM_MIL_ControlCore_Sim', 'PMLSM_ControlCore_Block', 'PMLSM_ThreeLoop_Simple'):
     src = root / (model + '.slx')
     lines += ['## ' + model, '', 'SHA256: `' + hashlib.sha256(src.read_bytes()).hexdigest() + '`', '', '| XML | SID | Name | Type |', '|---|---|---|---|']
     with zipfile.ZipFile(src) as archive:

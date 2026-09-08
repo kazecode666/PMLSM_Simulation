@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <System>
   <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="Open">on</P>
+  <P Name="ZoomFactor">150</P>
   <Block BlockType="Inport" Name="ia" SID="206">
-    <P Name="Position">[-155, 228, -125, 242]</P>
+    <P Name="Position">[-145, 228, -115, 242]</P>
     <P Name="ZOrder">100000</P>
   </Block>
   <Block BlockType="Inport" Name="ib" SID="207">
-    <P Name="Position">[-155, 323, -125, 337]</P>
+    <P Name="Position">[-145, 323, -115, 337]</P>
     <P Name="ZOrder">100000</P>
     <P Name="Port">2</P>
   </Block>
   <Block BlockType="Inport" Name="ic" SID="208">
-    <P Name="Position">[-155, 418, -125, 432]</P>
+    <P Name="Position">[-145, 418, -115, 432]</P>
     <P Name="ZOrder">100000</P>
     <P Name="Port">3</P>
   </Block>
@@ -87,7 +89,7 @@
   </Block>
   <Block BlockType="SubSystem" Name="Clack" SID="213">
     <PortCounts in="3" out="2"/>
-    <P Name="Position">[-45, 189, 70, 471]</P>
+    <P Name="Position">[-35, 189, 80, 471]</P>
     <P Name="ZOrder">100000</P>
     <P Name="TreatAsAtomicUnit">on</P>
     <P Name="RTWSystemCode">Reusable function</P>
@@ -290,7 +292,7 @@
     </PortProperties>
   </Block>
   <Block BlockType="From" Name="From7" SID="242">
-    <P Name="Position">[10, 489, 85, 521]</P>
+    <P Name="Position">[20, 489, 95, 521]</P>
     <P Name="ZOrder">100000</P>
     <P Name="ShowName">off</P>
     <P Name="GotoTag">etheta</P>
@@ -324,25 +326,25 @@
     </PortProperties>
   </Block>
   <Block BlockType="Goto" Name="Goto" SID="245">
-    <P Name="Position">[335, 342, 380, 358]</P>
+    <P Name="Position">[345, 342, 390, 358]</P>
     <P Name="ZOrder">100000</P>
     <P Name="ShowName">off</P>
     <P Name="GotoTag">id</P>
   </Block>
   <Block BlockType="Goto" Name="Goto1" SID="246">
-    <P Name="Position">[335, 406, 380, 424]</P>
+    <P Name="Position">[345, 406, 390, 424]</P>
     <P Name="ZOrder">100000</P>
     <P Name="ShowName">off</P>
     <P Name="GotoTag">iq</P>
   </Block>
   <Block BlockType="Goto" Name="Goto10" SID="908">
-    <P Name="Position">[-95, 346, -60, 364]</P>
+    <P Name="Position">[-85, 346, -50, 364]</P>
     <P Name="ZOrder">100000</P>
     <P Name="ShowName">off</P>
     <P Name="GotoTag">ib</P>
   </Block>
   <Block BlockType="Goto" Name="Goto11" SID="909">
-    <P Name="Position">[-95, 441, -60, 459]</P>
+    <P Name="Position">[-85, 441, -50, 459]</P>
     <P Name="ZOrder">100000</P>
     <P Name="ShowName">off</P>
     <P Name="GotoTag">ic</P>
@@ -390,7 +392,7 @@
     <P Name="GotoTag">etheta</P>
   </Block>
   <Block BlockType="Goto" Name="Goto9" SID="907">
-    <P Name="Position">[-95, 251, -60, 269]</P>
+    <P Name="Position">[-85, 251, -50, 269]</P>
     <P Name="ZOrder">100000</P>
     <P Name="ShowName">off</P>
     <P Name="GotoTag">ia</P>
@@ -454,7 +456,7 @@ Angle Transform</P>
   </Block>
   <Block BlockType="Reference" Name="Park Transform" SID="294">
     <PortCounts in="3" out="2"/>
-    <P Name="Position">[125, 231, 220, 519]</P>
+    <P Name="Position">[135, 231, 230, 519]</P>
     <P Name="ZOrder">100000</P>
     <P Name="HideAutomaticName">off</P>
     <P Name="LibrarySourceBlock">mcblib/Controls/Math Transforms/Park Transform</P>
@@ -758,11 +760,11 @@ Angle Transform</P>
     <P Name="GotoTag">uq_raw</P>
   </Block>
   <Block BlockType="Outport" Name="obs_id" SID="459">
-    <P Name="Position">[345, 298, 375, 312]</P>
+    <P Name="Position">[355, 298, 385, 312]</P>
     <P Name="ZOrder">100000</P>
   </Block>
   <Block BlockType="Outport" Name="obs_iq" SID="460">
-    <P Name="Position">[345, 443, 375, 457]</P>
+    <P Name="Position">[355, 443, 385, 457]</P>
     <P Name="ZOrder">100000</P>
     <P Name="Port">2</P>
   </Block>

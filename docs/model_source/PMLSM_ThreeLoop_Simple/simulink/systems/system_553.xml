@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -7, 1707, 960]</P>
+  <P Name="ZoomFactor">121</P>
+  <Block BlockType="Inport" Name="ia" SID="554">
+    <P Name="Position">[20, 33, 50, 47]</P>
+    <P Name="ZOrder">10</P>
+  </Block>
+  <Block BlockType="Inport" Name="ib" SID="555">
+    <P Name="Position">[20, 68, 50, 82]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="ic" SID="556">
+    <P Name="Position">[20, 103, 50, 117]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Sum" Name="Add" SID="557">
+    <PortCounts in="3" out="1"/>
+    <P Name="Position">[200, 23, 220, 127]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">+--</P>
+  </Block>
+  <Block BlockType="Sum" Name="Add1" SID="558">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[200, 147, 220, 178]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">+-</P>
+  </Block>
+  <Block BlockType="Gain" Name="Gain" SID="559">
+    <P Name="Position">[140, 60, 170, 90]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Gain">0.5</P>
+  </Block>
+  <Block BlockType="Gain" Name="Gain1" SID="560">
+    <P Name="Position">[140, 95, 170, 125]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Gain">0.5</P>
+  </Block>
+  <Block BlockType="Gain" Name="Gain2" SID="561">
+    <P Name="Position">[250, 60, 390, 90]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Gain">2/3</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">ialf</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Gain" Name="Gain3" SID="562">
+    <P Name="Position">[250, 150, 370, 180]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="Gain"> 1/sqrt(3)</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">ibeta</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Outport" Name="ialpha" SID="563">
+    <P Name="Position">[490, 68, 520, 82]</P>
+    <P Name="ZOrder">13</P>
+  </Block>
+  <Block BlockType="Outport" Name="ibeta" SID="564">
+    <P Name="Position">[490, 158, 520, 172]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">559#out:1</P>
+    <P Name="Dst">557#in:2</P>
+  </Line>
+  <Line>
+    <P Name="Name">ialf</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">561#out:1</P>
+    <P Name="Dst">563#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">557#out:1</P>
+    <P Name="Dst">561#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">ibeta</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">562#out:1</P>
+    <P Name="Dst">564#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">556#out:1</P>
+    <P Name="Points">[56, 0]</P>
+    <Branch>
+      <P Name="ZOrder">6</P>
+      <P Name="Dst">560#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">7</P>
+      <P Name="Points">[0, 60]</P>
+      <P Name="Dst">558#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">558#out:1</P>
+    <P Name="Dst">562#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">555#out:1</P>
+    <P Name="Points">[65, 0]</P>
+    <Branch>
+      <P Name="ZOrder">10</P>
+      <P Name="Dst">559#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">11</P>
+      <P Name="Points">[0, 80]</P>
+      <P Name="Dst">558#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">12</P>
+    <P Name="Src">554#out:1</P>
+    <P Name="Dst">557#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">560#out:1</P>
+    <P Name="Dst">557#in:3</P>
+  </Line>
+  <Annotation SID="565">
+    <P Name="Name">alpha=(A-0.5*(B+C))*2/3
+Beta=sqrt(3)/2*(B-C)*2/3</P>
+    <P Name="Position">[72, 208, 183, 234]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-1</P>
+  </Annotation>
+</System>

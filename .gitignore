@@ -12,6 +12,11 @@
 !/init_PMLSM_plant_params.m
 !/init_PMLSM_mil_test_params.m
 !/init_PMLSM_MIL_params.m
+!/PMLSM_ThreeLoop_Simple.slx
+!/init_PMLSM_ThreeLoop_Simple.m
+!/run_PMLSM_ThreeLoop_Simple.m
+!/design_PMLSM_three_loop.m
+!/pmlsm_scurve_profile.m
 !/docs/
 !/tools/
 !/compatibility/
@@ -19,3 +24,5 @@
 **/work/
 **/*.slxc
 **/slprj/
+/docs/**/*.mat
+/docs/**/*.fig

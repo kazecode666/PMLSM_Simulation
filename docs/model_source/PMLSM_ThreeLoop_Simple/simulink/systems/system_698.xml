@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="ZoomFactor">175</P>
+  <Block BlockType="Inport" Name="ud_raw" SID="699">
+    <P Name="Position">[-85, 253, -55, 267]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Inport" Name="uq_raw" SID="700">
+    <P Name="Position">[-85, 308, -55, 322]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Sum" Name="Add" SID="701">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[210, 56, 245, 154]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="IconShape">rectangular</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant1" SID="702">
+    <P Name="Position">[265, 25, 325, 55]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">Udc/sqrt(3)</P>
+    <P Name="OutDataTypeStr">double</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant2" SID="703">
+    <P Name="Position">[305, 145, 335, 175]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">1e-6</P>
+    <P Name="OutDataTypeStr">double</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant3" SID="704">
+    <P Name="Position">[460, 145, 490, 175]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="OutDataTypeStr">double</P>
+  </Block>
+  <Block BlockType="Constant" Name="Constant6" SID="705">
+    <P Name="Position">[160, 550, 190, 580]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="Value">0.999</P>
+  </Block>
+  <Block BlockType="Product" Name="Divide" SID="706">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[445, 97, 475, 128]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Inputs">*/</P>
+    <P Name="OutDataTypeStr">double</P>
+  </Block>
+  <Block BlockType="From" Name="From1" SID="707">
+    <P Name="Position">[160, 511, 200, 539]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">s</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_s</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="From10" SID="708">
+    <P Name="Position">[145, 236, 185, 264]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ud_raw</P>
+  </Block>
+  <Block BlockType="From" Name="From11" SID="709">
+    <P Name="Position">[145, 276, 185, 304]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">s</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">obs_s</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="From" Name="From12" SID="710">
+    <P Name="Position">[145, 371, 185, 399]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">uq_raw</P>
+  </Block>
+  <Block BlockType="From" Name="From8" SID="711">
+    <P Name="Position">[20, 66, 75, 94]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ud_raw</P>
+  </Block>
+  <Block BlockType="From" Name="From9" SID="712">
+    <P Name="Position">[20, 116, 75, 144]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">uq_raw</P>
+  </Block>
+  <Block BlockType="Gain" Name="Gain" SID="713">
+    <P Name="Position">[360, 20, 415, 60]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Gain">0.9</P>
+    <P Name="OutDataTypeStr">double</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">U_max</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Goto" Name="Goto" SID="714">
+    <P Name="Position">[35, 245, 75, 275]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">ud_raw</P>
+  </Block>
+  <Block BlockType="Goto" Name="Goto1" SID="715">
+    <P Name="Position">[35, 300, 75, 330]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">uq_raw</P>
+  </Block>
+  <Block BlockType="Goto" Name="Goto2" SID="716">
+    <P Name="Position">[650, 115, 690, 145]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">s</P>
+  </Block>
+  <Block BlockType="Math" Name="Math&#xA;Function" SID="717">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[120, 65, 150, 95]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Operator">square</P>
+  </Block>
+  <Block BlockType="Math" Name="Math&#xA;Function1" SID="718">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[120, 115, 150, 145]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Operator">square</P>
+  </Block>
+  <Block BlockType="MinMax" Name="MinMax" SID="719">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[520, 99, 560, 161]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Inputs">2</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">obs_s</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Product" Name="Product" SID="720">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[265, 231, 295, 309]</P>
+    <P Name="ZOrder">100000</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">obs_ud_lim</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Product" Name="Product1" SID="721">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[265, 326, 295, 404]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="OutDataTypeStr">double</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">obs_uq_lim</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="RelationalOperator" Name="Relational&#xA;Operator" SID="722">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[255, 517, 285, 548]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Operator">&lt;</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="OutDataTypeStr">boolean</P>
+    <P Name="RndMeth">Simplest</P>
+  </Block>
+  <Block BlockType="Sqrt" Name="Sqrt" SID="723">
+    <P Name="Position">[285, 90, 315, 120]</P>
+    <P Name="ZOrder">100000</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">U_raw</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Sum" Name="Subtract" SID="724">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[385, 197, 415, 253]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">+-</P>
+  </Block>
+  <Block BlockType="Sum" Name="Subtract1" SID="725">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[385, 422, 415, 478]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">+-</P>
+  </Block>
+  <Block BlockType="Sum" Name="Sum" SID="726">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[375, 90, 400, 145]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="IconShape">rectangular</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="Unit Delay" SID="727">
+    <P Name="Position">[475, 208, 510, 242]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="SampleTime">-1</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="Unit Delay1" SID="728">
+    <P Name="Position">[475, 433, 510, 467]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="SampleTime">-1</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="Unit Delay2" SID="729">
+    <P Name="Position">[320, 518, 355, 552]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="SampleTime">-1</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">obs_sat_flag_z</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Outport" Name="ud_lim" SID="730">
+    <P Name="Position">[425, 263, 455, 277]</P>
+    <P Name="ZOrder">100000</P>
+  </Block>
+  <Block BlockType="Outport" Name="uq_lim" SID="731">
+    <P Name="Position">[425, 358, 455, 372]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="du_d_z" SID="732">
+    <P Name="Position">[560, 218, 590, 232]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="du_q_z" SID="733">
+    <P Name="Position">[560, 443, 590, 457]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Outport" Name="sat_flag_z" SID="734">
+    <P Name="Position">[460, 528, 490, 542]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Line>
+    <P Name="Name">obs_sat_flag_z</P>
+    <P Name="ZOrder">1</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">729#out:1</P>
+    <P Name="Dst">734#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">722#out:1</P>
+    <P Name="Dst">729#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">707#out:1</P>
+    <P Name="Dst">722#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">705#out:1</P>
+    <P Name="Points">[22, 0; 0, -25]</P>
+    <P Name="Dst">722#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">728#out:1</P>
+    <P Name="Dst">733#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">6</P>
+    <P Name="Src">727#out:1</P>
+    <P Name="Dst">732#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">7</P>
+    <P Name="Src">700#out:1</P>
+    <P Name="Dst">715#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">699#out:1</P>
+    <P Name="Dst">714#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">9</P>
+    <P Name="Src">725#out:1</P>
+    <P Name="Dst">728#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">10</P>
+    <P Name="Src">724#out:1</P>
+    <P Name="Dst">727#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">710#out:1</P>
+    <P Name="Points">[23, 0]</P>
+    <Branch>
+      <P Name="ZOrder">12</P>
+      <P Name="Dst">721#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">13</P>
+      <P Name="Points">[0, 50]</P>
+      <P Name="Dst">725#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">obs_ud_lim</P>
+    <P Name="ZOrder">14</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">720#out:1</P>
+    <P Name="Points">[54, 0]</P>
+    <Branch>
+      <P Name="ZOrder">15</P>
+      <P Name="Dst">730#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">16</P>
+      <P Name="Points">[0, -30]</P>
+      <P Name="Dst">724#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">17</P>
+    <P Name="Src">708#out:1</P>
+    <P Name="Points">[30, 0]</P>
+    <Branch>
+      <P Name="ZOrder">18</P>
+      <P Name="Dst">720#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">19</P>
+      <P Name="Points">[0, -40]</P>
+      <P Name="Dst">724#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">20</P>
+    <P Name="Src">709#out:1</P>
+    <P Name="Points">[23, 0]</P>
+    <Branch>
+      <P Name="ZOrder">21</P>
+      <P Name="Dst">720#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">22</P>
+      <P Name="Points">[0, 55]</P>
+      <P Name="Dst">721#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">obs_uq_lim</P>
+    <P Name="ZOrder">23</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">721#out:1</P>
+    <P Name="Points">[36, 0]</P>
+    <Branch>
+      <P Name="ZOrder">24</P>
+      <P Name="Points">[0, 100]</P>
+      <P Name="Dst">725#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">25</P>
+      <P Name="Dst">731#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">obs_s</P>
+    <P Name="ZOrder">26</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">719#out:1</P>
+    <P Name="Dst">716#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">27</P>
+    <P Name="Src">711#out:1</P>
+    <P Name="Dst">717#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">28</P>
+    <P Name="Src">712#out:1</P>
+    <P Name="Dst">718#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">29</P>
+    <P Name="Src">717#out:1</P>
+    <P Name="Dst">701#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">30</P>
+    <P Name="Src">718#out:1</P>
+    <P Name="Dst">701#in:2</P>
+  </Line>
+  <Line>
+    <P Name="Name">U_raw</P>
+    <P Name="ZOrder">31</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">723#out:1</P>
+    <P Name="Dst">726#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">U_max</P>
+    <P Name="ZOrder">32</P>
+    <P Name="Labels">[1, 1]</P>
+    <P Name="Src">713#out:1</P>
+    <P Name="Points">[10, 0]</P>
+    <P Name="Dst">706#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">33</P>
+    <P Name="Src">706#out:1</P>
+    <P Name="Dst">719#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">34</P>
+    <P Name="Src">702#out:1</P>
+    <P Name="Dst">713#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">35</P>
+    <P Name="Src">701#out:1</P>
+    <P Name="Dst">723#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">36</P>
+    <P Name="Src">704#out:1</P>
+    <P Name="Points">[10, 0]</P>
+    <P Name="Dst">719#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">37</P>
+    <P Name="Src">703#out:1</P>
+    <P Name="Points">[15, 0; 0, -30]</P>
+    <P Name="Dst">726#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">38</P>
+    <P Name="Src">726#out:1</P>
+    <P Name="Dst">706#in:2</P>
+  </Line>
+</System>

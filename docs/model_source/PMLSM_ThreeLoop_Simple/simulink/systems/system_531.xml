@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[23, 11, 1017, 770]</P>
+  <P Name="ZoomFactor">83</P>
+  <Block BlockType="Inport" Name="v_ref_mmps" SID="532">
+    <P Name="Position">[25, 98, 55, 112]</P>
+    <P Name="ZOrder">1</P>
+  </Block>
+  <Block BlockType="Inport" Name="v_mmps" SID="533">
+    <P Name="Position">[25, 168, 55, 182]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="TriggerPort" Name="Speed_Tick" SID="770">
+    <PortCounts/>
+    <P Name="Position">[1020, 35, 1040, 55]</P>
+    <P Name="ZOrder">15</P>
+    <P Name="VariantControl">(inherit)</P>
+    <P Name="StatesWhenEnabling">held</P>
+    <P Name="PortDimensions">1</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="AW_Delay" SID="534">
+    <P Name="Position">[855, 48, 890, 82]</P>
+    <P Name="ZOrder">11</P>
+    <P Name="SampleTime">-1</P>
+  </Block>
+  <Block BlockType="Gain" Name="Anti_Windup" SID="535">
+    <P Name="Position">[930, 50, 960, 80]</P>
+    <P Name="ZOrder">12</P>
+    <P Name="Gain">Kaw_s</P>
+  </Block>
+  <Block BlockType="Saturate" Name="Current_Limit" SID="536">
+    <P Name="Position">[665, 95, 695, 125]</P>
+    <P Name="ZOrder">13</P>
+    <P Name="UpperLimit">Speed_loop_Iq_Limit</P>
+    <P Name="LowerLimit">-Speed_loop_Iq_Limit</P>
+  </Block>
+  <Block BlockType="Saturate" Name="Integral_Limit" SID="537">
+    <P Name="Position">[385, 120, 415, 150]</P>
+    <P Name="ZOrder">14</P>
+    <P Name="UpperLimit">Iq_int_limit</P>
+    <P Name="LowerLimit">-Iq_int_limit</P>
+  </Block>
+  <Block BlockType="Sum" Name="Integral_Update" SID="538">
+    <PortCounts in="3" out="1"/>
+    <P Name="Position">[295, 119, 325, 151]</P>
+    <P Name="ZOrder">9</P>
+    <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">++-</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="Integrator_State" SID="539">
+    <P Name="Position">[470, 118, 505, 152]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="SampleTime">-1</P>
+  </Block>
+  <Block BlockType="Sum" Name="PI_Output" SID="540">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[580, 42, 610, 73]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="IconShape">rectangular</P>
+  </Block>
+  <Block BlockType="Sum" Name="Saturation_Error" SID="541">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[775, 47, 805, 78]</P>
+    <P Name="ZOrder">10</P>
+    <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">+-</P>
+  </Block>
+  <Block BlockType="Sum" Name="Speed_Error" SID="542">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[115, 117, 145, 148]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">+-</P>
+  </Block>
+  <Block BlockType="Gain" Name="Speed_I" SID="543">
+    <P Name="Position">[210, 120, 240, 150]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Gain">Ki_ASR*Ts_ASR</P>
+  </Block>
+  <Block BlockType="Gain" Name="Speed_P" SID="544">
+    <P Name="Position">[210, 35, 240, 65]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Gain">Kp_ASR</P>
+  </Block>
+  <Block BlockType="Outport" Name="iq_ref" SID="545">
+    <P Name="Position">[775, 138, 805, 152]</P>
+    <P Name="ZOrder">3</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">535#out:1</P>
+    <P Name="Points">[30, 0; 0, 106; -735, 0; 0, -26]</P>
+    <P Name="Dst">538#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">543#out:1</P>
+    <P Name="Dst">538#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">534#out:1</P>
+    <P Name="Dst">535#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">541#out:1</P>
+    <P Name="Dst">534#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">540#out:1</P>
+    <P Name="Points">[24, 0]</P>
+    <Branch>
+      <P Name="ZOrder">6</P>
+      <P Name="Points">[0, 50]</P>
+      <P Name="Dst">536#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">7</P>
+      <P Name="Points">[49, 0; 0, -5]</P>
+      <P Name="Dst">541#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">8</P>
+    <P Name="Src">539#out:1</P>
+    <P Name="Points">[19, 0]</P>
+    <Branch>
+      <P Name="ZOrder">9</P>
+      <P Name="Points">[12, 0; 0, -70]</P>
+      <P Name="Dst">540#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">10</P>
+      <P Name="Points">[0, -25; -258, 0; 0, 15]</P>
+      <P Name="Dst">538#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">544#out:1</P>
+    <P Name="Dst">540#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">12</P>
+    <P Name="Src">542#out:1</P>
+    <P Name="Points">[26, 0]</P>
+    <Branch>
+      <P Name="ZOrder">13</P>
+      <P Name="Points">[0, -85]</P>
+      <P Name="Dst">544#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">14</P>
+      <P Name="Dst">543#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">15</P>
+    <P Name="Src">533#out:1</P>
+    <P Name="Points">[19, 0; 0, -35]</P>
+    <P Name="Dst">542#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">532#out:1</P>
+    <P Name="Points">[19, 0; 0, 20]</P>
+    <P Name="Dst">542#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">17</P>
+    <P Name="Src">536#out:1</P>
+    <P Name="Points">[26, 0]</P>
+    <Branch>
+      <P Name="ZOrder">18</P>
+      <P Name="Points">[15, 0; 0, 35]</P>
+      <P Name="Dst">545#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">19</P>
+      <P Name="Points">[0, -40]</P>
+      <P Name="Dst">541#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">20</P>
+    <P Name="Src">538#out:1</P>
+    <P Name="Dst">537#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">21</P>
+    <P Name="Src">537#out:1</P>
+    <P Name="Dst">539#in:1</P>
+  </Line>
+</System>

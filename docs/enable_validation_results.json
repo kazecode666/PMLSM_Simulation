@@ -1,0 +1,51 @@
+[
+  {
+    "case": "position",
+    "final_position_mm": 9.9361054380166891,
+    "final_speed_mmps": -0.0095198999078565678,
+    "pass": true,
+    "restart_peak_speed_mmps": []
+  },
+  {
+    "case": "speed",
+    "final_position_mm": 4.6053691868611653,
+    "final_speed_mmps": 4.9335378173195981,
+    "pass": true,
+    "restart_peak_speed_mmps": []
+  },
+  {
+    "case": "closed_off",
+    "final_position_mm": 0,
+    "final_speed_mmps": 0,
+    "pass": true,
+    "restart_peak_speed_mmps": []
+  },
+  {
+    "case": "pwm_off",
+    "final_position_mm": 0,
+    "final_speed_mmps": 0,
+    "pass": true,
+    "restart_peak_speed_mmps": []
+  },
+  {
+    "case": "switching",
+    "final_position_mm": 9.936888179274117,
+    "final_speed_mmps": 0.017681020188978873,
+    "pass": true,
+    "restart_peak_speed_mmps": 5.925935504749873
+  },
+  {
+    "case": "current_only",
+    "final_position_mm": 3.6702868294895317,
+    "final_speed_mmps": 94.196914848918425,
+    "pass": true,
+    "restart_peak_speed_mmps": []
+  },
+  {
+    "case": "pi_reset",
+    "final_position_mm": 0,
+    "final_speed_mmps": 0,
+    "pass": true,
+    "restart_peak_speed_mmps": []
+  }
+]

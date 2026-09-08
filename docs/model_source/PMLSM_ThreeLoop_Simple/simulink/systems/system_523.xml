@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[223, 338, 826, 833]</P>
+  <P Name="SIDHighWatermark">55</P>
+  <Block BlockType="Inport" Name="t" SID="523::1">
+    <P Name="Position">[20, 101, 40, 119]</P>
+    <P Name="ZOrder">-1</P>
+  </Block>
+  <Block BlockType="Demux" Name=" Demux " SID="523::26">
+    <PortCounts in="1" out="1"/>
+    <P Name="Position">[270, 530, 320, 570]</P>
+    <P Name="ZOrder">17</P>
+    <P Name="Outputs">1</P>
+  </Block>
+  <Block BlockType="S-Function" Name=" SFunction " SID="523::25">
+    <P Name="Tag">Stateflow S-Function 2</P>
+    <PortCounts in="1" out="12"/>
+    <P Name="Position">[180, 110, 230, 370]</P>
+    <P Name="ZOrder">16</P>
+    <P Name="FunctionName">sf_sfun</P>
+    <P Name="Parameters">Host_Enable_Schedule,Host_Id_A,Host_Iq_A,Host_Iq_Test_Mode,Host_Load_N,Host_PI_Reset_EN,Host_Speed_Ramp_s,Host_Speed_mmps,Host_Start_s,Host_Target_mm,Host_Traj_Amax,Host_Traj_Jmax,Host_Traj_Vmax,Udc</P>
+    <P Name="PortCounts">[1 12]</P>
+    <P Name="SFunctionDeploymentMode">off</P>
+    <P Name="EnableBusSupport">off</P>
+    <P Name="SFcnIsStateOwnerBlock">off</P>
+    <PortProperties>
+      <Port Type="out" Index="2">
+        <P Name="Name">x_ref_mm</P>
+      </Port>
+      <Port Type="out" Index="3">
+        <P Name="Name">vdc</P>
+      </Port>
+      <Port Type="out" Index="4">
+        <P Name="Name">load_N</P>
+      </Port>
+      <Port Type="out" Index="5">
+        <P Name="Name">Close_Loop_EN</P>
+      </Port>
+      <Port Type="out" Index="6">
+        <P Name="Name">Position_Loop_EN</P>
+      </Port>
+      <Port Type="out" Index="7">
+        <P Name="Name">PWM_EN</P>
+      </Port>
+      <Port Type="out" Index="8">
+        <P Name="Name">v_ref_cmd</P>
+      </Port>
+      <Port Type="out" Index="9">
+        <P Name="Name">id_ref_cmd</P>
+      </Port>
+      <Port Type="out" Index="10">
+        <P Name="Name">iq_test_mode</P>
+      </Port>
+      <Port Type="out" Index="11">
+        <P Name="Name">iq_test_ref</P>
+      </Port>
+      <Port Type="out" Index="12">
+        <P Name="Name">PI_Reset_EN</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Terminator" Name=" Terminator " SID="523::27">
+    <P Name="Position">[460, 541, 480, 559]</P>
+    <P Name="ZOrder">18</P>
+  </Block>
+  <Block BlockType="Outport" Name="x_ref_mm" SID="523::5">
+    <P Name="Position">[460, 101, 480, 119]</P>
+    <P Name="ZOrder">-5</P>
+  </Block>
+  <Block BlockType="Outport" Name="vdc" SID="523::28">
+    <P Name="Position">[460, 136, 480, 154]</P>
+    <P Name="ZOrder">19</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Outport" Name="load_N" SID="523::29">
+    <P Name="Position">[460, 171, 480, 189]</P>
+    <P Name="ZOrder">20</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Outport" Name="Close_Loop_EN" SID="523::34">
+    <P Name="Position">[460, 206, 480, 224]</P>
+    <P Name="ZOrder">21</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Outport" Name="Position_Loop_EN" SID="523::35">
+    <P Name="Position">[460, 246, 480, 264]</P>
+    <P Name="ZOrder">22</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Outport" Name="PWM_EN" SID="523::36">
+    <P Name="Position">[460, 281, 480, 299]</P>
+    <P Name="ZOrder">23</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Outport" Name="v_ref_cmd" SID="523::37">
+    <P Name="Position">[460, 316, 480, 334]</P>
+    <P Name="ZOrder">24</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Outport" Name="id_ref_cmd" SID="523::38">
+    <P Name="Position">[460, 351, 480, 369]</P>
+    <P Name="ZOrder">25</P>
+    <P Name="Port">8</P>
+  </Block>
+  <Block BlockType="Outport" Name="iq_test_mode" SID="523::39">
+    <P Name="Position">[460, 386, 480, 404]</P>
+    <P Name="ZOrder">26</P>
+    <P Name="Port">9</P>
+  </Block>
+  <Block BlockType="Outport" Name="iq_test_ref" SID="523::40">
+    <P Name="Position">[460, 426, 480, 444]</P>
+    <P Name="ZOrder">27</P>
+    <P Name="Port">10</P>
+  </Block>
+  <Block BlockType="Outport" Name="PI_Reset_EN" SID="523::41">
+    <P Name="Position">[460, 461, 480, 479]</P>
+    <P Name="ZOrder">28</P>
+    <P Name="Port">11</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">560</P>
+    <P Name="Src">523::1#out:1</P>
+    <P Name="Dst">523::25#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">x_ref_mm</P>
+    <P Name="ZOrder">561</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">523::25#out:2</P>
+    <P Name="Dst">523::5#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">vdc</P>
+    <P Name="ZOrder">562</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">523::25#out:3</P>
+    <P Name="Dst">523::28#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">load_N</P>
+    <P Name="ZOrder">563</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">523::25#out:4</P>
+    <P Name="Dst">523::29#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">Close_Loop_EN</P>
+    <P Name="ZOrder">564</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">523::25#out:5</P>
+    <P Name="Dst">523::34#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">Position_Loop_EN</P>
+    <P Name="ZOrder">565</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">523::25#out:6</P>
+    <P Name="Dst">523::35#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">PWM_EN</P>
+    <P Name="ZOrder">566</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">523::25#out:7</P>
+    <P Name="Dst">523::36#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">v_ref_cmd</P>
+    <P Name="ZOrder">567</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">523::25#out:8</P>
+    <P Name="Dst">523::37#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">id_ref_cmd</P>
+    <P Name="ZOrder">568</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">523::25#out:9</P>
+    <P Name="Dst">523::38#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">iq_test_mode</P>
+    <P Name="ZOrder">569</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">523::25#out:10</P>
+    <P Name="Dst">523::39#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">iq_test_ref</P>
+    <P Name="ZOrder">570</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">523::25#out:11</P>
+    <P Name="Dst">523::40#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">PI_Reset_EN</P>
+    <P Name="ZOrder">571</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">523::25#out:12</P>
+    <P Name="Dst">523::41#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">572</P>
+    <P Name="Src">523::26#out:1</P>
+    <P Name="Dst">523::27#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">573</P>
+    <P Name="Src">523::25#out:1</P>
+    <P Name="Dst">523::26#in:1</P>
+  </Line>
+</System>

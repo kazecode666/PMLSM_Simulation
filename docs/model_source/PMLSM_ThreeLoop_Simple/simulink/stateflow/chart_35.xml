@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<chart id="35">
+  <P Name="name">Simple_Host</P>
+  <P Name="windowPosition">[422 539.941 189 413]</P>
+  <P Name="viewLimits">[0 156.75 0 153.75]</P>
+  <P Name="screen">[1 1 3600 1200 1.180555555555556]</P>
+  <P Name="viewObj">35</P>
+  <P Name="ssIdHighWaterMark">33</P>
+  <P Name="decomposition">CLUSTER_CHART</P>
+  <P Name="type">EML_CHART</P>
+  <P Name="chartFileNumber">2</P>
+  <P Name="disableImplicitCasting">1</P>
+  <eml>
+    <P Name="name">Simple_Host</P>
+  </eml>
+  <Children>
+    <state SSID="1">
+      <P Name="labelString">eML_blk_kernel()</P>
+      <P Name="position">[18 64.5 118 66]</P>
+      <P Name="fontSize">12</P>
+      <P Name="superState">SUBCHART</P>
+      <P Name="subviewer">35</P>
+      <P Name="type">FUNC_STATE</P>
+      <P Name="decomposition">CLUSTER_STATE</P>
+      <eml>
+        <P Name="isEML">1</P>
+        <P Name="script">function [x_ref_mm,vdc,load_N,Close_Loop_EN,Position_Loop_EN,PWM_EN,v_ref_cmd,id_ref_cmd,iq_test_mode,iq_test_ref,PI_Reset_EN] = Simple_Host(t, Host_Enable_Schedule, Host_Speed_mmps, Host_Id_A, Host_Iq_Test_Mode, Host_Iq_A, Host_PI_Reset_EN, Host_Start_s, Host_Target_mm, Udc, Host_Load_N, Host_Traj_Vmax, Host_Traj_Amax, Host_Traj_Jmax, Host_Speed_Ramp_s)
+% Smooth acceleration - constant speed - smooth deceleration.
+x_ref_mm=pmlsm_scurve_profile(t-Host_Start_s,Host_Target_mm,Host_Traj_Vmax,Host_Traj_Amax,Host_Traj_Jmax,Host_Speed_Ramp_s);
+r=min(max((t-Host_Start_s)/max(Host_Speed_Ramp_s,1e-6),0),1);
+v_ref_cmd=Host_Speed_mmps*(10*r^3-15*r^4+6*r^5);
+vdc=Udc; load_N=Host_Load_N;
+Close_Loop_EN=0; Position_Loop_EN=0; PWM_EN=0;
+for k=1:size(Host_Enable_Schedule,1)
+ if t&gt;=Host_Enable_Schedule(k,1)
+  Close_Loop_EN=double(Host_Enable_Schedule(k,2)~=0);
+  Position_Loop_EN=double(Host_Enable_Schedule(k,3)~=0);
+  PWM_EN=double(Host_Enable_Schedule(k,4)~=0);
+ end
+end
+id_ref_cmd=Host_Id_A;
+iq_test_mode=Host_Iq_Test_Mode; iq_test_ref=Host_Iq_A;
+PI_Reset_EN=Host_PI_Reset_EN;
+end</P>
+      </eml>
+    </state>
+    <data SSID="4" name="t">
+      <P Name="scope">INPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="5" name="x_ref_mm">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="6" name="vdc">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="7" name="load_N">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="12" name="Close_Loop_EN">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="13" name="Position_Loop_EN">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="14" name="PWM_EN">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="15" name="v_ref_cmd">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="16" name="id_ref_cmd">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="17" name="iq_test_mode">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="18" name="iq_test_ref">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="19" name="PI_Reset_EN">
+      <P Name="scope">OUTPUT_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_NO</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="20" name="Host_Enable_Schedule">
+      <P Name="scope">PARAMETER_DATA</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="21" name="Host_Speed_mmps">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">7</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="22" name="Host_Id_A">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">1</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="23" name="Host_Iq_Test_Mode">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">3</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="24" name="Host_Iq_A">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">2</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="25" name="Host_PI_Reset_EN">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">5</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="26" name="Host_Start_s">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">8</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="27" name="Host_Target_mm">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">9</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="28" name="Udc">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">13</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="29" name="Host_Load_N">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">4</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="30" name="Host_Traj_Vmax">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">12</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="31" name="Host_Traj_Amax">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">10</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="32" name="Host_Traj_Jmax">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">11</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <data SSID="33" name="Host_Speed_Ramp_s">
+      <P Name="scope">PARAMETER_DATA</P>
+      <P Name="paramIndexForInitFromWorkspace">6</P>
+      <props>
+        <array>
+          <P Name="size">-1</P>
+        </array>
+        <type>
+          <P Name="method">SF_INHERITED_TYPE</P>
+          <P Name="primitive">SF_DOUBLE_TYPE</P>
+          <P Name="isSigned">1</P>
+          <P Name="wordLength">16</P>
+        </type>
+        <P Name="complexity">SF_COMPLEX_INHERITED</P>
+        <P Name="frame">SF_FRAME_INHERITED</P>
+        <unit>
+          <P Name="name">inherit</P>
+        </unit>
+      </props>
+      <P Name="dataType">Inherit: Same as Simulink</P>
+    </data>
+    <transition SSID="2">
+      <P Name="labelString">{eML_blk_kernel();}</P>
+      <P Name="labelPosition">[28.125 13.875 102.544 14.964]</P>
+      <P Name="fontSize">12</P>
+      <src>
+        <P Name="intersection">[0 0 1 0 23.5747 14.625 0 0]</P>
+      </src>
+      <dst>
+        <P Name="SSID">3</P>
+        <P Name="intersection">[1 0 -1 0 23.5747 42.5747 0 0]</P>
+      </dst>
+      <P Name="midPoint">[23.5747 24.9468]</P>
+      <P Name="dataLimits">[21.175 25.975 14.625 42.575]</P>
+      <P Name="subviewer">35</P>
+      <P Name="drawStyle">SMART</P>
+      <slide>
+        <P Name="sticky">BOTH_STICK</P>
+      </slide>
+      <P Name="executionOrder">1</P>
+    </transition>
+    <junction SSID="3">
+      <P Name="position">[23.5747 49.5747 7]</P>
+      <P Name="subviewer">35</P>
+      <P Name="type">CONNECTIVE_JUNCTION</P>
+    </junction>
+  </Children>
+</chart>

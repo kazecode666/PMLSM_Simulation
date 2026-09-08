@@ -1,0 +1,16 @@
+[
+  {
+    "Ts_s": 0.0001,
+    "PWM_delay_s": 5E-5,
+    "delay_error_counts": 0,
+    "speed_period_s": 0.001,
+    "position_period_s": 0.01
+  },
+  {
+    "Ts_s": 8E-5,
+    "PWM_delay_s": 4E-5,
+    "delay_error_counts": 0,
+    "speed_period_s": 0.0008,
+    "position_period_s": 0.008
+  }
+]

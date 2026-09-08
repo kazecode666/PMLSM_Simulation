@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2025a_20251111">
+  <System type="System" uuid="d3c85c98-109d-42a0-a462-654cfeef83c6">
+    <Parameter type="Parameter" uuid="62f3aca0-1673-40db-8fee-3d20ab03e461">
+      <Identifier>CPU_Clock</Identifier>
+      <Name>CPU_Clock</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="e62e1c18-a92f-47e2-980a-0913a79115ab">
+      <Identifier>Host_Enable_Schedule</Identifier>
+      <Name>Host_Enable_Schedule</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="6fd130c9-280e-4db5-ac78-aa23e94c8533">
+      <Identifier>Host_Id_A</Identifier>
+      <Name>Host_Id_A</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="0a520505-3ddb-470f-ae40-b9185340f901">
+      <Identifier>Host_Iq_A</Identifier>
+      <Name>Host_Iq_A</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="24631b25-a0a5-4e4a-84e9-9f1d7e400684">
+      <Identifier>Host_Iq_Test_Mode</Identifier>
+      <Name>Host_Iq_Test_Mode</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="680ad38a-98f8-4f94-b86f-c70338be9701">
+      <Identifier>Host_Load_N</Identifier>
+      <Name>Host_Load_N</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="d2c71c82-e6d2-498d-8fa8-5b234911da21">
+      <Identifier>Host_PI_Reset_EN</Identifier>
+      <Name>Host_PI_Reset_EN</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="f30c44ba-bb5c-438f-a7b5-a95a95df99ce">
+      <Identifier>Host_Speed_Ramp_s</Identifier>
+      <Name>Host_Speed_Ramp_s</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="db8b7436-b01c-4ad9-9e2d-2ad44377202d">
+      <Identifier>Host_Speed_mmps</Identifier>
+      <Name>Host_Speed_mmps</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="a0e14297-3a57-427b-99c2-bf1216f39c46">
+      <Identifier>Host_Start_s</Identifier>
+      <Name>Host_Start_s</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="8c794051-9409-4a69-be25-e87719d331f9">
+      <Identifier>Host_Target_mm</Identifier>
+      <Name>Host_Target_mm</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="3d6cbaa1-0ba4-4c7e-9f6d-da7fb75ed3dc">
+      <Identifier>Host_Traj_Amax</Identifier>
+      <Name>Host_Traj_Amax</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="ce0848e0-0b7f-41a8-a87b-1c90da8cfeaa">
+      <Identifier>Host_Traj_Jmax</Identifier>
+      <Name>Host_Traj_Jmax</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="384cf021-d35e-4a53-8c3d-d04cc4c50a97">
+      <Identifier>Host_Traj_Vmax</Identifier>
+      <Name>Host_Traj_Vmax</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="6e51403a-4053-4697-a91e-97704016d1fa">
+      <Identifier>Iq_int_limit</Identifier>
+      <Name>Iq_int_limit</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="3e18110a-b74a-43bb-b0f2-143696a8ab43">
+      <Identifier>Kaw_d</Identifier>
+      <Name>Kaw_d</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="3c41b4f7-44a1-43e6-90d8-9a29ce7ca0cc">
+      <Identifier>Kaw_q</Identifier>
+      <Name>Kaw_q</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="4080dfee-cf6f-483a-b81a-e55f7a452136">
+      <Identifier>Kaw_s</Identifier>
+      <Name>Kaw_s</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="4e1e2098-fa55-4c3a-bfdf-4ca63271aad8">
+      <Identifier>Ki_ACR</Identifier>
+      <Name>Ki_ACR</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="c0e66c73-a195-438d-9cc2-40a97606a582">
+      <Identifier>Ki_ASR</Identifier>
+      <Name>Ki_ASR</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="cc3f6a8e-8fc0-4184-8b44-919c0e16e60d">
+      <Identifier>Kp_ACR</Identifier>
+      <Name>Kp_ACR</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="f8d217b8-14c3-4da9-96d4-5ac25075d13a">
+      <Identifier>Kp_ASR</Identifier>
+      <Name>Kp_ASR</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="42f93546-fadc-4fe4-b37d-576b7229098f">
+      <Identifier>Kp_pos</Identifier>
+      <Name>Kp_pos</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="ae8061a8-346d-4da0-b73f-e13abef7dc17">
+      <Identifier>PMLSM_Bv_N_per_mps</Identifier>
+      <Name>PMLSM_Bv_N_per_mps</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="00938dac-e9a0-41df-811e-e0d07ef0bf57">
+      <Identifier>PMLSM_Fc_N</Identifier>
+      <Name>PMLSM_Fc_N</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="5c04de78-ca70-4d9e-8427-7ba5e3a07079">
+      <Identifier>PMLSM_Kf_peak_N_per_Apeak</Identifier>
+      <Name>PMLSM_Kf_peak_N_per_Apeak</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="33366cba-fa86-4716-9fd3-8c2c5e7521de">
+      <Identifier>PMLSM_Ld_H</Identifier>
+      <Name>PMLSM_Ld_H</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="41fdeed5-d065-4940-861a-536929aea9e4">
+      <Identifier>PMLSM_Lq_H</Identifier>
+      <Name>PMLSM_Lq_H</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="1c5fceea-2e63-4e6e-96aa-f72165cfffff">
+      <Identifier>PMLSM_M_kg</Identifier>
+      <Name>PMLSM_M_kg</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="067124b7-bbcc-471d-b516-68c4f432a2e5">
+      <Identifier>PMLSM_Rs_ohm</Identifier>
+      <Name>PMLSM_Rs_ohm</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="c67b7553-c5d9-4327-881c-6f7fffbcdb13">
+      <Identifier>PMLSM_Ts_s</Identifier>
+      <Name>PMLSM_Ts_s</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="50bedb07-302f-42f2-acd6-55b5287e9caa">
+      <Identifier>PMLSM_deadtime_current_eps_A</Identifier>
+      <Name>PMLSM_deadtime_current_eps_A</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="68dbbdff-9562-479d-8f36-2731bf731db3">
+      <Identifier>PMLSM_deadtime_ratio</Identifier>
+      <Name>PMLSM_deadtime_ratio</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="89aebbdc-5b92-4e35-8762-04d73bae2232">
+      <Identifier>PMLSM_deadtime_s</Identifier>
+      <Name>PMLSM_deadtime_s</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="841d5120-33bc-4fd3-912b-84e28ee4826c">
+      <Identifier>PMLSM_psi_f_Wb</Identifier>
+      <Name>PMLSM_psi_f_Wb</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="54e01277-dd03-4376-b552-d6514eade30a">
+      <Identifier>PMLSM_pwm_period_counts</Identifier>
+      <Name>PMLSM_pwm_period_counts</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="d93967c1-badd-445e-8f1e-129fd2f078ee">
+      <Identifier>PMLSM_tau_NN_m</Identifier>
+      <Name>PMLSM_tau_NN_m</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="1ff3e666-a8eb-4ac0-a146-d93968876450">
+      <Identifier>PMLSM_theta_offset_rad</Identifier>
+      <Name>PMLSM_theta_offset_rad</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="11c1a244-4b3c-4f8a-90d1-ad4afdfba5d7">
+      <Identifier>PMLSM_v_eps_mps</Identifier>
+      <Name>PMLSM_v_eps_mps</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="1f76075f-a703-4d70-8f45-14ca7ffa0ffc">
+      <Identifier>Pos_deadband</Identifier>
+      <Name>Pos_deadband</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="33731696-420a-4238-b67f-97e29e76a0f7">
+      <Identifier>Speed_loop_Iq_Limit</Identifier>
+      <Name>Speed_loop_Iq_Limit</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="9106769b-341f-4e2b-9c07-2e53c9cbdcfe">
+      <Identifier>Ts</Identifier>
+      <Name>Ts</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="fbe177de-24e0-4923-8225-6b4bf19d7a13">
+      <Identifier>Ts_ACR</Identifier>
+      <Name>Ts_ACR</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="e37e356d-1b95-42a3-94d4-11dc9a0dda18">
+      <Identifier>Ts_ASR</Identifier>
+      <Name>Ts_ASR</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="30abf040-1e89-4961-9756-98edf0be6f7f">
+      <Identifier>Ts_POS</Identifier>
+      <Name>Ts_POS</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="be275caf-57eb-4031-ac99-ad37962d1c9c">
+      <Identifier>Tuning_Current_Xi</Identifier>
+      <Name>Tuning_Current_Xi</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="f36652d7-a9eb-456b-b6d8-c4f372490a2a">
+      <Identifier>Tuning_Gains</Identifier>
+      <Name>Tuning_Gains</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="100860c3-9d04-42fc-9dbe-3d38c07d4e01">
+      <Identifier>Tuning_Position_Separation</Identifier>
+      <Name>Tuning_Position_Separation</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="153169ff-c835-41b5-b9b6-0c3b47626266">
+      <Identifier>Tuning_Speed_h</Identifier>
+      <Name>Tuning_Speed_h</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="58508468-19a4-4e64-b238-2ebad54bb180">
+      <Identifier>Udc</Identifier>
+      <Name>Udc</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="99aa77fb-4670-4d00-b89a-e4bbec68a7b1">
+      <Identifier>V_pos_max_mmps</Identifier>
+      <Name>V_pos_max_mmps</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="57405cb8-5546-4e03-afb3-af5ff3a09ea2">
+      <Identifier>v_ff_eps</Identifier>
+      <Name>v_ff_eps</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="8462e212-c2ea-4dae-b393-c323e067d41b">
+      <Identifier>v_over_eps</Identifier>
+      <Name>v_over_eps</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="943ff009-f5d1-4d5a-9369-a37ec5d3dc85">
+      <Identifier>v_ref_max</Identifier>
+      <Name>v_ref_max</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="1e985505-1152-4bd1-9f07-bc7072aa3f4a">
+      <Identifier>v_ref_set_rate_dn</Identifier>
+      <Name>v_ref_set_rate_dn</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="83cfaac9-8ef5-4607-866f-a0f691ff37fb">
+      <Identifier>v_ref_set_rate_up</Identifier>
+      <Name>v_ref_set_rate_up</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="f2cd7f65-3e08-44e2-9b4f-b34a0b36661d">
+      <Identifier>v_ref_set_step_dn</Identifier>
+      <Name>v_ref_set_step_dn</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="829c265d-76ac-48e8-9ee6-076dbf507dd5">
+      <Identifier>v_ref_set_step_up</Identifier>
+      <Name>v_ref_set_step_up</Name>
+    </Parameter>
+    <Parameter type="Parameter" uuid="c6167bec-2af0-407e-82ac-f180e7eb49b2">
+      <Identifier>v_ref_zero_eps</Identifier>
+      <Name>v_ref_zero_eps</Name>
+    </Parameter>
+    <Interface type="Interface" uuid="73200e57-80f1-4150-9b58-10819112fd54"/>
+  </System>
+</MF0>

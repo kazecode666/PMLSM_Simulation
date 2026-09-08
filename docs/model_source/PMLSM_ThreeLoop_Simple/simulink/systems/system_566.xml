@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[30, -1, 1010, 750]</P>
+  <P Name="ZoomFactor">191</P>
+  <Block BlockType="Inport" Name="id_ref" SID="567">
+    <P Name="Position">[-20, -22, 10, -8]</P>
+    <P Name="ZOrder">100000</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">id_ref_cmd</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="id" SID="568">
+    <P Name="Position">[-20, 33, 10, 47]</P>
+    <P Name="ZOrder">28481</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="Inport" Name="iq" SID="569">
+    <P Name="Position">[100, 203, 130, 217]</P>
+    <P Name="ZOrder">28482</P>
+    <P Name="Port">3</P>
+  </Block>
+  <Block BlockType="Inport" Name="we" SID="570">
+    <P Name="Position">[250, 263, 280, 277]</P>
+    <P Name="ZOrder">28483</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Inport" Name="du_d_z" SID="571">
+    <P Name="Position">[-30, 353, 0, 367]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">5</P>
+  </Block>
+  <Block BlockType="Inport" Name="PI_Reset_EN" SID="1099">
+    <P Name="Position">[730, 73, 760, 87]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Gain" Name=" " SID="572">
+    <P Name="Position">[255, 51, 400, 99]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Gain">Ki_ACR*Ts_ACR</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">KiTs_q * e_d</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Gain" Name="  " SID="573">
+    <P Name="Position">[300, -91, 455, -49]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Gain">Kp_ACR</P>
+  </Block>
+  <Block BlockType="Sum" Name="Add1" SID="574">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[590, -48, 620, -17]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="IconShape">rectangular</P>
+  </Block>
+  <Block BlockType="Sum" Name="Add2" SID="575">
+    <PortCounts in="3" out="1"/>
+    <P Name="Position">[660, 214, 680, 336]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">++-</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">x_d_next</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Constant" Name="Constant1" SID="576">
+    <P Name="Position">[50, 233, 135, 257]</P>
+    <P Name="ZOrder">28477</P>
+    <P Name="Value">PMLSM_Lq_H</P>
+  </Block>
+  <Block BlockType="From" Name="From2" SID="577">
+    <P Name="Position">[335, 21, 400, 49]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_d_next</P>
+  </Block>
+  <Block BlockType="From" Name="From6" SID="578">
+    <P Name="Position">[330, 103, 390, 127]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">du_d_z</P>
+  </Block>
+  <Block BlockType="Gain" Name="Gain" SID="579">
+    <P Name="Position">[430, 100, 500, 130]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Gain">Kaw_d</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">u_d,aw</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Goto" Name="Goto2" SID="580">
+    <P Name="Position">[85, 345, 155, 375]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">du_d_z</P>
+  </Block>
+  <Block BlockType="Goto" Name="Goto4" SID="581">
+    <P Name="Position">[950, -5, 1015, 25]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="ShowName">off</P>
+    <P Name="GotoTag">x_d_next</P>
+  </Block>
+  <Block BlockType="Product" Name="Product" SID="582">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[175, 194, 210, 261]</P>
+    <P Name="ZOrder">28478</P>
+  </Block>
+  <Block BlockType="Product" Name="Product1" SID="583">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[345, 210, 375, 290]</P>
+    <P Name="ZOrder">28480</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">解耦项</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Switch" Name="Reset_Integral" SID="1101">
+    <P Name="Position">[855, -10, 905, 30]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Switch" Name="Reset_Output" SID="1102">
+    <P Name="Position">[855, 85, 905, 125]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Criteria">u2 &gt; Threshold</P>
+    <P Name="Threshold">0.5</P>
+    <P Name="InputSameDT">off</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="DataLoggingNameMode">Custom</P>
+        <P Name="DataLoggingName">ud_pi</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Constant" Name="Reset_Zero" SID="1100">
+    <P Name="Position">[730, -50, 760, -20]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="Value">0</P>
+  </Block>
+  <Block BlockType="Sum" Name="Sum" SID="584">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[75, -25, 95, -5]</P>
+    <P Name="ZOrder">24471</P>
+    <P Name="Inputs">|+-</P>
+  </Block>
+  <Block BlockType="Sum" Name="Sum1" SID="585">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[735, 140, 755, 160]</P>
+    <P Name="ZOrder">28475</P>
+    <P Name="Inputs">|+-</P>
+  </Block>
+  <Block BlockType="UnitDelay" Name="x_d_z" SID="586">
+    <P Name="Position">[450, 18, 485, 52]</P>
+    <P Name="ZOrder">100000</P>
+    <P Name="SampleTime">-1</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="DataLoggingNameMode">Custom</P>
+        <P Name="DataLoggingName">id_integrator</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Outport" Name="ud_raw" SID="587">
+    <P Name="Position">[965, 98, 995, 112]</P>
+    <P Name="ZOrder">28484</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">10</P>
+    <P Name="Src">578#out:1</P>
+    <P Name="Dst">579#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">11</P>
+    <P Name="Src">577#out:1</P>
+    <P Name="Dst">586#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">12</P>
+    <P Name="Src">571#out:1</P>
+    <P Name="Dst">580#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">13</P>
+    <P Name="Src">573#out:1</P>
+    <P Name="Points">[100, 0; 0, 30]</P>
+    <P Name="Dst">574#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">14</P>
+    <P Name="Src">576#out:1</P>
+    <P Name="Dst">582#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">15</P>
+    <P Name="Src">582#out:1</P>
+    <P Name="Dst">583#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">16</P>
+    <P Name="Src">570#out:1</P>
+    <P Name="Dst">583#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">17</P>
+    <P Name="Src">584#out:1</P>
+    <P Name="Points">[38, 0]</P>
+    <Branch>
+      <P Name="ZOrder">18</P>
+      <P Name="Points">[0, -55]</P>
+      <P Name="Dst">573#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">19</P>
+      <P Name="Points">[0, 90]</P>
+      <P Name="Dst">572#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">20</P>
+    <P Name="Src">568#out:1</P>
+    <P Name="Points">[70, 0]</P>
+    <P Name="Dst">584#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">21</P>
+    <P Name="Src">567#out:1</P>
+    <P Name="Dst">584#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">22</P>
+    <P Name="Src">569#out:1</P>
+    <P Name="Dst">582#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">40</P>
+    <P Name="Src">1102#out:1</P>
+    <P Name="Dst">587#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">41</P>
+    <P Name="Src">1101#out:1</P>
+    <P Name="Dst">581#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">43</P>
+    <P Name="Src">1099#out:1</P>
+    <P Name="Points">[40, 0]</P>
+    <Branch>
+      <P Name="ZOrder">42</P>
+      <P Name="Points">[9, 0; 0, 25]</P>
+      <P Name="Dst">1102#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">44</P>
+      <P Name="Points">[0, -70]</P>
+      <P Name="Dst">1101#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">46</P>
+    <P Name="Src">1100#out:1</P>
+    <P Name="Points">[22, 0]</P>
+    <Branch>
+      <P Name="ZOrder">45</P>
+      <P Name="Points">[0, 125]</P>
+      <P Name="Dst">1102#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">47</P>
+      <P Name="Points">[25, 0; 0, 30]</P>
+      <P Name="Dst">1101#in:1</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="Name">x_d_next</P>
+    <P Name="ZOrder">48</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">575#out:1</P>
+    <P Name="Points">[14, 0; 0, -250]</P>
+    <P Name="Dst">1101#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">49</P>
+    <P Name="Src">585#out:1</P>
+    <P Name="Points">[44, 0; 0, -30]</P>
+    <P Name="Dst">1102#in:3</P>
+  </Line>
+  <Line>
+    <P Name="Name">KiTs_q * e_d</P>
+    <P Name="ZOrder">50</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">572#out:1</P>
+    <P Name="Points">[201, 0; 0, 200]</P>
+    <P Name="Dst">575#in:2</P>
+  </Line>
+  <Line>
+    <P Name="Name">u_d,aw</P>
+    <P Name="ZOrder">51</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">579#out:1</P>
+    <P Name="Points">[50, 0; 0, 200]</P>
+    <P Name="Dst">575#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">53</P>
+    <P Name="Src">586#out:1</P>
+    <P Name="Points">[38, 0]</P>
+    <Branch>
+      <P Name="ZOrder">52</P>
+      <P Name="Points">[0, 200]</P>
+      <P Name="Dst">575#in:1</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">54</P>
+      <P Name="Points">[10, 0; 0, -60]</P>
+      <P Name="Dst">574#in:2</P>
+    </Branch>
+  </Line>
+  <Line>
+    <P Name="ZOrder">55</P>
+    <P Name="Src">574#out:1</P>
+    <P Name="Points">[44, 0; 0, 180]</P>
+    <P Name="Dst">585#in:1</P>
+  </Line>
+  <Line>
+    <P Name="Name">解耦项</P>
+    <P Name="ZOrder">56</P>
+    <P Name="Labels">[0, 0]</P>
+    <P Name="Src">583#out:1</P>
+    <P Name="Points">[72, 0; 0, -73; 293, 0]</P>
+    <P Name="Dst">585#in:2</P>
+  </Line>
+  <Annotation SID="588">
+    <P Name="Name">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body align=&quot;left&quot; style=&quot; font-family:&apos;Helvetica&apos;; font-size:10px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;left&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12px;&quot;&gt;起到使能时初始化一下的作用&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</P>
+    <P Name="Position">[1, 177, 168, 207]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="FixedHeight">on</P>
+    <P Name="FixedWidth">on</P>
+    <P Name="Interpreter">rich</P>
+    <P Name="ZOrder">-1</P>
+  </Annotation>
+</System>

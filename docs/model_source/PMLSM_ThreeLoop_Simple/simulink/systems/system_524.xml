@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[23, 11, 1017, 770]</P>
+  <P Name="ZoomFactor">191</P>
+  <Block BlockType="Inport" Name="x_ref_mm" SID="525">
+    <P Name="Position">[25, 43, 55, 57]</P>
+    <P Name="ZOrder">1</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">x_ref_mm</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="x_mm" SID="526">
+    <P Name="Position">[25, 113, 55, 127]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Block BlockType="TriggerPort" Name="Position_Tick" SID="769">
+    <PortCounts/>
+    <P Name="Position">[430, 43, 450, 63]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="VariantControl">(inherit)</P>
+    <P Name="StatesWhenEnabling">held</P>
+    <P Name="PortDimensions">1</P>
+  </Block>
+  <Block BlockType="Sum" Name="Position_Error" SID="527">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[110, 92, 140, 123]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">+-</P>
+  </Block>
+  <Block BlockType="Gain" Name="Position_P" SID="528">
+    <P Name="Position">[190, 95, 220, 125]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Gain">Kp_pos</P>
+  </Block>
+  <Block BlockType="Saturate" Name="Speed_Limit" SID="529">
+    <P Name="Position">[265, 95, 295, 125]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="UpperLimit">V_pos_max_mmps</P>
+    <P Name="LowerLimit">-V_pos_max_mmps</P>
+  </Block>
+  <Block BlockType="Outport" Name="v_ref_mmps" SID="530">
+    <P Name="Position">[340, 103, 370, 117]</P>
+    <P Name="ZOrder">3</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">1</P>
+    <P Name="Src">527#out:1</P>
+    <P Name="Dst">528#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2</P>
+    <P Name="Src">526#out:1</P>
+    <P Name="Points">[17, 0; 0, -5]</P>
+    <P Name="Dst">527#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">3</P>
+    <P Name="Src">525#out:1</P>
+    <P Name="Points">[17, 0; 0, 50]</P>
+    <P Name="Dst">527#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">4</P>
+    <P Name="Src">528#out:1</P>
+    <P Name="Dst">529#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">5</P>
+    <P Name="Src">529#out:1</P>
+    <P Name="Dst">530#in:1</P>
+  </Line>
+</System>

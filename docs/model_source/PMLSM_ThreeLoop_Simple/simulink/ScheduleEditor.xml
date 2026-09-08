@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sltp_editor version="1.1" packageUris="http://schema.mathworks.com/mf0/DiagramEditor/R2019a_20181107 http://schema.mathworks.com/mf0/SltpSyntax/R2025a_202406271400">
+  <sltp.mm.syntax.Context type="sltp.mm.syntax.Context" uuid="820b343f-a70a-48d9-831d-dd8dcf4aba42">
+    <rootGraph type="sltp.mm.syntax.Graph" uuid="c2397f4f-2a1d-4a43-b8cd-847f2fde6069">
+      <children type="sltp.mm.syntax.Node" uuid="442ed463-94c4-485f-bc32-6eb3821a0ea6">
+        <priority>40</priority>
+        <rates type="sltp.mm.syntax.RateData">
+          <color>#ff453a</color>
+          <hasBlocks>true</hasBlocks>
+          <rate>5e-05</rate>
+          <title>D1</title>
+        </rates>
+        <rates type="sltp.mm.syntax.RateData">
+          <color>#3ac831</color>
+          <hasBlocks>true</hasBlocks>
+          <rate>0.0001</rate>
+          <title>D2</title>
+        </rates>
+        <title>D1</title>
+        <type>implicit-periodic</type>
+        <diagramElement type="diagram.editor.model.Entity" uuid="4a393941-51e6-4ecc-996f-c5ca7b68cf05"/>
+        <subgraph type="sltp.mm.syntax.Graph" uuid="90f31c0f-5a63-4fbc-81d5-2cdfd6293e99">
+          <title>D1</title>
+          <diagramElement type="diagram.editor.model.Diagram" uuid="3f217568-6f96-4d2b-8086-d1dac2307478"/>
+        </subgraph>
+      </children>
+      <title>Default</title>
+      <diagramElement type="diagram.editor.model.Diagram" uuid="c80f28e2-cada-4118-9224-ee63d2325141"/>
+    </rootGraph>
+  </sltp.mm.syntax.Context>
+  <diagram.editor.model.Diagram type="diagram.editor.model.Diagram" uuid="c80f28e2-cada-4118-9224-ee63d2325141">
+    <entities type="diagram.editor.model.Entity" uuid="4a393941-51e6-4ecc-996f-c5ca7b68cf05">
+      <position>0,0</position>
+      <size>0,0,0,0</size>
+      <syntaxElement type="sltp.mm.syntax.Node" uuid="442ed463-94c4-485f-bc32-6eb3821a0ea6"/>
+      <title>D1</title>
+      <type>implicit-periodic</type>
+      <subDiagram type="diagram.editor.model.Diagram" uuid="3f217568-6f96-4d2b-8086-d1dac2307478">
+        <position>0,0</position>
+        <syntaxElement type="sltp.mm.syntax.Graph" uuid="90f31c0f-5a63-4fbc-81d5-2cdfd6293e99"/>
+        <title>D1</title>
+        <type>graph.Graph</type>
+      </subDiagram>
+    </entities>
+    <syntaxElement type="sltp.mm.syntax.Graph" uuid="c2397f4f-2a1d-4a43-b8cd-847f2fde6069"/>
+    <title>Default</title>
+    <type>graph.Graph</type>
+  </diagram.editor.model.Diagram>
+</sltp_editor>

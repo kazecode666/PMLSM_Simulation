@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<System>
+  <P Name="Location">[0, -8, 2560, 1440]</P>
+  <P Name="Open">on</P>
+  <P Name="ZoomFactor">136</P>
+  <Block BlockType="Inport" Name="cmp_a_counts" SID="774">
+    <P Name="Position">[25, 98, 55, 112]</P>
+    <P Name="ZOrder">1</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">DutyU</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="cmp_b_counts" SID="775">
+    <P Name="Position">[25, 148, 55, 162]</P>
+    <P Name="ZOrder">2</P>
+    <P Name="Port">2</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">DutyV</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="cmp_c_counts" SID="776">
+    <P Name="Position">[25, 198, 55, 212]</P>
+    <P Name="ZOrder">3</P>
+    <P Name="Port">3</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">DutyW</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="theta_e" SID="777">
+    <P Name="Position">[555, 248, 585, 262]</P>
+    <P Name="ZOrder">4</P>
+    <P Name="Port">4</P>
+  </Block>
+  <Block BlockType="Inport" Name="vdc" SID="778">
+    <P Name="Position">[555, 298, 585, 312]</P>
+    <P Name="ZOrder">5</P>
+    <P Name="Port">5</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">vdc</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="Inport" Name="ia" SID="779">
+    <P Name="Position">[555, 348, 585, 362]</P>
+    <P Name="ZOrder">6</P>
+    <P Name="Port">6</P>
+  </Block>
+  <Block BlockType="Inport" Name="ib" SID="780">
+    <P Name="Position">[555, 398, 585, 412]</P>
+    <P Name="ZOrder">7</P>
+    <P Name="Port">7</P>
+  </Block>
+  <Block BlockType="Inport" Name="ic" SID="781">
+    <P Name="Position">[555, 448, 585, 462]</P>
+    <P Name="ZOrder">8</P>
+    <P Name="Port">8</P>
+  </Block>
+  <Block BlockType="Inport" Name="PWM_EN" SID="1240">
+    <P Name="Position">[925, 273, 955, 287]</P>
+    <P Name="ZOrder">370</P>
+    <P Name="Port">9</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">PWM_EN</P>
+      </Port>
+    </PortProperties>
+  </Block>
+  <Block BlockType="SubSystem" Name="DeadTime_Voltage_Model" SID="790">
+    <PortCounts in="8" out="2"/>
+    <P Name="Position">[665, 82, 860, 478]</P>
+    <P Name="ZOrder">365</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_790"/>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">inv_vd_before_pwm_enable</P>
+      </Port>
+      <Port Type="out" Index="2">
+        <P Name="PropagatedSignals">inv_vq_before_pwm_enable</P>
+      </Port>
+    </PortProperties>
+    <System Ref="system_790"/>
+  </Block>
+  <Block BlockType="SubSystem" Name="PWM_Update_HalfTs" SID="866">
+    <PortCounts in="3" out="3"/>
+    <P Name="Position">[175, 80, 355, 230]</P>
+    <P Name="ZOrder">368</P>
+    <P Name="LibrarySourceProduct" Ref="bdmxdata:LibrarySourceProduct_866"/>
+    <P Name="ContentPreviewEnabled">on</P>
+    <System Ref="system_866"/>
+  </Block>
+  <Block BlockType="Product" Name="vd_PWM_Enable" SID="1241">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[1060, 175, 1095, 210]</P>
+    <P Name="ZOrder">371</P>
+    <P Name="Inputs">**</P>
+  </Block>
+  <Block BlockType="Product" Name="vq_PWM_Enable" SID="1242">
+    <PortCounts in="2" out="1"/>
+    <P Name="Position">[1060, 370, 1095, 405]</P>
+    <P Name="ZOrder">372</P>
+    <P Name="Inputs">**</P>
+  </Block>
+  <Block BlockType="Outport" Name="vd" SID="782">
+    <P Name="Position">[1175, 188, 1205, 202]</P>
+    <P Name="ZOrder">9</P>
+  </Block>
+  <Block BlockType="Outport" Name="vq" SID="783">
+    <P Name="Position">[1175, 383, 1205, 397]</P>
+    <P Name="ZOrder">10</P>
+    <P Name="Port">2</P>
+  </Block>
+  <Line>
+    <P Name="ZOrder">43</P>
+    <P Name="Src">776#out:1</P>
+    <P Name="Dst">866#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">44</P>
+    <P Name="Src">775#out:1</P>
+    <P Name="Dst">866#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">45</P>
+    <P Name="Src">774#out:1</P>
+    <P Name="Dst">866#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">60</P>
+    <P Name="Src">1242#out:1</P>
+    <P Name="Dst">783#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">61</P>
+    <P Name="Src">1241#out:1</P>
+    <P Name="Dst">782#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">66</P>
+    <P Name="Src">866#out:1</P>
+    <P Name="Dst">790#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">69</P>
+    <P Name="Src">866#out:2</P>
+    <P Name="Dst">790#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">72</P>
+    <P Name="Src">866#out:3</P>
+    <P Name="Dst">790#in:3</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">74</P>
+    <P Name="Src">777#out:1</P>
+    <P Name="Dst">790#in:4</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">75</P>
+    <P Name="Src">778#out:1</P>
+    <P Name="Dst">790#in:5</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">76</P>
+    <P Name="Src">779#out:1</P>
+    <P Name="Dst">790#in:6</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">77</P>
+    <P Name="Src">780#out:1</P>
+    <P Name="Dst">790#in:7</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">78</P>
+    <P Name="Src">781#out:1</P>
+    <P Name="Dst">790#in:8</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">79</P>
+    <P Name="Src">790#out:1</P>
+    <P Name="Dst">1241#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">80</P>
+    <P Name="Src">790#out:2</P>
+    <P Name="Dst">1242#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">83</P>
+    <P Name="Src">1240#out:1</P>
+    <P Name="Points">[38, 0]</P>
+    <Branch>
+      <P Name="ZOrder">86</P>
+      <P Name="Points">[0, -80]</P>
+      <P Name="Dst">1241#in:2</P>
+    </Branch>
+    <Branch>
+      <P Name="ZOrder">85</P>
+      <P Name="Points">[0, 115]</P>
+      <P Name="Dst">1242#in:2</P>
+    </Branch>
+  </Line>
+  <Annotation SID="1280">
+    <P Name="Name">死区时间建立</P>
+    <P Name="Position">[721, 54, 783, 68]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-1</P>
+  </Annotation>
+  <Annotation SID="1279">
+    <P Name="Name">半拍更新延迟</P>
+    <P Name="Position">[234, 54, 296, 68]</P>
+    <P Name="InternalMargins">[0, 0, 0, 0]</P>
+    <P Name="ZOrder">-2</P>
+  </Annotation>
+</System>
