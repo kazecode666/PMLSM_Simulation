@@ -4,7 +4,7 @@ AUM3-S4 永磁同步直线电机 MATLAB/Simulink MIL 仿真。
 
 新增独立算法模型：`PMLSM_ThreeLoop_Simple.slx`，上位机→原计数器调度的三环→比较计数→Ts/2 更新延迟及死区逆变器→电机。运行 `run_PMLSM_ThreeLoop_Simple(100)`。当前位置指令带平滑加速、匀速和平滑减速段，100 mm 默认为 1 s 加速、4 s 匀速、1 s 减速。详情见 [轨迹及验证说明](docs/ThreeLoop_SCurve.md) 与 [三环整定](docs/ThreeLoop_Tuning.md)。
 
-简化模型必须连同 `init_PMLSM_ThreeLoop_Simple.m`、`design_PMLSM_three_loop.m`、`pmlsm_scurve_profile.m` 一起下载。仓库保留验证图和 JSON 摘要，大型原始仿真 MAT/FIG 文件仅保留在本地。
+简化模型必须连同 `init_PMLSM_ThreeLoop_Simple.m`、`design_PMLSM_three_loop.m`、`pmlsm_scurve_profile.m` 一起下载。仓库保留核心运行文件、全部 Markdown、模型 XML 和兼容包；过程截图、JSON/MAT/FIG 结果及一次性排版/验证脚本仅保留在本地。验证结论见 Markdown 文档。
 
 ## 运行
 

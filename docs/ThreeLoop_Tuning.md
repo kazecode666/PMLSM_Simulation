@@ -61,7 +61,7 @@ Kp_pos = min(omega_v_nominal/separation,0.25/Ts_POS);
 
 ## 验证范围
 
-候选数据及完整信号保存在 `docs/three_loop_tuning/*.json`、`*.mat`。未通过的候选和旧阈值带载结果一并保留，不通过放宽误差阈值来宣称通过。
+候选数据及完整信号保存在原电脑本地 `docs/three_loop_tuning/*.json`、`*.mat`。仓库精简后，过程图、结果数据和本文提及的 `tools/*.m` 不再上传；下述路径仅作为历史验证来源。未通过的候选和旧阈值带载结果仍在本地保留，不通过放宽误差阈值来宣称通过。
 
 最终检查包括正反向位置、1 mm 小行程、1 N/2 N 负载、带载速度、PWM 关闭再开启、正负/小电流和 d 轴电流，以及保持增益不变时质量增加 20%、电感减小 20%。这些是离散平均逆变器仿真，不是实机或开关级验证。位置原有 0.02 mm 死区保持，不能宣称零定位误差。
 
@@ -88,7 +88,7 @@ Kp_pos = min(omega_v_nominal/separation,0.25/Ts_POS);
 
 10 mm 默认定位在指令施加后约 1.079 s 进入 ±0.05 mm 误差带，3 s 时位置约 9.98811 mm。1 N 与 2 N 恒载时末段误差约 0.0200 mm。PWM 关闭区间的 ud/uq 还进行了严格为零检查。
 
-候选与响应曲线：![整定对比](three_loop_tuning/comparison.png)
+候选与响应曲线：`three_loop_tuning/comparison.png`（历史过程图，仅本地保留）。
 
 ## 独立目录验证
 

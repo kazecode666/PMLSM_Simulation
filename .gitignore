@@ -26,3 +26,7 @@
 **/slprj/
 /docs/**/*.mat
 /docs/**/*.fig
+# Intermediate reports and one-off model editing/validation scripts stay local.
+/docs/**/*.png
+/docs/**/*.json
+/tools/*.m
