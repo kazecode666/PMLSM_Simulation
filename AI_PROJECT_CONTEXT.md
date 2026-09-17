@@ -10,7 +10,8 @@
 - `PMLSM_MIL_ControlCore_Sim.slx`: main MIL plant/inverter/sensor/test-bench model.
 - `PMLSM_ControlCore_Block.slx`: referenced controller model.
 - Main InitFcn: `init_PMLSM_control_params; init_PMLSM_plant_params; init_PMLSM_mil_test_params;`
-- `init_PMLSM_control_params.m` calls `PMSLM_Init_Params_MBDL4.m`. Keep this parameter file even though the hardware code-generation model is excluded.
+- `PMSLM_Close_Loop_MBDL4.slx`: hardware code-generation source model, included on 2026-09-17. Upload alone does not establish build or hardware validation.
+- `init_PMLSM_control_params.m` calls `PMSLM_Init_Params_MBDL4.m`. Keep this parameter file.
 - `init_PMLSM_MIL_params.m`: combined initialization entry point.
 
 ## Current defaults (2026-09-07 snapshot)
@@ -27,4 +28,4 @@ Use the SLX models as source of truth. `docs/model_source/` is a searchable extr
 
 Model parsing is not simulation. State the actual MATLAB release, tested modes and numerical checks. The R2023b compatibility ZIP was verified on R2026a, not on an installed R2023b runtime. No hardware/board validation is implied.
 
-No code-generation model, old result dataset, hardware archive, or paper archive is included. Historical documents are not automatically authoritative for current parameters.
+Generated code, old result datasets, hardware archives, and paper archives are excluded. Historical documents are not automatically authoritative for current parameters.

@@ -8,6 +8,7 @@
 !/PMLSM_MIL_ControlCore_Sim.slx
 !/PMLSM_ControlCore_Block.slx
 !/PMSLM_Init_Params_MBDL4.m
+!/PMSLM_Close_Loop_MBDL4.slx
 !/init_PMLSM_control_params.m
 !/init_PMLSM_plant_params.m
 !/init_PMLSM_mil_test_params.m
